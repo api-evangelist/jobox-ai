@@ -1,0 +1,29 @@
+generated: '2026-08-23'
+method: searched
+source: https://www.jobox.ai/ , https://www.jobox.ai/pro , https://www.jobox.ai/marketplace (2026-08-23)
+plan_count: 0
+note: Jobox publishes no pricing page and no rate card for either product. https://www.jobox.ai/pricing
+  returns HTTP 404. The B2B marketplace/API product is sold entirely through "Request a demo" and "Contact
+  Sales" — no tiers, no quotas, no overage and no API pricing is published anywhere. The pro-facing app
+  states qualitative pricing only ("free to download", "no subscription fees", "one of the lowest CC processing
+  fees available", "up to $10K credit with no annual fees or interest") with no numbers attached. The
+  only numeric fee material lives in the help center and now describes Talus Pay card-processing rates,
+  which are the acquirer's, not a published Jobox plan.
+plans: []
+qualitative_claims:
+- product: Jobox pro app
+  claim: Free to download; no upfront or recurring subscription fees.
+  source: https://www.jobox.ai/pro
+- product: Jobox Credit Card
+  claim: Up to $10,000 credit; no annual fees, no interest, no credit-score impact.
+  source: https://www.jobox.ai/
+- product: Managed marketplace / API
+  claim: No published price. "Contact Sales" / "Request a demo" only.
+  source: https://www.jobox.ai/marketplace
+evidence:
+- url: https://www.jobox.ai/pricing
+  status: 404
+- url: https://www.jobox.ai/marketplace
+  status: 200
+- url: https://www.jobox.ai/pro
+  status: 200

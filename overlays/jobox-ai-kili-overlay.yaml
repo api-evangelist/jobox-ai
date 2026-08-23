@@ -1,0 +1,82 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the Jobox Kili API
+  version: 1.0.0
+extends: ../openapi/jobox-ai-kili-openapi.json
+x-generated: '2026-08-23'
+x-method: generated
+x-source: openapi/jobox-ai-kili-openapi.json + live probes of https://api.jobox.ai on 2026-08-23
+x-note: 'Captures API Evangelist enhancements WITHOUT mutating the harvested contract: the production
+  host (the contract names the staging host), the observed authentication requirement the contract omits
+  entirely, the observed error envelope, and the three operations the live host no longer routes. Every
+  action below is grounded in a probe recorded in this repo; nothing is invented.'
+actions:
+- target: $
+  description: Record the production host. The harvested contract names host "https://staging.jobox.ai";
+    the live production deployment of the same basePath is api.jobox.ai, confirmed by a 200 at https://api.jobox.ai/Kili/
+    returning the kili build config.
+  update:
+    x-production-host: api.jobox.ai
+    x-production-base-url: https://api.jobox.ai/Kili
+- target: $.info
+  description: The contract carries only a version string. Add identifying metadata derived from the provider
+    profile.
+  update:
+    x-title: Jobox Kili API
+    x-provider: JOBOX.ai
+    x-parent: Talus Pay (acquired 2024-01-03)
+    x-contract-availability: withdrawn — last served snapshot 2019-05-07; see lifecycle/jobox-ai-lifecycle.yml
+- target: $
+  description: The contract declares no securityDefinitions, yet the live API returns 401 to anonymous
+    requests. Record the observed requirement without asserting a mechanism Jobox has not published.
+  update:
+    x-authentication-observed:
+      required: true
+      status_on_anonymous: 401
+      evidence: GET https://api.jobox.ai/Kili/occupations -> 401 (2026-08-23)
+      mechanism: undocumented
+      caller-header: User-Id
+- target: $
+  description: Record the observed error envelope. The contract documents no 4xx/5xx response on any operation.
+  update:
+    x-error-envelope:
+      media_type: application/json
+      fields:
+      - title
+      - message
+      - debug_id
+      rfc9457: false
+      catalog: errors/jobox-ai-problem-types.yml
+- target: $.paths['/dashboard']
+  description: 'Observed withdrawn: GET https://api.jobox.ai/Kili/dashboard returns 404 on the live host
+    (2026-08-23) although the contract publishes it.'
+  update:
+    x-observed-status: withdrawn
+    x-observed-http-status: 404
+    x-observed-at: '2026-08-23'
+- target: $.paths['/search']
+  description: 'Observed withdrawn: GET https://api.jobox.ai/Kili/search returns 404 on the live host
+    (2026-08-23) although the contract publishes it.'
+  update:
+    x-observed-status: withdrawn
+    x-observed-http-status: 404
+    x-observed-at: '2026-08-23'
+- target: $.paths['/occupations']
+  description: Observed live behind authentication.
+  update:
+    x-observed-status: live
+    x-observed-http-status: 401
+    x-observed-at: '2026-08-23'
+- target: $.paths['/joboxnumbers']
+  description: Observed live behind authentication.
+  update:
+    x-observed-status: live
+    x-observed-http-status: 401
+    x-observed-at: '2026-08-23'
+- target: $
+  description: Record the absence of runtime rate-limit signalling observed on the live host.
+  update:
+    x-rate-limit-signal:
+      headers: []
+      documented: false
+      artifact: rate-limits/jobox-ai-rate-limits.yml

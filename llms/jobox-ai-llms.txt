@@ -1,0 +1,165 @@
+# Jobox Help Center
+
+> Need help? We've got your back!
+
+## Getting Started
+
+- [First-Time Cashouts or Transfers](https://help.jobox.ai/en/articles/6650180-first-time-cashouts-or-transfers.md): What happens the first time a user tries to transfer funds or cash-out after a job has been completed
+- [Getting Started on Talus Pay: Frequently Asked Questions](https://help.jobox.ai/en/articles/6455430-getting-started-on-talus-pay-frequently-asked-questions.md): Get started on Talus Pay and find out the answers to all your questions about the pro app.
+- [Adding Account Verifications](https://help.jobox.ai/en/articles/4520801-adding-account-verifications.md): Learn how to upload your ID and Tax Information to protect your account and upgrade your wallet abilities.
+- [Service Recipient Terms of Service](https://help.jobox.ai/en/articles/4092854-service-recipient-terms-of-service.md): Terms and Conditions for the end-customer, the service recipient.
+- [App Permissions - iOS](https://help.jobox.ai/en/articles/2660586-app-permissions-ios.md): Learn about the permissions Talus Pay asks from you
+- [App Permissions - Android](https://help.jobox.ai/en/articles/2657250-app-permissions-android.md): Learn about the permissions Talus Pay asks from you
+- [Bank Transfer Timeline](https://help.jobox.ai/en/articles/2494028-bank-transfer-timeline.md): When should I expect my money to be reflected in my bank?
+- [Talus Pay Terms of Service](https://help.jobox.ai/en/articles/2642053-talus-pay-terms-of-service.md): Talus Pay Terms of Service - Get informed about the details
+- [Talus Pay Privacy Policy](https://help.jobox.ai/en/articles/2629223-talus-pay-privacy-policy.md): Talus Pay Privacy Policy - learn about information security
+- [What are Talus Pay's credit card processing fees?](https://help.jobox.ai/en/articles/3446682-what-are-talus-pay-s-credit-card-processing-fees.md): Your credit card rates on Talus Pay depends on the volume of transactions you generate in the Talus Pay app.
+- [Taluspay Card Reader](https://help.jobox.ai/en/articles/3482978-taluspay-card-reader.md): Learn more about how to connect the Taluspay Card Reader, and the benefits of using the device.
+- [Instant Website with Talus Pay](https://help.jobox.ai/en/articles/5701912-instant-website-with-talus-pay.md): Users Website
+- [How do I login?](https://help.jobox.ai/en/articles/6226047-how-do-i-login.md): Loging in simply to the app- no password needed!
+- [What is my Talus Pay number?](https://help.jobox.ai/en/articles/6226069-what-is-my-talus-pay-number.md)
+- [Email Verification](https://help.jobox.ai/en/articles/5031973-email-verification.md): Why you need to verify your email, and why every account needs a unique email account.
+- [Understanding A2P 10DLC - Talus Pay users](https://help.jobox.ai/en/articles/8250261-understanding-a2p-10dlc-talus-pay-users.md): What is A2P and what I need to do?
+- [How and when to contact support](https://help.jobox.ai/en/articles/9702013-how-and-when-to-contact-support.md): When and how should you contact us!
+- [Getting Started with the Talus Pay app](https://help.jobox.ai/en/articles/2790099-getting-started-with-the-talus-pay-app.md): App highlights and overview \(J\)
+
+## Jobox Basics
+
+- [Supported Devices](https://help.jobox.ai/en/articles/2993184-supported-devices.md): Find out which devices offer the best Talus Pay app experience
+- [Pull Down to Refresh](https://help.jobox.ai/en/articles/2872865-pull-down-to-refresh.md): How to refresh your app to get the latest job info
+- [Using Talus Pay Without a Network Connection](https://help.jobox.ai/en/articles/2785816-using-talus-pay-without-a-network-connection.md): What happens when you're offline and how Talus Pay still works
+- [How to Edit Your Receipt Settings](https://help.jobox.ai/en/articles/3193916-how-to-edit-your-receipt-settings.md): Add your company name and contact details to customer receipts
+- [Import a Contact](https://help.jobox.ai/en/articles/2766058-import-a-contact.md): How to import an existing contact into Talus Pay
+- [Parts Price, Labor Price, and Sales Tax](https://help.jobox.ai/en/articles/5058672-parts-price-labor-price-and-sales-tax.md): Itemize the Job Total Amount into Parts, Labor, and Sales Tax and give your customer a clear and transparent understanding of the charge.
+- [What is a job ID?](https://help.jobox.ai/en/articles/2785744-what-is-a-job-id.md): Understanding Talus Pay Job IDs and how to find them
+- [Accept a Job](https://help.jobox.ai/en/articles/2660193-accept-a-job.md): How to accept a job from another Talus Pay user
+- [Reject a Job](https://help.jobox.ai/en/articles/2660309-reject-a-job.md): How to reject a job from another Talus Pay user
+- [Add a Job](https://help.jobox.ai/en/articles/2644607-add-a-job.md): How to create a job from Workspace
+- [Create a Job from Chat](https://help.jobox.ai/en/articles/2638718-create-a-job-from-chat.md): How to create a job from a chat message
+- [Transfer a Job ▶️](https://help.jobox.ai/en/articles/2641391-transfer-a-job.md): How to transfer a job to a contact
+- [Turn Off Job Owner SMS ▶️](https://help.jobox.ai/en/articles/2795343-turn-off-job-owner-sms.md): How to stop a text update to job owners
+- [Cancel a Job Transfer or Cancel a Job▶️](https://help.jobox.ai/en/articles/2641421-cancel-a-job-transfer-or-cancel-a-job.md): How to take back a job you transferred
+- [Change Job Type ▶️](https://help.jobox.ai/en/articles/2626966-change-job-type.md): How to change a job type from your default setting
+- [Send a Job Update](https://help.jobox.ai/en/articles/2637935-send-a-job-update.md): How to send updates to a job owner
+- [Search for a Job](https://help.jobox.ai/en/articles/2679990-search-for-a-job.md): How to search for a job
+- [Job Sub-types](https://help.jobox.ai/en/articles/4129030-job-sub-types.md): Specify the type of job you complete to give more detailed information to your co-workers and your customers
+- [Delete a Job](https://help.jobox.ai/en/articles/3753879-delete-a-job.md): How to delete closed jobs
+- [Scheduling Jobs](https://help.jobox.ai/en/articles/3456863-scheduling-jobs.md): How to set and change appointment times for jobs
+- [Team Message Transfer features](https://help.jobox.ai/en/articles/9730045-team-message-transfer-features.md): Forward or Copy your closings notifications to various numbers
+- [Send/Re-send a Receipt ▶️](https://help.jobox.ai/en/articles/2649821-send-re-send-a-receipt.md): How to send your customer a receipt
+- [How to Resend a Receipt?](https://help.jobox.ai/en/articles/2663929-how-to-resend-a-receipt.md): How to re-send a receipt to a customer after closing
+- [Add Tax](https://help.jobox.ai/en/articles/2645193-add-tax.md): How to add tax to a job total
+- [Add a New Contact](https://help.jobox.ai/en/articles/2631913-add-a-new-contact.md): How to create a new contact
+- [Edit a Contact ▶️](https://help.jobox.ai/en/articles/2632466-edit-a-contact.md): How to edit an existing contact
+- [Edit Your Personal Information ▶️](https://help.jobox.ai/en/articles/2637810-edit-your-personal-information.md): How to edit your personal info in your account
+- [When a Contact Doesn't Use Jobox](https://help.jobox.ai/en/articles/2673688-when-a-contact-doesn-t-use-jobox.md): How to work with contacts who don't use Jobox
+- [Troubleshooting the Jobox Card Reader](https://help.jobox.ai/en/articles/5368731-troubleshooting-the-jobox-card-reader.md): Having troubles with your Card Reader device? Follow these steps to find and solve the issue
+- [Change Push Notification Sound ▶️](https://help.jobox.ai/en/articles/2552147-change-push-notification-sound.md): How to change your Talus Pay app's push notification sound
+- [Troubleshooting: iOS Notifications](https://help.jobox.ai/en/articles/2782488-troubleshooting-ios-notifications.md): How to make sure you're getting real-time app updates
+
+## Payments & Requests
+
+- [Payments](https://help.jobox.ai/en/articles/6587874-payments.md): Understand the benefits & use of payment features on Talus Pay
+- [Identity Verification Requirement](https://help.jobox.ai/en/articles/5740247-identity-verification-requirement.md): Identity verification compliance at Talus Pay
+- [Set up your tip collection screen](https://help.jobox.ai/en/articles/5104456-set-up-your-tip-collection-screen.md): We all know you work hard and deserve to be compensated for it! Earn more tips by choosing how to present them to your customer.
+- [In-App Refund Request Statement](https://help.jobox.ai/en/articles/4554531-in-app-refund-request-statement.md): Request a refund for your customer within the app, and immediately get a refund statement for your customer.
+- [Reporting Payments](https://help.jobox.ai/en/articles/3040816-reporting-payments.md): Reporting check, cash, and credit card payments
+- [Transaction History & Year End Summary ▶️](https://help.jobox.ai/en/articles/2863124-transaction-history-year-end-summary.md): How to get a 1099K
+- [Customize Tip Suggestions ▶️](https://help.jobox.ai/en/articles/2829640-customize-tip-suggestions.md): How to set suggested tip amounts to show customers
+- [Credit Card Statements](https://help.jobox.ai/en/articles/2552616-credit-card-statements.md): Customize how your company name appears on customers' bank statements
+- [My Disputes Overview ▶️](https://help.jobox.ai/en/articles/2725301-my-disputes-overview.md): Your place for easy dispute resolution
+- [Jobox Payment Dispute Policy](https://help.jobox.ai/en/articles/2792651-jobox-payment-dispute-policy.md): What happens to your money when a payment is disputed
+- [Transaction Holds](https://help.jobox.ai/en/articles/6228520-transaction-holds.md): Why are my funds on hold?
+- [Why am I being asked for a Social Security number?](https://help.jobox.ai/en/articles/6226066-why-am-i-being-asked-for-a-social-security-number.md)
+- [How to get paid with Tap-to-Pay on Talus Pay?](https://help.jobox.ai/en/articles/6706033-how-to-get-paid-with-tap-to-pay-on-talus-pay.md): Talus Pay has partnered with TSYS to let our users receive digital payment with just their phone - no need for external payment device.
+- [Transfer Money to your Bank Account via PLAID](https://help.jobox.ai/en/articles/2660959-transfer-money-to-your-bank-account-via-plaid.md): How to transfer wallet funds to your bank account via PLAID
+- [Transfer Money instantly between Talus Pay users](https://help.jobox.ai/en/articles/2653933-transfer-money-instantly-between-talus-pay-users.md): How to make a wallet to wallet transfer
+- [Accepting Remote payments](https://help.jobox.ai/en/articles/4375961-accepting-remote-payments.md): Let your customers pay in a secure way, even if they're not on-site.
+- [Accept Split Payments](https://help.jobox.ai/en/articles/2679516-accept-split-payments.md): How to split between multiple payment methods
+- [Payments](https://help.jobox.ai/en/articles/9736510-payments.md): Understand the benefits & use of payment features on Talus Pay
+- [Becoming an individual technician- what to expect?](https://help.jobox.ai/en/articles/5647120-becoming-an-individual-technician-what-to-expect.md): Leaving a team? starting your own business? if so this article is for you!
+- [Best Practices for Accepting Credit Card Payments](https://help.jobox.ai/en/articles/2508437-best-practices-for-accepting-credit-card-payments.md): Learn how to best avoid disputes
+- [Best Practices: Credit Card Charge Checklist](https://help.jobox.ai/en/articles/2729881-best-practices-credit-card-charge-checklist.md): Best steps to take before charging a customer's card
+- [Best Practices: Receipts](https://help.jobox.ai/en/articles/2729884-best-practices-receipts.md): Best receipt practices to prevent disputes
+- [Best Practices: Charging Cards Remotely](https://help.jobox.ai/en/articles/2729886-best-practices-charging-cards-remotely.md): Important guidelines for charging cards remotely
+- [Best Practices: Charge Review](https://help.jobox.ai/en/articles/2729889-best-practices-charge-review.md)
+- [Sending Invoices](https://help.jobox.ai/en/articles/3276035-sending-invoices.md): Get your customer's approval before you charge their card
+- [ITIN holders are now accepted on Talus Pay!](https://help.jobox.ai/en/articles/7183730-itin-holders-are-now-accepted-on-talus-pay.md): New Identity verification compliance at Talus Pay- ITIN acceptance
+- [Can I open a new account for my new business?](https://help.jobox.ai/en/articles/10670438-can-i-open-a-new-account-for-my-new-business.md): Already have a Taluspay account but need an additional one for a new business?
+- [Job Warranties](https://help.jobox.ai/en/articles/5452015-job-warranties.md): Better protect your work with a professional Warranty statement
+- [Accept Cash ▶️](https://help.jobox.ai/en/articles/2649939-accept-cash.md): How to accept and process cash payment for a job 💵
+- [Accept Credit Cards Manually ▶️](https://help.jobox.ai/en/articles/2650032-accept-credit-cards-manually.md): How to manually enter a credit card at payment 💳
+- [Jobox Card Reader - White](https://help.jobox.ai/en/articles/6248900-jobox-card-reader-white.md)
+- [Taluspay Credit Card Fee](https://help.jobox.ai/en/articles/5210848-taluspay-credit-card-fee.md)
+- [Update Bank Account](https://help.jobox.ai/en/articles/12648770-update-bank-account.md): Update your bank account quickly and securely
+- [Payment Dispute Overview](https://help.jobox.ai/en/articles/2507318-payment-dispute-overview.md)
+- [Payment Disputes: Our Process](https://help.jobox.ai/en/articles/2507323-payment-disputes-our-process.md)
+- [Payment Disputes: Responding to the Bank](https://help.jobox.ai/en/articles/2507345-payment-disputes-responding-to-the-bank.md)
+
+## Reports
+
+- [Filtering Reports](https://help.jobox.ai/en/articles/3793527-filtering-reports.md): Understanding, organizing and viewing reports info in the right way for you.
+- [Understanding Owe/Collect](https://help.jobox.ai/en/articles/2893051-understanding-owe-collect.md): Easy settlements with balance calculations for each of your contacts
+- [Your Reports Summary: Full Guide](https://help.jobox.ai/en/articles/2862285-your-reports-summary-full-guide.md): How to get insights and settlement info from your Reports Summary
+- [Understanding My Net Cut](https://help.jobox.ai/en/articles/2876126-understanding-my-net-cut.md): What is a "Net Cut" and how is it calculated?
+- [Understanding Reports: Calculations](https://help.jobox.ai/en/articles/2806708-understanding-reports-calculations.md): How Talus Pay reports calculate your cut and balance
+- [Generating Job Reports with your contacts](https://help.jobox.ai/en/articles/2773088-generating-job-reports-with-your-contacts.md): How to create and send yourself a report of your jobs
+- [Export Wallet Transactions ▶️](https://help.jobox.ai/en/articles/2691405-export-wallet-transactions.md): How to email yourself a report of your wallet transactions
+- [Understanding Reports: Key Terms](https://help.jobox.ai/en/articles/2806465-understanding-reports-key-terms.md): Important definitions for report language
+- [Understanding Your Wallet Balance](https://help.jobox.ai/en/articles/3403539-understanding-your-wallet-balance.md): Understanding your wallet balance
+- [Updates to Payments in Reports](https://help.jobox.ai/en/articles/3423953-updates-to-payments-in-reports.md): Understanding new payment breakdowns
+
+## 1099k
+
+- [1099K Form for Talus Pay users](https://help.jobox.ai/en/articles/8753879-1099k-form-for-talus-pay-users.md): 1099-K Form for year 2025
+- [1099-K Form FAQ](https://help.jobox.ai/en/articles/5864550-1099-k-form-faq.md): 1099-K Form for year 2025
+
+## Power Dispatch
+
+- [Power Dispatch- call recording feature setup](https://help.jobox.ai/en/articles/9298582-power-dispatch-call-recording-feature-setup.md): Call recordings are for the Power Dispatch user to have the ability to monitor the conversations between their technicians and customers
+- [Power Dispatch- Adding a job](https://help.jobox.ai/en/articles/9294279-power-dispatch-adding-a-job.md): How to add a job in the Power Dispatch system
+- [Power Dispatch- Adding a user](https://help.jobox.ai/en/articles/9294144-power-dispatch-adding-a-user.md): How to add a user on my Power Dispatch system?
+- [Power Dispatch- Adding your Twilio number](https://help.jobox.ai/en/articles/6901048-power-dispatch-adding-your-twilio-number.md): Twillio integration into Power Dispatch
+- [Power Dispatch- Payments report](https://help.jobox.ai/en/articles/9298649-power-dispatch-payments-report.md): Deep dive into Payment reports
+- [Power Dispatch- Overview report](https://help.jobox.ai/en/articles/9298664-power-dispatch-overview-report.md): Deep dive into Overview reports
+- [Power Dispatch- Technicians Statistics Report](https://help.jobox.ai/en/articles/9298681-power-dispatch-technicians-statistics-report.md): Deep dive into Technician statistics report
+- [Power Dispatch- Companies Statistics Report](https://help.jobox.ai/en/articles/9298700-power-dispatch-companies-statistics-report.md): Deep dive into Companies Statistics report
+- [Power Dispatch- Metro Report](https://help.jobox.ai/en/articles/9298714-power-dispatch-metro-report.md): Deep dive into Metro Report
+- [Power Dispatch- Users Report](https://help.jobox.ai/en/articles/9298747-power-dispatch-users-report.md): Deep dive into Users report
+- [Power Dispatch- Type Report](https://help.jobox.ai/en/articles/9298758-power-dispatch-type-report.md): Deep dive into Type Report
+- [Power Dispatch- Everything to know about Reports](https://help.jobox.ai/en/articles/9298610-power-dispatch-everything-to-know-about-reports.md): All you need to know about Power Dispatch unique customized reports
+- [Power Dispatch- User guide](https://help.jobox.ai/en/articles/9298823-power-dispatch-user-guide.md): How to correctly set up in Power Dispatch
+- [Power Dispatch- Adding Referral Companys](https://help.jobox.ai/en/articles/9307250-power-dispatch-adding-referral-companys.md): How to add Referral Companies to your Power Dispatch system
+- [Power Dispatch - Tech Portal](https://help.jobox.ai/en/articles/9307308-power-dispatch-tech-portal.md): Deep dive into the Tech Portal feature
+- [Power Dispatch- Adding Technicians](https://help.jobox.ai/en/articles/9307278-power-dispatch-adding-technicians.md): How to add Technicians to your Power Dispatch system
+- [Power Dispatch- Advertising Report](https://help.jobox.ai/en/articles/9298729-power-dispatch-advertising-report.md): Deep dive into Advertising Report
+- [Power Dispatch: A2P 10DLC Registration Requirements](https://help.jobox.ai/en/articles/8076109-power-dispatch-a2p-10dlc-registration-requirements.md): A2P Registration requirements- Power Dispatch
+- [Power Dispatch: Technician and Company set up](https://help.jobox.ai/en/articles/8062787-power-dispatch-technician-and-company-set-up.md): How to set up Technicians and Companies in Power Dispatch
+- [Power Dispatch Pricing](https://help.jobox.ai/en/articles/7044818-power-dispatch-pricing.md): Updated Pricing- Power Dispatch accounts
+- [Power Dispatch-Talus Pay integration tutorial](https://help.jobox.ai/en/articles/5269208-power-dispatch-talus-pay-integration-tutorial.md): Complete instructions on fine tuning your PowerDispatch-Talus Pay integration
+- [Power Dispatch- Invoices, Receipts, Estimates, Work orders](https://help.jobox.ai/en/articles/9294385-power-dispatch-invoices-receipts-estimates-work-orders.md): How to create Invoices, receipts, Estimates and Work orders?
+- [Power Dispatch- Suggestions for email-to-text message issues](https://help.jobox.ai/en/articles/3832981-power-dispatch-suggestions-for-email-to-text-message-issues.md)
+- [Power Dispatch- Message comments explained](https://help.jobox.ai/en/articles/3976185-power-dispatch-message-comments-explained.md): How to use the new Message comments system
+- [Power Dispatch- Troubleshooting Twilio Campaigns](https://help.jobox.ai/en/articles/9828750-power-dispatch-troubleshooting-twilio-campaigns.md): Step by Step guide to troubleshoot your Twilio campaign, when messages aren't being sent
+- [Power Dispatch- Automated Customer Notifications](https://help.jobox.ai/en/articles/4809505-power-dispatch-automated-customer-notifications.md)
+- [Say hello to a faster Power Dispatch!](https://help.jobox.ai/en/articles/4645993-say-hello-to-a-faster-power-dispatch.md)
+- [New Technician and User permissions and a new Job Status!](https://help.jobox.ai/en/articles/4596712-new-technician-and-user-permissions-and-a-new-job-status.md)
+- [Power Dispatch- Job Comments Revolution!](https://help.jobox.ai/en/articles/3976222-power-dispatch-job-comments-revolution.md): Release notes for the new Job Comments Revolution!
+- [Power Dispatch- Set Job occupation](https://help.jobox.ai/en/articles/5194922-power-dispatch-set-job-occupation.md): Job Occupation- how to?
+- [Power Dispatch- New & Improved Tech Portal](https://help.jobox.ai/en/articles/3832913-power-dispatch-new-improved-tech-portal.md): New design and functionality for the Tech Portal
+- [How to reset password on Power Dispatch](https://help.jobox.ai/en/articles/10742681-how-to-reset-password-on-power-dispatch.md): Password rest on the PD system
+- [Power Dispatch- Jobs Board](https://help.jobox.ai/en/articles/11739111-power-dispatch-jobs-board.md): The place to find all your jobs
+- [Frequently Asked Questions](https://help.jobox.ai/en/articles/6226039-frequently-asked-questions.md): The most common questions our users ask us
+- [How do I change my phone number?](https://help.jobox.ai/en/articles/6226097-how-do-i-change-my-phone-number.md): Changed my phone number, what do I do?
+
+## News & Updates
+
+- [4 Tips to Stay Safe and Healthy as a Service Provider](https://help.jobox.ai/en/articles/3779454-4-tips-to-stay-safe-and-healthy-as-a-service-provider.md): Protect customers, technicians and your company today
+- [Introducing Customer Invoice](https://help.jobox.ai/en/articles/5445695-introducing-customer-invoice.md): Issuing Customer Invoice
+- [Jobox is now Talus Pay](https://help.jobox.ai/en/articles/9174663-jobox-is-now-talus-pay.md): Jobox is now officially Talus Pay 📣
+- [Jobox is now Talus Pay FAQ's](https://help.jobox.ai/en/articles/9174718-jobox-is-now-talus-pay-faq-s.md): All the questions you may have and more!
+- [Jobox Migration](https://help.jobox.ai/en/articles/10450789-jobox-migration.md)
+
+## Taluspay Conversion
+
+- [Jobox is Becoming Taluspay!](https://help.jobox.ai/en/articles/10458006-jobox-is-becoming-taluspay.md)

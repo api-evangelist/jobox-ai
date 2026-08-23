@@ -1,0 +1,827 @@
+generated: '2026-08-23'
+method: derived
+source: openapi/jobox-ai-kili-openapi.json (candidate); live probes of api.jobox.ai / mcp.jobox.ai 2026-08-23
+status: candidate
+note: Jobox ships NO MCP server. This is a derived candidate tool surface only — one candidate tool per
+  contract operation — and must not be read as an agent surface that exists. No endpoint is invented.
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: probed
+  evidence:
+  - POST https://api.jobox.ai/mcp {"jsonrpc":"2.0","method":"tools/list"} -> HTTP 404 (Tomcat)
+  - https://mcp.jobox.ai/ -> DNS does not resolve (curl exit 000)
+  - POST https://www.jobox.ai/mcp -> HTTP 405 (Webflow, method not allowed)
+  - No MCP server for Jobox found on npm, PyPI or the jobox.ai site.
+candidate_tool_count: 110
+categories:
+  applogic_users: 1
+  bankinfo: 5
+  commodities: 1
+  contacts: 7
+  dashboard: 2
+  displayname: 1
+  disputes: 2
+  external: 3
+  history: 1
+  identification: 1
+  joblog: 3
+  joboxnumbers: 1
+  jobs: 20
+  notes: 2
+  notifications: 3
+  occupations: 2
+  paymentlog: 4
+  payments: 3
+  receipts: 3
+  referral: 3
+  reports: 5
+  search: 1
+  shorten: 1
+  status: 1
+  upload: 4
+  uploadsignature: 1
+  users: 16
+  v2stripe: 4
+  wallet: 6
+  wallet_alias: 3
+caveats:
+- 'All candidate tools inherit the contract''s weaknesses: no operation summaries, no descriptions, and
+  no documented responses, so no faithful inputSchema/outputSchema can be derived beyond raw parameter
+  shape.'
+- The credential these tools would need is undocumented (see authentication/jobox-ai-authentication.yml).
+- Three contract paths (/dashboard GET+POST, /search GET) now 404 on the live host and would be dead tools.
+candidate_tools:
+- name: jobox_applogic_users_create
+  category: applogic_users
+  rest:
+    method: POST
+    path: /alusers
+    operationId: create
+  read_only: false
+- name: jobox_bankinfo_archive
+  category: bankinfo
+  rest:
+    method: DELETE
+    path: /bankinfo
+    operationId: archive
+  read_only: false
+- name: jobox_bankinfo_create_1
+  category: bankinfo
+  rest:
+    method: POST
+    path: /bankinfo
+    operationId: create_1
+  read_only: false
+- name: jobox_bankinfo_update
+  category: bankinfo
+  rest:
+    method: PUT
+    path: /bankinfo
+    operationId: update
+  read_only: false
+- name: jobox_bankinfo_readByUserId
+  category: bankinfo
+  rest:
+    method: GET
+    path: /bankinfo/users/{user_id}
+    operationId: readByUserId
+  read_only: true
+- name: jobox_bankinfo_read
+  category: bankinfo
+  rest:
+    method: GET
+    path: /bankinfo/{bank_id}
+    operationId: read
+  read_only: true
+- name: jobox_commodities_create_2
+  category: commodities
+  rest:
+    method: POST
+    path: /commodities
+    operationId: create_2
+  read_only: false
+- name: jobox_contacts_archive_2
+  category: contacts
+  rest:
+    method: DELETE
+    path: /contacts
+    operationId: archive_2
+  read_only: false
+- name: jobox_contacts_create_3
+  category: contacts
+  rest:
+    method: POST
+    path: /contacts
+    operationId: create_3
+  read_only: false
+- name: jobox_contacts_archiveForRetrofit
+  category: contacts
+  rest:
+    method: PUT
+    path: /contacts/delete
+    operationId: archiveForRetrofit
+  read_only: false
+- name: jobox_contacts_archive_1
+  category: contacts
+  rest:
+    method: DELETE
+    path: /contacts/{contact_id}
+    operationId: archive_1
+  read_only: false
+- name: jobox_contacts_update_1
+  category: contacts
+  rest:
+    method: PUT
+    path: /contacts/{contact_id}
+    operationId: update_1
+  read_only: false
+- name: jobox_contacts_read_1
+  category: contacts
+  rest:
+    method: GET
+    path: /contacts/{id}
+    operationId: read_1
+  read_only: true
+- name: jobox_contacts_readAliases
+  category: contacts
+  rest:
+    method: GET
+    path: /contacts/{id}/aliases/{entity_type}
+    operationId: readAliases
+  read_only: true
+- name: jobox_dashboard_read_2
+  category: dashboard
+  rest:
+    method: GET
+    path: /dashboard
+    operationId: read_2
+  read_only: true
+- name: jobox_dashboard_create_4
+  category: dashboard
+  rest:
+    method: POST
+    path: /dashboard
+    operationId: create_4
+  read_only: false
+- name: jobox_displayname_read_3
+  category: displayname
+  rest:
+    method: GET
+    path: /displayname/{sender_id}/{receiver_id}
+    operationId: read_3
+  read_only: true
+- name: jobox_disputes_list
+  category: disputes
+  rest:
+    method: GET
+    path: /disputes/users/{user_id}
+    operationId: list
+  read_only: true
+- name: jobox_disputes_read_4
+  category: disputes
+  rest:
+    method: GET
+    path: /disputes/{dispute_id}
+    operationId: read_4
+  read_only: true
+- name: jobox_external_delete
+  category: external
+  rest:
+    method: DELETE
+    path: /external
+    operationId: delete
+  read_only: false
+- name: jobox_external_create_5
+  category: external
+  rest:
+    method: POST
+    path: /external
+    operationId: create_5
+  read_only: false
+- name: jobox_external_update_2
+  category: external
+  rest:
+    method: PUT
+    path: /external
+    operationId: update_2
+  read_only: false
+- name: jobox_history_create_6
+  category: history
+  rest:
+    method: POST
+    path: /history/joblog
+    operationId: create_6
+  read_only: false
+- name: jobox_identification_read_12
+  category: identification
+  rest:
+    method: GET
+    path: /identification/{user_id}
+    operationId: read_12
+  read_only: true
+- name: jobox_joblog_createAll
+  category: joblog
+  rest:
+    method: POST
+    path: /joblog/list
+    operationId: createAll
+  read_only: false
+- name: jobox_joblog_create_7
+  category: joblog
+  rest:
+    method: POST
+    path: /joblog/v2/list
+    operationId: create_7
+  read_only: false
+- name: jobox_joblog_read_5
+  category: joblog
+  rest:
+    method: GET
+    path: /joblog/{id}
+    operationId: read_5
+  read_only: true
+- name: jobox_joboxnumbers_read_9
+  category: joboxnumbers
+  rest:
+    method: GET
+    path: /joboxnumbers
+    operationId: read_9
+  read_only: true
+- name: jobox_jobs_archive_3
+  category: jobs
+  rest:
+    method: DELETE
+    path: /jobs
+    operationId: archive_3
+  read_only: false
+- name: jobox_jobs_read_8
+  category: jobs
+  rest:
+    method: GET
+    path: /jobs
+    operationId: read_8
+  read_only: true
+- name: jobox_jobs_create_8
+  category: jobs
+  rest:
+    method: POST
+    path: /jobs
+    operationId: create_8
+  read_only: false
+- name: jobox_jobs_update_3
+  category: jobs
+  rest:
+    method: PUT
+    path: /jobs
+    operationId: update_3
+  read_only: false
+- name: jobox_jobs_archiveForAndroid
+  category: jobs
+  rest:
+    method: PUT
+    path: /jobs/delete
+    operationId: archiveForAndroid
+  read_only: false
+- name: jobox_jobs_create_9
+  category: jobs
+  rest:
+    method: POST
+    path: /jobs/description/parse
+    operationId: create_9
+  read_only: false
+- name: jobox_jobs_read_6
+  category: jobs
+  rest:
+    method: GET
+    path: /jobs/list/{page_num}
+    operationId: read_6
+  read_only: true
+- name: jobox_jobs_read_7
+  category: jobs
+  rest:
+    method: GET
+    path: /jobs/{id}
+    operationId: read_7
+  read_only: true
+- name: jobox_jobs_readDescription
+  category: jobs
+  rest:
+    method: GET
+    path: /jobs/{id}/description
+    operationId: readDescription
+  read_only: true
+- name: jobox_jobs_readJobUnit
+  category: jobs
+  rest:
+    method: POST
+    path: /jobs/{job_id}
+    operationId: readJobUnit
+  read_only: false
+- name: jobox_jobs_readCommodities
+  category: jobs
+  rest:
+    method: GET
+    path: /jobs/{job_id}/commodities
+    operationId: readCommodities
+  read_only: true
+- name: jobox_jobs_readExternalDetails
+  category: jobs
+  rest:
+    method: GET
+    path: /jobs/{job_id}/external
+    operationId: readExternalDetails
+  read_only: true
+- name: jobox_jobs_readAll
+  category: jobs
+  rest:
+    method: GET
+    path: /jobs/{job_id}/log
+    operationId: readAll
+  read_only: true
+- name: jobox_jobs_readNotes
+  category: jobs
+  rest:
+    method: GET
+    path: /jobs/{job_id}/notes
+    operationId: readNotes
+  read_only: true
+- name: jobox_jobs_readPayment
+  category: jobs
+  rest:
+    method: GET
+    path: /jobs/{job_id}/payment
+    operationId: readPayment
+  read_only: true
+- name: jobox_jobs_readPaymentLog
+  category: jobs
+  rest:
+    method: GET
+    path: /jobs/{job_id}/payment/log
+    operationId: readPaymentLog
+  read_only: true
+- name: jobox_jobs_latestReceipt
+  category: jobs
+  rest:
+    method: GET
+    path: /jobs/{job_id}/receipts
+    operationId: latestReceipt
+  read_only: true
+- name: jobox_jobs_readCommoditiesForUser
+  category: jobs
+  rest:
+    method: GET
+    path: /jobs/{job_id}/users/{user_id}/commodities
+    operationId: readCommoditiesForUser
+  read_only: true
+- name: jobox_jobs_readJob
+  category: jobs
+  rest:
+    method: GET
+    path: /v2/jobs/{job_id}
+    operationId: readJob
+  read_only: true
+- name: jobox_jobs_readAll_3
+  category: jobs
+  rest:
+    method: GET
+    path: /v2/jobs/{job_id}/log
+    operationId: readAll_3
+  read_only: true
+- name: jobox_notes_create_10
+  category: notes
+  rest:
+    method: POST
+    path: /notes
+    operationId: create_10
+  read_only: false
+- name: jobox_notes_read_10
+  category: notes
+  rest:
+    method: GET
+    path: /notes/{entity_type}/{entity_id}
+    operationId: read_10
+  read_only: true
+- name: jobox_notifications_publish_1
+  category: notifications
+  rest:
+    method: POST
+    path: /notifications/publish/all/{language}
+    operationId: publish_1
+  read_only: false
+- name: jobox_notifications_publish
+  category: notifications
+  rest:
+    method: POST
+    path: /notifications/publish/{user_id}
+    operationId: publish
+  read_only: false
+- name: jobox_notifications_publishToMyContacts
+  category: notifications
+  rest:
+    method: POST
+    path: /notifications/publish/{user_id}/contacts/all
+    operationId: publishToMyContacts
+  read_only: false
+- name: jobox_occupations_readSummary
+  category: occupations
+  rest:
+    method: GET
+    path: /occupations
+    operationId: readSummary
+  read_only: true
+- name: jobox_occupations_readOccupation
+  category: occupations
+  rest:
+    method: GET
+    path: /occupations/{occupation_id}
+    operationId: readOccupation
+  read_only: true
+- name: jobox_paymentlog_delete_1
+  category: paymentlog
+  rest:
+    method: DELETE
+    path: /paymentlog
+    operationId: delete_1
+  read_only: false
+- name: jobox_paymentlog_create_11
+  category: paymentlog
+  rest:
+    method: POST
+    path: /paymentlog
+    operationId: create_11
+  read_only: false
+- name: jobox_paymentlog_create_12
+  category: paymentlog
+  rest:
+    method: POST
+    path: /paymentlog/list
+    operationId: create_12
+  read_only: false
+- name: jobox_paymentlog_read_11
+  category: paymentlog
+  rest:
+    method: GET
+    path: /paymentlog/{id}
+    operationId: read_11
+  read_only: true
+- name: jobox_payments_create_13
+  category: payments
+  rest:
+    method: POST
+    path: /payments
+    operationId: create_13
+  read_only: false
+- name: jobox_payments_update_4
+  category: payments
+  rest:
+    method: PUT
+    path: /payments
+    operationId: update_4
+  read_only: false
+- name: jobox_payments_update_5
+  category: payments
+  rest:
+    method: PUT
+    path: /payments/{payment_id}
+    operationId: update_5
+  read_only: false
+- name: jobox_receipts_create_14
+  category: receipts
+  rest:
+    method: POST
+    path: /receipts/new
+    operationId: create_14
+  read_only: false
+- name: jobox_receipts_read_13
+  category: receipts
+  rest:
+    method: GET
+    path: /receipts/v2/{receipt_key}
+    operationId: read_13
+  read_only: true
+- name: jobox_receipts_getFeedback
+  category: receipts
+  rest:
+    method: POST
+    path: /receipts/{receipt_key}/feedback
+    operationId: getFeedback
+  read_only: false
+- name: jobox_referral_validate
+  category: referral
+  rest:
+    method: POST
+    path: /referral
+    operationId: validate
+  read_only: false
+- name: jobox_referral_generateReferralCodes
+  category: referral
+  rest:
+    method: GET
+    path: /referral/generate/{email}
+    operationId: generateReferralCodes
+  read_only: true
+- name: jobox_referral_request
+  category: referral
+  rest:
+    method: POST
+    path: /referral/{user_id}/request
+    operationId: request
+  read_only: false
+- name: jobox_reports_readAll_2
+  category: reports
+  rest:
+    method: GET
+    path: /reports/users/{user_id}/contacts/all/{start_time}/{end_time}
+    operationId: readAll_2
+  read_only: true
+- name: jobox_reports_readAll_1
+  category: reports
+  rest:
+    method: GET
+    path: /reports/users/{user_id}/contacts/{contact_ids}/{start_time}/{end_time}
+    operationId: readAll_1
+  read_only: true
+- name: jobox_reports_read_14
+  category: reports
+  rest:
+    method: GET
+    path: /reports/users/{user_id}/{start_time}/{end_time}
+    operationId: read_14
+  read_only: true
+- name: jobox_reports_readAll_4
+  category: reports
+  rest:
+    method: GET
+    path: /v3/reports/users/{user_id}/contacts/all/{start_time}/{end_time}
+    operationId: readAll_4
+  read_only: true
+- name: jobox_reports_readAll_5
+  category: reports
+  rest:
+    method: GET
+    path: /v3/reports/users/{user_id}/contacts/{contact_ids}/{start_time}/{end_time}
+    operationId: readAll_5
+  read_only: true
+- name: jobox_search_search
+  category: search
+  rest:
+    method: GET
+    path: /search
+    operationId: search
+  read_only: true
+- name: jobox_shorten_unshorten
+  category: shorten
+  rest:
+    method: GET
+    path: /s/{jxUrlCode}
+    operationId: unshorten
+  read_only: true
+- name: jobox_status_read_15
+  category: status
+  rest:
+    method: GET
+    path: /
+    operationId: read_15
+  read_only: true
+- name: jobox_upload_create_16
+  category: upload
+  rest:
+    method: POST
+    path: /upload
+    operationId: create_16
+  read_only: false
+- name: jobox_upload_uploadId
+  category: upload
+  rest:
+    method: POST
+    path: /upload/identification
+    operationId: uploadId
+  read_only: false
+- name: jobox_upload_create_15
+  category: upload
+  rest:
+    method: POST
+    path: /upload/{job_id}/{payment_log_id}
+    operationId: create_15
+  read_only: false
+- name: jobox_upload_getKycUploadUrl
+  category: upload
+  rest:
+    method: GET
+    path: /upload/{user_id}/kyc
+    operationId: getKycUploadUrl
+  read_only: true
+- name: jobox_uploadsignature_createSignature
+  category: uploadsignature
+  rest:
+    method: POST
+    path: /uploadsignature
+    operationId: createSignature
+  read_only: false
+- name: jobox_users_create_17
+  category: users
+  rest:
+    method: POST
+    path: /users
+    operationId: create_17
+  read_only: false
+- name: jobox_users_updateDeprecated
+  category: users
+  rest:
+    method: PUT
+    path: /users
+    operationId: updateDeprecated
+  read_only: false
+- name: jobox_users_read_16
+  category: users
+  rest:
+    method: GET
+    path: /users/{user_id}
+    operationId: read_16
+  read_only: true
+- name: jobox_users_update_6
+  category: users
+  rest:
+    method: PUT
+    path: /users/{user_id}
+    operationId: update_6
+  read_only: false
+- name: jobox_users_readContacts
+  category: users
+  rest:
+    method: GET
+    path: /users/{user_id}/contacts
+    operationId: readContacts
+  read_only: true
+- name: jobox_users_readAllContacts
+  category: users
+  rest:
+    method: GET
+    path: /users/{user_id}/contacts/all
+    operationId: readAllContacts
+  read_only: true
+- name: jobox_users_readJobsByPage
+  category: users
+  rest:
+    method: GET
+    path: /users/{user_id}/jobs
+    operationId: readJobsByPage
+  read_only: true
+- name: jobox_users_readJobsLogByPage
+  category: users
+  rest:
+    method: GET
+    path: /users/{user_id}/jobs/log
+    operationId: readJobsLogByPage
+  read_only: true
+- name: jobox_users_readJobsLog
+  category: users
+  rest:
+    method: GET
+    path: /users/{user_id}/jobs/log/{start_time}/{end_time}
+    operationId: readJobsLog
+  read_only: true
+- name: jobox_users_readJobs
+  category: users
+  rest:
+    method: GET
+    path: /users/{user_id}/jobs/{start_time}/{end_time}
+    operationId: readJobs
+  read_only: true
+- name: jobox_users_getInfo
+  category: users
+  rest:
+    method: GET
+    path: /users/{user_id}/kyc_info
+    operationId: getInfo
+  read_only: true
+- name: jobox_users_submitInfo
+  category: users
+  rest:
+    method: POST
+    path: /users/{user_id}/kyc_info
+    operationId: submitInfo
+  read_only: false
+- name: jobox_users_readActiveRulesForUser
+  category: users
+  rest:
+    method: GET
+    path: /users/{user_id}/usermasking
+    operationId: readActiveRulesForUser
+  read_only: true
+- name: jobox_users_sendLatestJobStatus
+  category: users
+  rest:
+    method: GET
+    path: /users/{user_id}/{contact_user_id}/jobs/{job_id}/jobstatus
+    operationId: sendLatestJobStatus
+  read_only: true
+- name: jobox_users_sendStatus
+  category: users
+  rest:
+    method: GET
+    path: /users/{user_id}/{contact_user_id}/jobs/{job_id}/status
+    operationId: sendStatus
+  read_only: true
+- name: jobox_users_verify
+  category: users
+  rest:
+    method: PUT
+    path: /users/{user_id}/{verification_code}
+    operationId: verify
+  read_only: false
+- name: jobox_v2stripe_archive_5
+  category: v2stripe
+  rest:
+    method: DELETE
+    path: /v2/stripe
+    operationId: archive_5
+  read_only: false
+- name: jobox_v2stripe_read_18
+  category: v2stripe
+  rest:
+    method: GET
+    path: /v2/stripe
+    operationId: read_18
+  read_only: true
+- name: jobox_v2stripe_create_20
+  category: v2stripe
+  rest:
+    method: POST
+    path: /v2/stripe
+    operationId: create_20
+  read_only: false
+- name: jobox_v2stripe_update_7
+  category: v2stripe
+  rest:
+    method: PUT
+    path: /v2/stripe
+    operationId: update_7
+  read_only: false
+- name: jobox_wallet_create_18
+  category: wallet
+  rest:
+    method: POST
+    path: /v2/wallet
+    operationId: create_18
+  read_only: false
+- name: jobox_wallet_read_17
+  category: wallet
+  rest:
+    method: GET
+    path: /v2/wallet/{user_id}
+    operationId: read_17
+  read_only: true
+- name: jobox_wallet_readLog
+  category: wallet
+  rest:
+    method: GET
+    path: /v2/wallet/{user_id}/log
+    operationId: readLog
+  read_only: true
+- name: jobox_wallet_create_21
+  category: wallet
+  rest:
+    method: POST
+    path: /v3/wallet
+    operationId: create_21
+  read_only: false
+- name: jobox_wallet_read_19
+  category: wallet
+  rest:
+    method: GET
+    path: /v3/wallet/{user_id}
+    operationId: read_19
+  read_only: true
+- name: jobox_wallet_readLog_1
+  category: wallet
+  rest:
+    method: GET
+    path: /v3/wallet/{user_id}/log
+    operationId: readLog_1
+  read_only: true
+- name: jobox_wallet_alias_archive_4
+  category: wallet_alias
+  rest:
+    method: DELETE
+    path: /wallet/alias
+    operationId: archive_4
+  read_only: false
+- name: jobox_wallet_alias_create_19
+  category: wallet_alias
+  rest:
+    method: POST
+    path: /wallet/alias
+    operationId: create_19
+  read_only: false
+- name: jobox_wallet_alias_readForUserId
+  category: wallet_alias
+  rest:
+    method: GET
+    path: /wallet/alias/{user_id}
+    operationId: readForUserId
+  read_only: true

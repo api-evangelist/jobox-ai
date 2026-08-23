@@ -1,0 +1,66 @@
+generated: '2026-08-23'
+method: searched
+source: registry.npmjs.org, pypi.org, rubygems.org, packagist.org queried 2026-08-23; jobox.ai docs/site
+  reviewed
+note: Jobox publishes no first-party client library in any public registry. The npm search hit @joboxza/jobox-eslint-ts-config
+  belongs to jobox-za (Jobox South Africa), an unrelated company, and is deliberately excluded. Distribution
+  of Jobox software to end users is via the app stores, not a package registry — those are listed below
+  as distributions, not SDKs, and no SDKs pointer is emitted.
+official_sdk_count: 0
+packages: []
+registries_checked:
+- registry: npm
+  query: jobox
+  first_party_hits: 0
+  version: null
+  published: null
+  note: Only @joboxza/* (Jobox South Africa, different company) — excluded.
+- registry: pypi
+  queries:
+  - jobox
+  - jobox-api
+  - jobox-sdk
+  first_party_hits: 0
+  version: null
+  published: null
+  note: All three return HTTP 404 from pypi.org/pypi/<pkg>/json.
+- registry: rubygems
+  query: jobox
+  first_party_hits: 0
+  version: null
+  published: null
+  note: Empty result set.
+- registry: packagist
+  query: jobox
+  first_party_hits: 0
+  version: null
+  published: null
+  note: Only unrelated packages (php-joox-api, laravel-jobx).
+- registry: maven-central
+  query: jobox
+  first_party_hits: 0
+  version: null
+  published: null
+  note: Not checked exhaustively; no Java SDK is referenced anywhere Jobox publishes.
+app_distributions:
+- name: Jobox / Talus Pay (iOS)
+  registry: apple-app-store
+  official: true
+  url: https://apps.apple.com/us/app/jobox-inc/id1261179797
+  version: null
+  published: null
+  note: End-user mobile app, not a developer SDK. No version metadata endpoint queried; recorded as null
+    rather than guessed.
+- name: Jobox / Talus Pay (Android)
+  registry: google-play
+  official: true
+  url: https://play.google.com/store/apps/details?id=us.jobox.app
+  version: null
+  published: null
+  note: End-user mobile app, not a developer SDK.
+source_repositories:
+- url: https://github.com/joboxapp/jobox-api
+  official: false
+  note: Excluded on ownership grounds. The joboxapp GitHub org was created 2016-07-08 and this repo was
+    pushed exactly once on 2016-07-09; it is a 16KB empty Ruby on Rails scaffold with no Jobox code, no
+    description and no homepage. Nothing on jobox.ai links to it. Not attributed to JOBOX.ai.

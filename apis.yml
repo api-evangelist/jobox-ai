@@ -1,18 +1,74 @@
 aid: jobox-ai
 name: JOBOX.ai
-description: 'JOBOX.ai is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: JOBOX.ai (Jobox) is a home-services fintech and marketplace-infrastructure platform for skilled
+  trades professionals — locksmiths, plumbers, HVAC and appliance technicians. Founded in California in
+  2016 and operating since 2018, Jobox runs a mobile business app for independent pros (job intake from
+  SMS/WhatsApp, dispatching, invoicing, tap-to-pay card acceptance, receipts, settlement reports, the
+  Jobox Wallet and a Jobox credit card) plus a B2B "managed marketplace" product that lets retailers,
+  distributors, discovery platforms and franchises embed home services into their own customer journeys
+  through programmable APIs, an automated dispatch algorithm, a demand-partner dashboard, Jobox-handled
+  KYC and weekly settlement reconciliation. Jobox.ai was acquired by Talus Pay in January 2024; the pro-facing
+  mobile app and help center have since been rebranded to Talus Pay while the jobox.ai marketing site
+  and the api.jobox.ai "Kili" production API remain live.
 url: https://raw.githubusercontent.com/api-evangelist/jobox-ai/refs/heads/main/apis.yml
+image: https://cdn.prod.website-files.com/621a3e492346748467acfaa9/62399d2f126332471592241d_256.png
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-23'
 modified: '2026-08-23'
 tags:
 - Company
-apis: []
+- Home Services
+- Field Service Management
+- Marketplace
+- Payments
+- Fintech
+- Dispatching
+- Skilled Trades
+- KYC
+- Wallet
+apis:
+- aid: jobox-ai:kili
+  name: Jobox Kili API
+  description: The Jobox "Kili" platform API — the production HTTP API behind the Jobox pro app and the
+    Jobox managed-marketplace product. Covers jobs (create, dispatch, status, logs, notes, descriptions
+    and description parsing), users and contacts, occupations and commodities, payments and payment logs,
+    receipts, disputes, bank info, KYC identification upload, wallet (v2/v3), Stripe linkage, referrals,
+    reporting and Jobox virtual phone numbers. 91 paths / 110 operations.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - Jobs
+  - Payments
+  - Wallet
+  - Users
+  - KYC
+  - Receipts
+  - Dispatching
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-kili-openapi.json
+  - type: Overlay
+    url: overlays/jobox-ai-kili-overlay.yaml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
+  - type: MCPServer
+    url: mcp/jobox-ai-mcp.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -20,4 +76,112 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://forgeglobal.com/jobox-ai_stock/
+  url: https://www.jobox.ai/
+- type: Documentation
+  url: https://help.jobox.ai/en/
+- type: GettingStarted
+  url: https://help.jobox.ai/en/articles/2790099-getting-started-with-the-talus-pay-app
+- type: Support
+  url: https://help.jobox.ai/en/articles/9702013-how-and-when-to-contact-support
+- type: Blog
+  url: https://blog.jobox.ai/
+- type: TermsOfService
+  url: https://www.jobox.ai/terms-of-service
+- type: PrivacyPolicy
+  url: https://www.jobox.ai/privacy-policy
+- type: LLMsTxt
+  url: llms/jobox-ai-llms.txt
+- type: Packages
+  url: packages/jobox-ai-packages.yml
+- type: DomainSecurity
+  url: security/jobox-ai-domain-security.yml
+- type: AgentSkill
+  url: skills/_index.yml
+x-pointer-verification:
+  checked: '2026-08-23'
+  method: probed
+  note: Every external pointer above was fetched with a browser User-Agent on 2026-08-23 and its body
+    read for a soft-404. blog.jobox.ai returns HTTP 403 to non-browser clients (Medium bot challenge)
+    but is linked from the jobox.ai homepage navigation and demonstrably exists, so it is retained per
+    the 0.12.0 rule that a bot challenge is not a dead pointer.
+  results:
+  - url: https://www.jobox.ai/
+    status: 200
+  - url: https://help.jobox.ai/en/
+    status: 200
+  - url: https://help.jobox.ai/en/articles/2790099-getting-started-with-the-talus-pay-app
+    status: 200
+  - url: https://help.jobox.ai/en/articles/9702013-how-and-when-to-contact-support
+    status: 200
+  - url: https://blog.jobox.ai/
+    status: 403
+    note: Medium bot challenge; treated as live.
+  - url: https://www.jobox.ai/terms-of-service
+    status: 200
+  - url: https://www.jobox.ai/privacy-policy
+    status: 200
+  - url: https://www.jobox.ai/marketplace
+    status: 200
+    note: apis[0].humanURL
+  - url: https://api.jobox.ai/Kili
+    status: 200
+    note: apis[0].baseURL — returns the kili build/version config.
+x-pointers-deliberately-absent:
+- type: DeveloperPortal
+  reason: Jobox operates no developer portal. developer/developers/docs/dev/api-docs .jobox.ai all fail
+    to resolve.
+- type: APIReference
+  reason: No API reference is published. The footer of jobox.ai/marketplace lists "API Documentation"
+    as a product but it is not a link and no such page exists.
+- type: SignUp
+  reason: No web signup or login. Pros onboard by downloading the mobile app; the marketplace/API product
+    is gated behind "Request a demo" / "Contact Sales".
+- type: Pricing
+  reason: https://www.jobox.ai/pricing returns 404. See plans/jobox-ai-plans-pricing.yml (plan_count 0).
+- type: StatusPage
+  reason: status.jobox.ai does not resolve; no status page linked anywhere.
+- type: Deprecation
+  reason: No deprecation or sunset policy published. See lifecycle/jobox-ai-lifecycle.yml.
+- type: ChangeLog
+  reason: No changelog published.
+- type: Roadmap
+  reason: No public roadmap.
+- type: GitHubOrganization
+  reason: No GitHub organization is linked from anything Jobox publishes. github.com/joboxapp is a 2016
+    empty Rails scaffold with unproven ownership — see packages/jobox-ai-packages.yml.
+- type: Postman
+  reason: No public Postman workspace or collection found.
+- type: WellKnown
+  reason: Every /.well-known/* path 404s on www.jobox.ai and api.jobox.ai. The probe is recorded at well-known/jobox-ai-well-known.yml
+    with no pointer, per the rule that a pointer asserts the provider serves the surface.
+- type: SecurityTxt
+  reason: The only served security.txt on a jobox.ai host (help.jobox.ai) is Intercom's vendor document,
+    not Jobox's.
+- type: Security
+  reason: probe-security-programs.py found no vulnerability disclosure policy, no bug bounty and no disclosure
+    page for Jobox.
+- type: Compliance
+  reason: Jobox publishes no compliance program, certification list or trust center of its own.
+- type: TrustCenter
+  reason: No trust center. trust.jobox.ai does not resolve.
+- type: SDKs
+  reason: Zero first-party client libraries in any public registry. See packages/jobox-ai-packages.yml.
+- type: Idempotency
+  reason: No Idempotency-Key or equivalent header on any of the 110 contract operations and no idempotency
+    documentation. The Conventions artifact records the absence.
+- type: AgentCard
+  reason: '/.well-known/agent-card.json and /.well-known/agent.json return 404 on every jobox.ai host.
+    Search-only artifact: nothing written.'
+- type: AsyncAPI
+  reason: No event, streaming or webhook surface is published or present in the contract.
+- type: Sandbox
+  reason: No sandbox, test mode or test credentials published.
+- type: CLI
+  reason: No first-party CLI.
+- type: OAuthScopes
+  reason: No OAuth anywhere — the contract declares no securityDefinitions at all.
+x-enrichment:
+  date: '2026-08-23'
+  status: enriched
+  artifacts_added: 17
+  pass: local-v1

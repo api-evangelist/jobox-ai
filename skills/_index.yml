@@ -1,0 +1,84 @@
+generated: '2026-08-23'
+method: generated
+source: openapi/jobox-ai-kili-openapi.json + conventions/jobox-ai-conventions.yml + errors/jobox-ai-problem-types.yml
+note: 'Four packaged Agent Skills covering the marquee Jobox flows. Every operationId is grepped from
+  the harvested contract — none invented. Each skill front-loads the three things this API does not give
+  an agent: no idempotency key, no dry run, and no reversal window.'
+skill_count: 4
+skills:
+- file: jobox-ai-collect-payment-and-receipt.md
+  name: jobox-ai-collect-payment-and-receipt
+  description: Record a payment against a completed Jobox job, issue the customer receipt, and read the
+    payment log. Covers what the Jobox Kili contract does and does not let you take back.
+  api: Jobox Kili API
+  operations:
+  - readPayment
+  - create_13
+  - update_4
+  - update_5
+  - create_11
+  - create_12
+  - delete_1
+  - readPaymentLog
+  - create_14
+  - read_13
+  - latestReceipt
+  - getFeedback
+  - read_4
+  - list
+  operation_count: 14
+- file: jobox-ai-dispatch-a-job.md
+  name: jobox-ai-dispatch-a-job
+  description: Submit a home-services job to the Jobox Kili platform, let Jobox auto-dispatch it to a
+    matched pro, and follow it to completion. For demand partners embedding home services into their own
+    product.
+  api: Jobox Kili API
+  operations:
+  - create_9
+  - create_8
+  - readJobUnit
+  - read_7
+  - readJob
+  - readAll
+  - readAll_3
+  - readDescription
+  - readNotes
+  - sendStatus
+  - archive_3
+  operation_count: 11
+- file: jobox-ai-onboard-a-pro-with-kyc.md
+  name: jobox-ai-onboard-a-pro-with-kyc
+  description: Create a Jobox user, run the KYC identification upload, attach bank details, and get the
+    pro ready to be paid. Jobox handles KYC on behalf of demand partners.
+  api: Jobox Kili API
+  operations:
+  - create_17
+  - read_16
+  - update_6
+  - getInfo
+  - submitInfo
+  - getKycUploadUrl
+  - uploadId
+  - read_12
+  - create_1
+  - update
+  - readByUserId
+  - archive
+  - readSummary
+  operation_count: 13
+- file: jobox-ai-settle-and-report.md
+  name: jobox-ai-settle-and-report
+  description: Read the Jobox Wallet, move funds, and pull the weekly settlement and reconciliation reports
+    a demand partner needs to close its books.
+  api: Jobox Kili API
+  operations:
+  - read_19
+  - readLog_1
+  - create_21
+  - create_19
+  - archive_4
+  - read_14
+  - read_9
+  - readJobsByPage
+  - read_6
+  operation_count: 9

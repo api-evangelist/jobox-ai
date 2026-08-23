@@ -1,0 +1,145 @@
+generated: '2026-08-23'
+method: probed
+source: direct HTTPS probes of each host on 2026-08-23
+note: 'Jobox serves no /.well-known document of its own. www.jobox.ai answers every /.well-known/* path
+  with a Webflow 404 page ("Invalid .well-known request"); api.jobox.ai answers with a Tomcat 404. The
+  single 200 in this file — help.jobox.ai/.well-known/security.txt — is INTERCOM''S vendor document (Canonical:
+  https://app.intercom.com/.well-known/security.txt, Contact: security@intercom.com, bugcrowd.com/intercom),
+  served because help.jobox.ai is an Intercom-hosted help center on a Jobox subdomain. It documents Intercom''s
+  disclosure program, not Jobox''s, so NO SecurityTxt and NO WellKnown pointer is emitted in apis.yml.
+  Recording the 200 here and refusing the pointer is the honest split.'
+hosts:
+- host: www.jobox.ai
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: api.jobox.ai
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: help.jobox.ai
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: null
+    note: 'HTTP 200, RFC 9116 document — but it is Intercom''s, not Jobox''s. Canonical: https://app.intercom.com/.well-known/security.txt.
+      Not saved and not pointered.'
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: blog.jobox.ai
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+    file: null
+    note: Medium returns 403 to non-browser clients for every path; not evidence of a served document
+      either way.
+  - path: /.well-known/openid-configuration
+    status: 403
+    file: null
+    note: Medium returns 403 to non-browser clients for every path; not evidence of a served document
+      either way.
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+    file: null
+    note: Medium returns 403 to non-browser clients for every path; not evidence of a served document
+      either way.
+  - path: /.well-known/oauth-protected-resource
+    status: 403
+    file: null
+    note: Medium returns 403 to non-browser clients for every path; not evidence of a served document
+      either way.
+  - path: /.well-known/api-catalog
+    status: 403
+    file: null
+    note: Medium returns 403 to non-browser clients for every path; not evidence of a served document
+      either way.
+  - path: /.well-known/ai-plugin.json
+    status: 403
+    file: null
+    note: Medium returns 403 to non-browser clients for every path; not evidence of a served document
+      either way.
+  - path: /.well-known/agent-card.json
+    status: 403
+    file: null
+    note: Medium returns 403 to non-browser clients for every path; not evidence of a served document
+      either way.
+  - path: /.well-known/agent.json
+    status: 403
+    file: null
+    note: Medium returns 403 to non-browser clients for every path; not evidence of a served document
+      either way.
+other_probes:
+- url: https://help.jobox.ai/llms.txt
+  status: 200
+  file: llms/jobox-ai-llms.txt
+  note: Real llms.txt — saved. See the LLMsTxt pointer.
+- url: https://www.jobox.ai/llms.txt
+  status: 404
+- url: https://www.jobox.ai/robots.txt
+  status: 200
+  note: 'User-agent: * / Disallow: (empty) — nothing disallowed; sitemap declared.'
+- url: https://api.jobox.ai/robots.txt
+  status: 404

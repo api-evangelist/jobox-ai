@@ -1,0 +1,42 @@
+generated: '2026-08-23'
+method: probed
+source: live responses from https://api.jobox.ai/Kili/* on 2026-08-23
+format: vendor-json
+rfc9457: false
+note: 'The contract is useless as an error catalog: all 110 operations declare exactly one response, the
+  Swagger 2.0 `default` with description "successful operation", so there are zero documented 4xx/5xx
+  responses to derive from. Everything below was OBSERVED against the live production API, not read out
+  of the spec. Jobox publishes no error reference.'
+envelope:
+  media_type: application/json
+  fields:
+  - name: title
+    description: Short human-readable error title, e.g. "Unauthorized", "Not Found".
+  - name: message
+    description: Human-readable explanation of the failure.
+  - name: debug_id
+    description: Opaque correlation id (prefix "dbg_") returned on authorization failures; the value to
+      quote to support.
+    optional: true
+  example_shape: '{"title": "...", "message": "...", "debug_id": "dbg_<uuid>"}'
+problem_types:
+- status: 401
+  title: Unauthorized
+  detail: You cannot access this resource
+  observed_at: GET https://api.jobox.ai/Kili/occupations
+  carries_debug_id: true
+  remediation: Supply the credential Jobox issues to a demand partner. Not self-service; contact Jobox/Talus
+    Pay sales.
+- status: 404
+  title: Not Found
+  detail: This request does not match any resources
+  observed_at: GET https://api.jobox.ai/Kili/swagger.json
+  carries_debug_id: false
+  remediation: Path is not routed on this deployment. Several paths in the 2019 contract (e.g. /dashboard,
+    /search) now 404 and appear to have been withdrawn.
+documented_4xx_in_spec: 0
+documented_5xx_in_spec: 0
+gaps:
+- No error reference published.
+- No 4xx/5xx responses in the contract.
+- Not RFC 9457 application/problem+json.

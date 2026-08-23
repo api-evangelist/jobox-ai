@@ -1,0 +1,424 @@
+generated: '2026-08-23'
+method: derived
+source: openapi/jobox-ai-kili-openapi.json
+note: Derived from Swagger 2.0 `definitions` $ref links and id-reference field names. The contract carries
+  no descriptions on any schema or property, so this graph records structure only — no semantics, no id-prefix
+  scheme, no object reference. Jobox publishes no object reference to enrich it from.
+entity_count: 27
+relationship_count: 14
+core_entities:
+- Job
+- User
+- ContactDTO
+- Payment
+- PaymentLog
+- BankInfo
+- KycInfoDTO
+- V2WalletDTO
+- JobLog
+- ReceiptWithNotesDTO
+entities:
+- name: ApplogicUserResponseDTO
+  field_count: 2
+  fields:
+  - deviceKey
+  - userId
+  required: []
+- name: BankInfo
+  field_count: 9
+  fields:
+  - accountName
+  - accountNumber
+  - active
+  - addedByUserId
+  - bankName
+  - createdAt
+  - forUserId
+  - id
+  - routingNumber
+  required: []
+- name: CommodityDTO
+  field_count: 9
+  fields:
+  - amount
+  - createdAt
+  - id
+  - jobId
+  - note
+  - paidByUserId
+  - quantity
+  - reportedByUserId
+  - viewedByUserId
+  required: []
+- name: JobEditDTO
+  field_count: 2
+  fields:
+  - downstream
+  - upstream
+  required: []
+- name: JobEditDTOListCommodityDTO
+  field_count: 2
+  fields:
+  - downstream
+  - upstream
+  required: []
+- name: Note
+  field_count: 10
+  fields:
+  - active
+  - attachment
+  - attachmentType
+  - byUserId
+  - content
+  - createdAt
+  - entityId
+  - entityType
+  - id
+  - shared
+  required: []
+- name: ContactDTO
+  field_count: 20
+  fields:
+  - active
+  - associatedUserId
+  - companyName
+  - createdAt
+  - firstName
+  - fractionList
+  - id
+  - joboxUser
+  - joinId
+  - lastName
+  - paymentDetails
+  - phoneNumber
+  - profileUrl
+  - receiveFractionFeeSummary
+  - receiveFractions
+  - statusAliasList
+  - transferFractionFeeSummary
+  - transferFractions
+  - userId
+  - walletAliasList
+  required: []
+- name: Fraction
+  field_count: 13
+  fields:
+  - active
+  - contactId
+  - createdAt
+  - endHour
+  - endMin
+  - fee
+  - fraction
+  - id
+  - joinId
+  - startHour
+  - startMin
+  - type
+  - weekday
+  required: []
+- name: JobStatusAlias
+  field_count: 8
+  fields:
+  - active
+  - aliasContactId
+  - contactId
+  - createdAt
+  - id
+  - joinId
+  - justAlias
+  - status
+  required: []
+- name: WalletLogAlias
+  field_count: 10
+  fields:
+  - active
+  - byUserId
+  - createdAt
+  - fromUserId
+  - id
+  - joinId
+  - modifiedAt
+  - regardlessOfOwner
+  - toUserId
+  - toUserIdGetsTips
+  required: []
+- name: ExternalPayment
+  field_count: 6
+  fields:
+  - createdAt
+  - externalId
+  - id
+  - jobId
+  - percent
+  - userId
+  required: []
+- name: JobLog
+  field_count: 10
+  fields:
+  - createdAt
+  - fee
+  - fraction
+  - id
+  - jobId
+  - notes
+  - receiverId
+  - senderId
+  - status
+  - tax
+  required: []
+- name: Job
+  field_count: 8
+  fields:
+  - active
+  - createdAt
+  - createdId
+  - description
+  - id
+  - notes
+  - occupationId
+  - referenceId
+  required: []
+- name: AddressBounds
+  field_count: 2
+  fields:
+  - lat
+  - lon
+  required: []
+- name: AddressParsingRequestDTO
+  field_count: 11
+  fields:
+  - address
+  - addressType
+  - area
+  - blurb
+  - country
+  - locality
+  - northEastBounds
+  - region
+  - route
+  - southWestBound
+  - zip
+  required: []
+- name: JobRequestDTO
+  field_count: 9
+  fields:
+  - address
+  - addressParsingRequest
+  - clientName
+  - clientPhoneNumber
+  - clientPhoneNumber2
+  - createdId
+  - description
+  - notes
+  - occupationId
+  required: []
+- name: PaymentLog
+  field_count: 10
+  fields:
+  - amount
+  - createdAt
+  - id
+  - jobId
+  - notes
+  - paymentId
+  - paymentType
+  - tip
+  - transactionType
+  - userId
+  required: []
+- name: CardPaymentDetails
+  field_count: 17
+  fields:
+  - active
+  - brand
+  - cardEntryMethod
+  - ccTotalFee
+  - createdAt
+  - customer
+  - fingerprint
+  - funding
+  - id
+  - interchangeFee
+  - last4
+  - paymentLogId
+  - paymentSource
+  - paymentSourceId
+  - transactionPercent
+  - userId
+  - zip
+  required: []
+- name: PaymentLogDTO
+  field_count: 11
+  fields:
+  - amount
+  - cardPaymentDetails
+  - createdAt
+  - id
+  - jobId
+  - notes
+  - paymentId
+  - paymentType
+  - tip
+  - transactionType
+  - userId
+  required: []
+- name: Payment
+  field_count: 8
+  fields:
+  - cost
+  - createdAt
+  - externalParts
+  - id
+  - jobId
+  - parts
+  - tax
+  - userId
+  required: []
+- name: JobFeedback
+  field_count: 4
+  fields:
+  - feedback
+  - feedbackTs
+  - id
+  - receiptLogId
+  required: []
+- name: ReceiptRequestDTO
+  field_count: 9
+  fields:
+  - companyName
+  - email
+  - firstName
+  - jobId
+  - lastName
+  - notes
+  - phoneNumber
+  - timezone
+  - userId
+  required: []
+- name: ReceiptWithNotesDTO
+  field_count: 2
+  fields:
+  - note
+  - receiptRequestDTO
+  required: []
+- name: User
+  field_count: 15
+  fields:
+  - companyName
+  - createdAt
+  - deviceKey
+  - email
+  - firstName
+  - id
+  - joboxNumber
+  - lastName
+  - lastUsedAt
+  - occupationId
+  - phoneNumber
+  - profileUrl
+  - tax
+  - verified
+  - verifiedAt
+  required: []
+- name: KycInfoDTO
+  field_count: 19
+  fields:
+  - address
+  - applicantId
+  - businessType
+  - checkId
+  - city
+  - companyName
+  - createdAt
+  - dateOfBirth
+  - documentId
+  - documentProvider
+  - firstName
+  - id
+  - lastName
+  - ssn
+  - state
+  - taxId
+  - userId
+  - verifiedFields
+  - zipCode
+  required: []
+- name: V2WalletDTO
+  field_count: 5
+  fields:
+  - amount
+  - bankId
+  - fromUserId
+  - notes
+  - toUserId
+  required: []
+- name: V2StripeDTO
+  field_count: 8
+  fields:
+  - amount
+  - cardEntryMethod
+  - creditInfo
+  - jobId
+  - metadata
+  - tip
+  - token
+  - userId
+  required: []
+relationships:
+- from: CommodityDTO
+  to: Note
+  kind: has_one
+  via: note
+- from: JobEditDTOListCommodityDTO
+  to: CommodityDTO
+  kind: has_many
+  via: upstream
+- from: JobEditDTOListCommodityDTO
+  to: CommodityDTO
+  kind: has_many
+  via: downstream
+- from: ContactDTO
+  to: Fraction
+  kind: has_many
+  via: transferFractions
+- from: ContactDTO
+  to: Fraction
+  kind: has_many
+  via: receiveFractions
+- from: ContactDTO
+  to: Fraction
+  kind: has_many
+  via: fractionList
+- from: ContactDTO
+  to: JobStatusAlias
+  kind: has_many
+  via: statusAliasList
+- from: ContactDTO
+  to: WalletLogAlias
+  kind: has_many
+  via: walletAliasList
+- from: AddressParsingRequestDTO
+  to: AddressBounds
+  kind: has_one
+  via: southWestBound
+- from: AddressParsingRequestDTO
+  to: AddressBounds
+  kind: has_one
+  via: northEastBounds
+- from: JobRequestDTO
+  to: AddressParsingRequestDTO
+  kind: has_one
+  via: addressParsingRequest
+- from: PaymentLogDTO
+  to: CardPaymentDetails
+  kind: has_one
+  via: cardPaymentDetails
+- from: ReceiptWithNotesDTO
+  to: ReceiptRequestDTO
+  kind: has_one
+  via: receiptRequestDTO
+- from: ReceiptWithNotesDTO
+  to: Note
+  kind: has_one
+  via: note

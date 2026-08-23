@@ -1,0 +1,50 @@
+generated: '2026-08-23'
+method: derived
+source: openapi/jobox-ai-kili-openapi.json + live probes of api.jobox.ai on 2026-08-23
+note: Reward-only. Home services / field-service dispatch has no dominant machine-readable domain standard,
+  so no domain_standard slot is claimed. Jobox publishes no compliance program, trust center or certification
+  list of its own; card processing sits with the Talus Pay parent and Jobox makes no public PCI claim
+  we can cite.
+standards:
+- id: openapi
+  conforms: true
+  evidence: Swagger 2.0 contract, 91 paths / 110 operations, saved at openapi/jobox-ai-kili-openapi.json.
+    Not OpenAPI 3.x.
+- id: oauth2
+  conforms: false
+  evidence: No securityDefinitions of any kind in the contract; /.well-known/oauth-authorization-server
+    returns 404 on www.jobox.ai and api.jobox.ai.
+- id: oidc
+  conforms: false
+  evidence: /.well-known/openid-configuration returns 404 on www.jobox.ai and api.jobox.ai.
+- id: rfc9457
+  conforms: false
+  evidence: Live errors return a vendor {title,message,debug_id} JSON body with content-type application/json,
+    not application/problem+json.
+- id: idempotency
+  conforms: false
+  evidence: No Idempotency-Key (or equivalent) header on any of the 110 operations; no idempotency documentation
+    published.
+- id: pagination
+  conforms: partial
+  evidence: A single path-segment page cursor exists — GET /jobs/list/{page_num} — and nothing else. 89
+    of 91 paths expose no pagination parameter, and no page-size, cursor or link envelope is described.
+- id: json:api
+  conforms: false
+  evidence: Plain application/json request/response bodies; no JSON:API media type or document structure.
+- id: rfc8594
+  conforms: false
+  evidence: No Sunset/Deprecation headers documented and no deprecation policy published.
+- id: rfc9116
+  conforms: false
+  evidence: '/.well-known/security.txt returns 404 on www.jobox.ai and api.jobox.ai. The 200 at help.jobox.ai/.well-known/security.txt
+    is Intercom''s vendor document (Canonical: app.intercom.com), not Jobox''s.'
+- id: llmstxt
+  conforms: true
+  evidence: https://help.jobox.ai/llms.txt returns HTTP 200, 22KB, valid llms.txt shape. Intercom-generated
+    for the Jobox/Talus Pay help center.
+domain_standard:
+  claimed: false
+  note: No home-services / field-service dispatch interchange standard is declared by the contract, and
+    none is established in this market.
+certifications: []

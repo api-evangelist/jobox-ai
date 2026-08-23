@@ -1,0 +1,52 @@
+generated: '2026-08-23'
+method: probed
+source: https://api.jobox.ai/Kili/occupations (HTTP 401) + openapi/jobox-ai-kili-openapi.json
+name: Jobox Kili API authentication
+note: The published contract declares NO securityDefinitions at all — a gap in the auto-generated spec,
+  not evidence the API is open. The live production API rejects anonymous requests with HTTP 401, so a
+  credential is required and is simply undocumented in the contract. Jobox publishes no public developer
+  authentication page; the marketplace product is sold through "Request a demo" / "Contact Sales".
+security_schemes_declared: 0
+schemes:
+- name: User-Id
+  type: apiKey
+  in: header
+  declared_in_spec: false
+  evidence: Carried as an explicit header parameter on 52 of 110 operations in openapi/jobox-ai-kili-openapi.json
+    (also spelled user-id / User-id on 16 more).
+  note: A caller-identity header, not by itself proof of a bearer credential; the transport credential
+    is not described anywhere Jobox publishes.
+- name: undocumented
+  type: unknown
+  in: unknown
+  declared_in_spec: false
+  evidence: GET https://api.jobox.ai/Kili/occupations -> HTTP 401 {"title":"Unauthorized","message":"You
+    cannot access this resource","debug_id":"dbg_..."} on 2026-08-23.
+  note: The mechanism that satisfies this 401 is not published. Onboarding is sales-gated.
+other_headers_observed:
+- name: User-Id
+  operations: 52
+- name: user-id
+  operations: 15
+- name: Timezone
+  operations: 8
+- name: Version
+  operations: 4
+- name: timezone
+  operations: 2
+- name: version
+  operations: 1
+- name: platform
+  operations: 1
+- name: User-id
+  operations: 1
+- name: password
+  operations: 1
+oauth2: false
+openid_connect: false
+mutual_tls: false
+docs: null
+gaps:
+- No securityDefinitions in the contract.
+- No public authentication documentation.
+- No published key-issuance or onboarding self-service flow.

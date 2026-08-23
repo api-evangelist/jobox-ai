@@ -1,0 +1,88 @@
+generated: '2026-08-23'
+method: probed
+source: https://api.jobox.ai/Kili/ + https://www.jobox.ai/ + Internet Archive CDX for jobox.ai (2026-08-23)
+versioning:
+  scheme: partial path prefix (v2/v3) over a mostly unversioned surface
+  contract_version: 1.2.3(1S)
+  deployed_version: v20260821.11700.65
+  deployed_at: '2026-08-21T22:49:40Z'
+  source: GET https://api.jobox.ai/Kili/ (HTTP 200) returns a build/version config object
+  policy_published: false
+contract_availability:
+  status: withdrawn
+  detail: 'Jobox published a Swagger 2.0 contract at http://staging.jobox.ai/Kili/swagger.json; the Internet
+    Archive holds 200-status snapshots from 2018-07-30 through 2019-05-07. It is no longer served: both
+    https://staging.jobox.ai/Kili/swagger.json and https://api.jobox.ai/Kili/swagger.json returned HTTP
+    404 on 2026-08-23, as did /openapi.json, /openapi.yaml, /api-docs, /v2/api-docs, /swagger-ui.html
+    and /redoc on the same host.'
+  last_published_snapshot: '2019-05-07'
+  surface_still_live: true
+  evidence: GET https://api.jobox.ai/Kili/occupations -> 401 and /Kili/joboxnumbers -> 401 (paths from
+    the contract, still routed); GET /Kili/dashboard -> 404 and /Kili/search -> 404 (paths from the contract,
+    withdrawn).
+deprecation:
+  policy_published: false
+  sunset_header: false
+  deprecation_header: false
+  deprecated_operations:
+  - method: PUT
+    path: /users
+    operationId: updateDeprecated
+    evidence: The operationId itself is `updateDeprecated` in openapi/jobox-ai-kili-openapi.json. The
+      only deprecation marker anywhere in the contract.
+    replacement: PUT /users/{user_id} (update_6)
+    sunset_date: null
+    note: 'No `deprecated: true` flag, no Sunset header, no announcement. The signal exists only in the
+      operation name.'
+  evidence: 'No operation carries the Swagger `deprecated: true` flag. One operation is marked by naming
+    convention only (PUT /users -> operationId `updateDeprecated`). No deprecation or sunset policy is
+    published on jobox.ai or help.jobox.ai.'
+  observed_removals:
+  - GET /dashboard
+  - POST /dashboard
+  - GET /search
+  note: Those three paths are in the published contract and now return 404 on the live host — removed
+    without any published notice.
+status_page:
+  present: false
+  evidence: https://status.jobox.ai/ does not resolve (curl exit 000, no DNS). No status.* or trust.*
+    host, and no status link on www.jobox.ai or help.jobox.ai.
+sla:
+  published: false
+  evidence: No SLA document on jobox.ai; terms-of-service carries no uptime commitment for the API.
+changelog:
+  published: false
+  evidence: No changelog host or page found; blog.jobox.ai is a Medium publication (last API-relevant
+    post predates the 2024 acquisition).
+corporate:
+  event: acquisition
+  acquirer: Talus Pay
+  announced: '2024-01-03'
+  source: https://taluspay.com/news/talus-pay-acquires-joboxai-and-clarus-merchant-services
+  effect: The pro-facing mobile app and the entire help center have been rebranded to Talus Pay; help.jobox.ai/llms.txt
+    now describes "Talus Pay" throughout. The jobox.ai marketing site still carries the Jobox brand and
+    a 2022 copyright, and the api.jobox.ai Kili API is still deployed daily. Talus Pay ships its own separate,
+    currently documented merchant API at docs.taluspay.com — that contract belongs to the acquirer and
+    is deliberately NOT attributed to Jobox here.
+superseded_surfaces:
+- current: /v3/wallet
+  superseded:
+  - /v2/wallet
+  - /wallet/alias
+  note: Three generations of the wallet surface are published simultaneously with no guidance on which
+    to use.
+- current: /v2/jobs/{job_id}
+  superseded:
+  - /jobs/{id}
+  note: v2 job read published alongside the unversioned one.
+- current: /v3/reports/...
+  superseded:
+  - /reports/...
+  note: v3 reports published alongside the unversioned ones.
+- current: /receipts/v2/{receipt_key}
+  superseded: []
+  note: Only a v2 receipt read is published; no v1 equivalent remains.
+- current: /joblog/v2/list
+  superseded:
+  - /joblog/list
+  note: v2 job-log list published alongside the unversioned one.

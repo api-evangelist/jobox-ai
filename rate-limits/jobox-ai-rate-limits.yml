@@ -1,0 +1,28 @@
+generated: '2026-08-23'
+method: probed
+source: https://api.jobox.ai/Kili/ response headers + jobox.ai / help.jobox.ai docs review (2026-08-23)
+limit_count: 0
+note: 'No rate limits are published and none are signalled at runtime. The live 200 from https://api.jobox.ai/Kili/
+  carries no RateLimit-*, no X-RateLimit-*, no Retry-After and no quota header of any kind — only tracing
+  headers (x-trace-id, x-span-id, traceparent). The contract declares no 429 response (it declares no
+  non-default response at all). An honest zero: an agent integrating this API has no runtime signal to
+  back off on.'
+limits: []
+response_headers:
+  ratelimit_headers_observed: []
+  retry_after: false
+  headers_present_on_200:
+  - x-trace-id
+  - x-span-id
+  - traceparent
+  - vary
+  - content-type
+  - date
+exhaustion_status_code: null
+evidence:
+- url: https://api.jobox.ai/Kili/
+  status: 200
+  note: No rate-limit header on the response.
+- url: https://api.jobox.ai/Kili/occupations
+  status: 401
+  note: Auth wall reached before any quota signal.

@@ -1,0 +1,75 @@
+generated: '2026-08-23'
+method: searched
+source: https://web.archive.org/web/20190507215015id_/http://staging.jobox.ai/Kili/swagger.json
+file: openapi/jobox-ai-kili-openapi.json
+verbatim_copy: openapi/_original/jobox-ai-kili-swagger-2019-05-07.json
+format: Swagger 2.0
+paths: 91
+operations: 110
+
+ownership_check:
+  verdict: owned-by-provider
+  rule: pipeline-enrich.md STEP 0c
+  evidence:
+  - The document was served from staging.jobox.ai, a subdomain of the provider's own domain.
+  - 'host: "https://staging.jobox.ai", basePath: "/Kili" — and the LIVE production API root
+    https://api.jobox.ai/Kili/ returns HTTP 200 with a JSON build config whose top-level key is
+    "kili" (version v20260821.11700.65, deployed 2026-08-21). Same service, same basePath.'
+  - 'Two paths from this contract are still routed on the live production host and reject anonymous
+    callers rather than 404ing: GET https://api.jobox.ai/Kili/occupations -> HTTP 401 and
+    GET https://api.jobox.ai/Kili/joboxnumbers -> HTTP 401 (2026-08-23).'
+  - 'The definitions describe exactly the product jobox.ai markets: Job, JobRequestDTO, User,
+    KycInfoDTO, V2WalletDTO, Payment, CardPaymentDetails, ReceiptWithNotesDTO, BankInfo, ContactDTO,
+    Occupation-style reads and Jobox virtual numbers — home-services dispatch plus fintech.'
+  - 'The contract carries no info.title, no info.contact and no info.termsOfService, so there is no
+    competing self-identification pointing at another product. The Leadpages/htmlpub failure mode
+    (a sibling brand''s spec on a shared codebase) does not apply here.'
+  not_attributed:
+  - url: https://docs.taluspay.com/
+    what: The TalusPay API (Merchants, Onboarding, Webhooks, Statements, Payments, Refunds, Charges,
+      Tokenizer), HTTP 200, actively documented.
+    why_excluded: 'It identifies itself as "the TalusPay API" on the taluspay.com domain with base
+      api.taluspay.com. Talus Pay ACQUIRED Jobox.ai in January 2024, but the acquirer''s own merchant
+      API is a different product on a different domain and is not Jobox''s contract. Attributing it
+      here would credit JOBOX.ai with an API it did not ship.'
+  - url: https://github.com/joboxapp/jobox-api
+    what: A 16KB Ruby on Rails scaffold.
+    why_excluded: Org created 2016-07-08 and pushed once on 2016-07-09, no description, no homepage,
+      no Jobox code, and nothing on jobox.ai links to it. Ownership unproven.
+
+currency:
+  status: withdrawn-from-publication
+  last_served_snapshot: '2019-05-07'
+  archive_snapshots_200: 10 snapshots between 2018-07-30 and 2019-05-07 (Internet Archive CDX)
+  live_probes_2026_08_23:
+  - {url: 'https://staging.jobox.ai/Kili/swagger.json', status: 404}
+  - {url: 'https://api.jobox.ai/Kili/swagger.json', status: 404}
+  - {url: 'https://api.jobox.ai/Kili/openapi.json', status: 404}
+  - {url: 'https://api.jobox.ai/Kili/v2/api-docs', status: 404}
+  - {url: 'https://api.jobox.ai/Kili/swagger-ui.html', status: 404}
+  - {url: 'https://api.jobox.ai/openapi.json', status: 404}
+  - {url: 'https://api.jobox.ai/swagger.json', status: 404}
+  withdrawn_operations_confirmed:
+  - {path: /dashboard, live_status: 404}
+  - {path: /search, live_status: 404}
+  caveat: 'This contract is REAL and it is JOBOX.ai''s, but Jobox does not serve it today. A developer
+    arriving at jobox.ai in 2026 cannot obtain it — this pipeline recovered it from the Internet
+    Archive. Read the presence of this file as "Jobox published a contract and still runs the API it
+    describes", not as "Jobox publishes a contract".'
+
+contract_quality:
+  operation_ids: {present: 110, of: 110, note: Machine-generated (read_8, create_8, archive_3, update_3);
+    unique but not descriptive.}
+  summaries: {present: 0, of: 110}
+  descriptions: {present: 0, of: 110}
+  tags: {present: 110, of: 110, distinct: 30}
+  documented_responses: {note: 'Every operation declares exactly one response — the Swagger 2.0
+      `default`, described "successful operation". Zero 2xx status codes, zero 4xx, zero 5xx.'}
+  examples: {present: 0}
+  security_schemes: {defined: 0, applied: 0, note: 'None declared, yet the live API returns 401 to
+      anonymous callers. See authentication/jobox-ai-authentication.yml.'}
+  component_schemas: {defined: 28, note: Reused across operations via $ref; no descriptions on any
+      schema or property.}
+  assessment: 'An untouched framework-generated Swagger dump. It names the surface accurately and is
+    genuinely useful for discovery, but it documents no behaviour: no summaries, no responses, no
+    errors, no auth, no examples. Nothing in this repo pads it — the gaps are recorded, not filled.'

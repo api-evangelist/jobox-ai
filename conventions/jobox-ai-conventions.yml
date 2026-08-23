@@ -1,0 +1,140 @@
+generated: '2026-08-23'
+method: derived
+source: openapi/jobox-ai-kili-openapi.json + live probes of https://api.jobox.ai/Kili/ on 2026-08-23
+note: Jobox publishes no developer conventions page. Everything here is derived from the contract or observed
+  on the live host. Where a convention is absent that absence is recorded rather than filled in.
+auth_style:
+  model: undocumented credential + User-Id caller header
+  documented: false
+  detail: See authentication/jobox-ai-authentication.yml. Anonymous requests get HTTP 401.
+base_url: https://api.jobox.ai/Kili
+media_types:
+  request:
+  - application/json
+  - multipart/form-data
+  response:
+  - application/json
+  - text/plain
+idempotency:
+  supported: false
+  header: null
+  scope: null
+  retention: null
+  evidence: No Idempotency-Key or equivalent header on any of the 110 operations; no idempotency documentation
+    published.
+  consequence: A retried POST /jobs, POST /payments or POST /v3/wallet cannot be made safe by the caller.
+    An agent must treat every write as at-most-once and reconcile by reading back.
+pagination:
+  style: path-segment page number
+  params:
+  - page_num
+  operations:
+  - GET /jobs/list/{page_num}
+  response_fields: null
+  evidence: Only one of 91 paths paginates. No page size, cursor, total or link envelope is described.
+  note: Several list endpoints (GET /jobs, GET /users/{user_id}/jobs, GET /contacts/{id}) take no pagination
+    parameter at all.
+filtering:
+  style: path-segment time range
+  evidence: Date-range reads are expressed as path segments, e.g. GET /users/{user_id}/jobs/{start_time}/{end_time}
+    and GET /v3/reports/users/{user_id}/contacts/{contact_ids}/{start_time}/{end_time}. No query-parameter
+    filter vocabulary.
+field_expansion:
+  supported: false
+  evidence: No expand/fields/include parameter anywhere in the contract.
+metadata:
+  supported: false
+  evidence: No metadata object on any definition.
+request_id_tracing:
+  supported: true
+  method: probed
+  headers:
+  - x-trace-id
+  - x-span-id
+  - traceparent
+  evidence: HEAD https://api.jobox.ai/Kili/ returns x-trace-id, x-span-id and a W3C traceparent header
+    (2026-08-23).
+  error_correlator: debug_id in the 401 error body
+  note: W3C Trace Context is emitted on responses but is not documented anywhere Jobox publishes.
+versioning:
+  style: path prefix, partial
+  evidence: v2 and v3 prefixes appear on a minority of paths (/v2/wallet, /v3/wallet, /v2/jobs/{job_id},
+    /v2/stripe, /v3/reports/..., /joblog/v2/list, /receipts/v2/{receipt_key}); the majority of paths are
+    unversioned. Contract info.version is "1.2.3(1S)".
+  header: A `version` / `Version` header parameter appears on 5 operations but is undocumented.
+  live_version: GET https://api.jobox.ai/Kili/ reports kili v20260821.11700.65 (deployed 2026-08-21).
+error_envelope:
+  shape: '{"title","message","debug_id?"}'
+  see: errors/jobox-ai-problem-types.yml
+  rfc9457: false
+rate_limit_signaling:
+  documented: false
+  headers_observed: []
+  evidence: No RateLimit-*, X-RateLimit-* or Retry-After header on the 200 from https://api.jobox.ai/Kili/.
+    See rate-limits/jobox-ai-rate-limits.yml.
+timezone:
+  note: A Timezone / timezone header parameter appears on 10 operations and is undocumented.
+reversibility:
+  grade: documented
+  applicable: true
+  note: The contract exposes real reversal/soft-delete operations, but Jobox publishes NO window for any
+    of them — no retention period, no cancel-before-capture rule, no refund deadline. Per the 0.12.0 rule
+    this grades `documented` (reversal path exists) and NOT `verified` (no stated window). No window is
+    asserted here because none is published; inventing one could cost a user money.
+  surfaces:
+  - write: POST /jobs (create_8)
+    reversal: DELETE /jobs (archive_3)
+    semantics: archive — the operationId is `archive`, implying a soft delete rather than a hard one
+    window: null
+    window_source: null
+  - write: POST /jobs (create_8)
+    reversal: PUT /jobs/delete (delete_1)
+    semantics: bulk/soft delete of jobs
+    window: null
+    window_source: null
+  - write: POST /contacts (create_5)
+    reversal: DELETE /contacts/{contact_id} (archive_1) and PUT /contacts/delete
+    semantics: archive
+    window: null
+    window_source: null
+  - write: POST /paymentlog
+    reversal: DELETE /paymentlog
+    semantics: delete a payment log entry — a bookkeeping reversal, not a card refund
+    window: null
+    window_source: null
+  - write: POST /bankinfo
+    reversal: DELETE /bankinfo
+    semantics: detach bank account
+    window: null
+    window_source: null
+  - write: POST /wallet/alias
+    reversal: DELETE /wallet/alias
+    semantics: remove wallet alias
+    window: null
+    window_source: null
+  - write: POST /v2/stripe
+    reversal: DELETE /v2/stripe
+    semantics: unlink Stripe connection
+    window: null
+    window_source: null
+  - write: POST /external
+    reversal: DELETE /external
+    semantics: remove an external payment record
+    window: null
+    window_source: null
+  gaps:
+  - No refund, void, capture-reversal or chargeback operation appears anywhere in the contract, despite
+    Payment, PaymentLog, CardPaymentDetails and Stripe entities. POST/PUT /payments and PUT /payments/{payment_id}
+    are the only payment writes.
+  - No reversal exists for POST /v3/wallet, POST /v2/wallet or the money-movement paths — a wallet transfer,
+    per this contract, cannot be taken back through the API.
+  - No window is stated for any reversal.
+dry_run_mode:
+  supported: false
+  evidence: No dry-run, preview, simulate or validate-only parameter in the contract.
+cross_links:
+- errors/jobox-ai-problem-types.yml
+- lifecycle/jobox-ai-lifecycle.yml
+- authentication/jobox-ai-authentication.yml
+- rate-limits/jobox-ai-rate-limits.yml
+- data-model/jobox-ai-data-model.yml
