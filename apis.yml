@@ -29,28 +29,16 @@ tags:
 - KYC
 - Wallet
 apis:
-- aid: jobox-ai:kili
-  name: Jobox Kili API
-  description: The Jobox "Kili" platform API — the production HTTP API behind the Jobox pro app and the
-    Jobox managed-marketplace product. Covers jobs (create, dispatch, status, logs, notes, descriptions
-    and description parsing), users and contacts, occupations and commodities, payments and payment logs,
-    receipts, disputes, bank info, KYC identification upload, wallet (v2/v3), Stripe linkage, referrals,
-    reporting and Jobox virtual phone numbers. 91 paths / 110 operations.
+- aid: jobox-ai:jobox-ai-applogic-users-api
+  name: JOBOX.ai Applogic Users API
+  description: The applogic_users API from JOBOX.ai — 1 operation(s) for applogic_users.
   humanURL: https://www.jobox.ai/marketplace
   baseURL: https://api.jobox.ai/Kili
   tags:
-  - Jobs
-  - Payments
-  - Wallet
-  - Users
-  - KYC
-  - Receipts
-  - Dispatching
+  - applogic_users
   properties:
   - type: OpenAPI
-    url: openapi/jobox-ai-kili-openapi.json
-  - type: Overlay
-    url: overlays/jobox-ai-kili-overlay.yaml
+    url: openapi/jobox-ai-applogic-users-api-openapi.yml
   - type: Authentication
     url: authentication/jobox-ai-authentication.yml
   - type: ErrorCatalog
@@ -63,8 +51,760 @@ apis:
     url: lifecycle/jobox-ai-lifecycle.yml
   - type: Conformance
     url: conformance/jobox-ai-conformance.yml
-  - type: MCPServer
-    url: mcp/jobox-ai-mcp.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
+- aid: jobox-ai:jobox-ai-bankinfo-api
+  name: JOBOX.ai Bankinfo API
+  description: The bankinfo API from JOBOX.ai — 3 operation(s) for bankinfo.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - bankinfo
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-bankinfo-api-openapi.yml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
+- aid: jobox-ai:jobox-ai-commodities-api
+  name: JOBOX.ai Commodities API
+  description: The commodities API from JOBOX.ai — 1 operation(s) for commodities.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - commodities
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-commodities-api-openapi.yml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
+- aid: jobox-ai:jobox-ai-contacts-api
+  name: JOBOX.ai Contacts API
+  description: The contacts API from JOBOX.ai — 5 operation(s) for contacts.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - contacts
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-contacts-api-openapi.yml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
+- aid: jobox-ai:jobox-ai-dashboard-api
+  name: JOBOX.ai Dashboard API
+  description: The dashboard API from JOBOX.ai — 1 operation(s) for dashboard.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - dashboard
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-dashboard-api-openapi.yml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
+- aid: jobox-ai:jobox-ai-displayname-api
+  name: JOBOX.ai Displayname API
+  description: The displayname API from JOBOX.ai — 1 operation(s) for displayname.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - displayname
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-displayname-api-openapi.yml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
+- aid: jobox-ai:jobox-ai-disputes-api
+  name: JOBOX.ai Disputes API
+  description: The disputes API from JOBOX.ai — 2 operation(s) for disputes.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - disputes
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-disputes-api-openapi.yml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
+- aid: jobox-ai:jobox-ai-external-api
+  name: JOBOX.ai External API
+  description: The external API from JOBOX.ai — 1 operation(s) for external.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - external
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-external-api-openapi.yml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
+- aid: jobox-ai:jobox-ai-history-api
+  name: JOBOX.ai History API
+  description: The history API from JOBOX.ai — 1 operation(s) for history.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - history
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-history-api-openapi.yml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
+- aid: jobox-ai:jobox-ai-identification-api
+  name: JOBOX.ai Identification API
+  description: The identification API from JOBOX.ai — 1 operation(s) for identification.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - identification
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-identification-api-openapi.yml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
+- aid: jobox-ai:jobox-ai-joblog-api
+  name: JOBOX.ai Joblog API
+  description: The joblog API from JOBOX.ai — 3 operation(s) for joblog.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - joblog
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-joblog-api-openapi.yml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
+- aid: jobox-ai:jobox-ai-joboxnumbers-api
+  name: JOBOX.ai Joboxnumbers API
+  description: The joboxnumbers API from JOBOX.ai — 1 operation(s) for joboxnumbers.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - joboxnumbers
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-joboxnumbers-api-openapi.yml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
+- aid: jobox-ai:jobox-ai-jobs-api
+  name: JOBOX.ai Jobs API
+  description: The jobs API from JOBOX.ai — 17 operation(s) for jobs.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - jobs
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-jobs-api-openapi.yml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
+- aid: jobox-ai:jobox-ai-notes-api
+  name: JOBOX.ai Notes API
+  description: The notes API from JOBOX.ai — 2 operation(s) for notes.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - notes
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-notes-api-openapi.yml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
+- aid: jobox-ai:jobox-ai-notifications-api
+  name: JOBOX.ai Notifications API
+  description: The notifications API from JOBOX.ai — 3 operation(s) for notifications.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - notifications
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-notifications-api-openapi.yml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
+- aid: jobox-ai:jobox-ai-occupations-api
+  name: JOBOX.ai Occupations API
+  description: The occupations API from JOBOX.ai — 2 operation(s) for occupations.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - occupations
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-occupations-api-openapi.yml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
+- aid: jobox-ai:jobox-ai-paymentlog-api
+  name: JOBOX.ai Paymentlog API
+  description: The paymentlog API from JOBOX.ai — 3 operation(s) for paymentlog.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - paymentlog
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-paymentlog-api-openapi.yml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
+- aid: jobox-ai:jobox-ai-payments-api
+  name: JOBOX.ai Payments API
+  description: The payments API from JOBOX.ai — 2 operation(s) for payments.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - payments
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-payments-api-openapi.yml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
+- aid: jobox-ai:jobox-ai-receipts-api
+  name: JOBOX.ai Receipts API
+  description: The receipts API from JOBOX.ai — 3 operation(s) for receipts.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - receipts
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-receipts-api-openapi.yml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
+- aid: jobox-ai:jobox-ai-referral-api
+  name: JOBOX.ai Referral API
+  description: The referral API from JOBOX.ai — 3 operation(s) for referral.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - referral
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-referral-api-openapi.yml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
+- aid: jobox-ai:jobox-ai-reports-api
+  name: JOBOX.ai Reports API
+  description: The reports API from JOBOX.ai — 5 operation(s) for reports.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - reports
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-reports-api-openapi.yml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
+- aid: jobox-ai:jobox-ai-search-api
+  name: JOBOX.ai Search API
+  description: The search API from JOBOX.ai — 1 operation(s) for search.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - search
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-search-api-openapi.yml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
+- aid: jobox-ai:jobox-ai-shorten-api
+  name: JOBOX.ai Shorten API
+  description: The shorten API from JOBOX.ai — 1 operation(s) for shorten.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - shorten
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-shorten-api-openapi.yml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
+- aid: jobox-ai:jobox-ai-status-api
+  name: JOBOX.ai Status API
+  description: The status API from JOBOX.ai — 1 operation(s) for status.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - status
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-status-api-openapi.yml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
+- aid: jobox-ai:jobox-ai-upload-api
+  name: JOBOX.ai Upload API
+  description: The upload API from JOBOX.ai — 4 operation(s) for upload.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - upload
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-upload-api-openapi.yml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
+- aid: jobox-ai:jobox-ai-uploadsignature-api
+  name: JOBOX.ai Uploadsignature API
+  description: The uploadsignature API from JOBOX.ai — 1 operation(s) for uploadsignature.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - uploadsignature
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-uploadsignature-api-openapi.yml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
+- aid: jobox-ai:jobox-ai-users-api
+  name: JOBOX.ai Users API
+  description: The users API from JOBOX.ai — 13 operation(s) for users.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - users
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-users-api-openapi.yml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
+- aid: jobox-ai:jobox-ai-v2stripe-api
+  name: JOBOX.ai V2stripe API
+  description: The v2stripe API from JOBOX.ai — 1 operation(s) for v2stripe.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - v2stripe
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-v2stripe-api-openapi.yml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
+- aid: jobox-ai:jobox-ai-wallet-alias-api
+  name: JOBOX.ai Wallet Alias API
+  description: The wallet_alias API from JOBOX.ai — 2 operation(s) for wallet_alias.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - wallet_alias
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-wallet-alias-api-openapi.yml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
+- aid: jobox-ai:jobox-ai-wallet-api
+  name: JOBOX.ai Wallet API
+  description: The wallet API from JOBOX.ai — 6 operation(s) for wallet.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - wallet
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-wallet-api-openapi.yml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
   - type: RateLimits
     url: rate-limits/jobox-ai-rate-limits.yml
   - type: Plans
@@ -75,6 +815,10 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Overlay
+  url: overlays/jobox-ai-kili-overlay.yaml
+- type: MCPServer
+  url: mcp/jobox-ai-mcp.yml
 - type: Website
   url: https://www.jobox.ai/
 - type: Documentation
