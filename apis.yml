@@ -11,6 +11,17 @@ description: JOBOX.ai (Jobox) is a home-services fintech and marketplace-infrast
   mobile app and help center have since been rebranded to Talus Pay while the jobox.ai marketing site
   and the api.jobox.ai "Kili" production API remain live.
 url: https://raw.githubusercontent.com/api-evangelist/jobox-ai/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://cdn.prod.website-files.com/621a3e492346748467acfaa9/62399d2f126332471592241d_256.png
 x-type: company
 x-source: harvest:secondary-market
