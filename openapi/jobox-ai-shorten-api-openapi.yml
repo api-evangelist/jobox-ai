@@ -1,0 +1,23 @@
+openapi: 3.2.0
+info:
+  version: 1.2.3(1S)
+  title: Jobox Ai Shorten API
+servers:
+- url: https://https://staging.jobox.ai/Kili
+tags:
+- name: shorten
+paths:
+  /s/{jxUrlCode}:
+    get:
+      tags:
+      - shorten
+      operationId: unshorten
+      parameters:
+      - name: jxUrlCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: successful operation

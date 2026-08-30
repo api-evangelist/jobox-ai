@@ -1,0 +1,45 @@
+openapi: 3.2.0
+info:
+  version: 1.2.3(1S)
+  title: Jobox Ai Joboxnumbers API
+servers:
+- url: https://https://staging.jobox.ai/Kili
+tags:
+- name: joboxnumbers
+paths:
+  /joboxnumbers:
+    get:
+      tags:
+      - joboxnumbers
+      operationId: read_9
+      parameters:
+      - name: latitude
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: longitude
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: zip
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: area_code
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: user-id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation

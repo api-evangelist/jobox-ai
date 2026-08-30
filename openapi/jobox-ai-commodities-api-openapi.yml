@@ -1,0 +1,110 @@
+openapi: 3.2.0
+info:
+  version: 1.2.3(1S)
+  title: Jobox Ai Commodities API
+servers:
+- url: https://https://staging.jobox.ai/Kili
+tags:
+- name: commodities
+paths:
+  /commodities:
+    post:
+      tags:
+      - commodities
+      operationId: create_2
+      parameters:
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JobEditDTOListCommodityDTO'
+components:
+  schemas:
+    JobEditDTOListCommodityDTO:
+      type: object
+      properties:
+        upstream:
+          type: array
+          items:
+            $ref: '#/components/schemas/CommodityDTO'
+        downstream:
+          type: array
+          items:
+            $ref: '#/components/schemas/CommodityDTO'
+    CommodityDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        jobId:
+          type: integer
+          format: int64
+        reportedByUserId:
+          type: integer
+          format: int64
+        viewedByUserId:
+          type: integer
+          format: int64
+        paidByUserId:
+          type: integer
+          format: int64
+        amount:
+          type: number
+        quantity:
+          type: integer
+          format: int64
+        createdAt:
+          type: string
+          format: date-time
+        note:
+          $ref: '#/components/schemas/Note'
+    Note:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        byUserId:
+          type: integer
+          format: int64
+        entityId:
+          type: integer
+          format: int64
+        entityType:
+          type: string
+          enum:
+          - JOB
+          - JOB_LOG
+          - PAYMENT
+          - PAYMENT_LOG
+          - WALLET_LOG
+          - RECEIPT
+          - COMMODITY
+        content:
+          type: string
+        attachmentType:
+          type: string
+          enum:
+          - TEXT
+          - IMAGE
+          - AUDIO
+          - VIDEO
+        attachment:
+          type: string
+        shared:
+          type: boolean
+        active:
+          type: boolean
+        createdAt:
+          type: string
+          format: date-time

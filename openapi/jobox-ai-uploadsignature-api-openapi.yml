@@ -1,0 +1,35 @@
+openapi: 3.2.0
+info:
+  version: 1.2.3(1S)
+  title: Jobox Ai Uploadsignature API
+servers:
+- url: https://https://staging.jobox.ai/Kili
+tags:
+- name: uploadsignature
+paths:
+  /uploadsignature:
+    post:
+      tags:
+      - uploadsignature
+      operationId: createSignature
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                user_id:
+                  type: integer
+                  format: int64
+                job_id:
+                  type: integer
+                  format: int64
+                payment_log_id:
+                  type: integer
+                  format: int64

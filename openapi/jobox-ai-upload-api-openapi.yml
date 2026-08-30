@@ -1,0 +1,123 @@
+openapi: 3.2.0
+info:
+  version: 1.2.3(1S)
+  title: Jobox Ai Upload API
+servers:
+- url: https://https://staging.jobox.ai/Kili
+tags:
+- name: upload
+paths:
+  /upload/identification:
+    post:
+      tags:
+      - upload
+      operationId: uploadId
+      parameters:
+      - name: user-id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                id_pic_front:
+                  type: string
+                  format: binary
+                id_pic_back:
+                  type: string
+                  format: binary
+                entity_type:
+                  type: string
+                  enum:
+                  - DRIVERS_LICENSE
+                  - PASSPORT
+                  - TAX_ID
+                  - EIN
+                  - BUSINESS_LICENSE
+                entity_id:
+                  type: string
+  /upload/{user_id}/kyc:
+    get:
+      tags:
+      - upload
+      operationId: getKycUploadUrl
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+  /upload/{job_id}/{payment_log_id}:
+    post:
+      tags:
+      - upload
+      operationId: create_15
+      parameters:
+      - name: job_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: payment_log_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                user_id:
+                  type: integer
+                  format: int64
+  /upload:
+    post:
+      tags:
+      - upload
+      operationId: create_16
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                added_by_user_id:
+                  type: integer
+                  format: int64
+                user_id:
+                  type: integer
+                  format: int64

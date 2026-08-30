@@ -1,0 +1,62 @@
+openapi: 3.2.0
+info:
+  version: 1.2.3(1S)
+  title: Jobox Ai Disputes API
+servers:
+- url: https://https://staging.jobox.ai/Kili
+tags:
+- name: disputes
+paths:
+  /disputes/{dispute_id}:
+    get:
+      tags:
+      - disputes
+      operationId: read_4
+      parameters:
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: dispute_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: successful operation
+  /disputes/users/{user_id}:
+    get:
+      tags:
+      - disputes
+      operationId: list
+      parameters:
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: range
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: page_num
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      responses:
+        default:
+          description: successful operation

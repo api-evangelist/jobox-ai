@@ -1,0 +1,68 @@
+openapi: 3.2.0
+info:
+  version: 1.2.3(1S)
+  title: Jobox Ai History API
+servers:
+- url: https://https://staging.jobox.ai/Kili
+tags:
+- name: history
+paths:
+  /history/joblog:
+    post:
+      tags:
+      - history
+      operationId: create_6
+      parameters:
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JobLog'
+components:
+  schemas:
+    JobLog:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        jobId:
+          type: integer
+          format: int64
+        senderId:
+          type: integer
+          format: int64
+        receiverId:
+          type: integer
+          format: int64
+        tax:
+          type: number
+        fee:
+          type: number
+        fraction:
+          type: number
+        status:
+          type: string
+          enum:
+          - PENDING
+          - ACCEPT
+          - REJECT
+          - COMPLETE
+          - CANCEL
+          - REVOKE
+          - UPDATE
+          - CLOSING
+        notes:
+          type: string
+        createdAt:
+          type: string
+          format: date-time

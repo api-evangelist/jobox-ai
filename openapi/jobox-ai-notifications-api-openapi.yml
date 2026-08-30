@@ -1,0 +1,68 @@
+openapi: 3.2.0
+info:
+  version: 1.2.3(1S)
+  title: Jobox Ai Notifications API
+servers:
+- url: https://https://staging.jobox.ai/Kili
+tags:
+- name: notifications
+paths:
+  /notifications/publish/{user_id}:
+    post:
+      tags:
+      - notifications
+      operationId: publish
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+  /notifications/publish/all/{language}:
+    post:
+      tags:
+      - notifications
+      operationId: publish_1
+      parameters:
+      - name: language
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+  /notifications/publish/{user_id}/contacts/all:
+    post:
+      tags:
+      - notifications
+      operationId: publishToMyContacts
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string

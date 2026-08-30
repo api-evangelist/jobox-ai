@@ -1,0 +1,30 @@
+openapi: 3.2.0
+info:
+  version: 1.2.3(1S)
+  title: Jobox Ai Displayname API
+servers:
+- url: https://https://staging.jobox.ai/Kili
+tags:
+- name: displayname
+paths:
+  /displayname/{sender_id}/{receiver_id}:
+    get:
+      tags:
+      - displayname
+      operationId: read_3
+      parameters:
+      - name: receiver_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: sender_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation

@@ -1,0 +1,68 @@
+openapi: 3.2.0
+info:
+  version: 1.2.3(1S)
+  title: Jobox Ai External API
+servers:
+- url: https://https://staging.jobox.ai/Kili
+tags:
+- name: external
+paths:
+  /external:
+    post:
+      tags:
+      - external
+      operationId: create_5
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExternalPayment'
+    put:
+      tags:
+      - external
+      operationId: update_2
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExternalPayment'
+    delete:
+      tags:
+      - external
+      operationId: delete
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExternalPayment'
+components:
+  schemas:
+    ExternalPayment:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        jobId:
+          type: integer
+          format: int64
+        externalId:
+          type: integer
+          format: int64
+        userId:
+          type: integer
+          format: int64
+        percent:
+          type: number
+        createdAt:
+          type: string
+          format: date-time

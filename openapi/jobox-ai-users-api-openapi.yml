@@ -1,0 +1,608 @@
+openapi: 3.2.0
+info:
+  version: 1.2.3(1S)
+  title: Jobox Ai Users API
+servers:
+- url: https://https://staging.jobox.ai/Kili
+tags:
+- name: users
+paths:
+  /users/{user_id}/kyc_info:
+    get:
+      tags:
+      - users
+      operationId: getInfo
+      parameters:
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+    post:
+      tags:
+      - users
+      operationId: submitInfo
+      parameters:
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/KycInfoDTO'
+  /users:
+    post:
+      tags:
+      - users
+      operationId: create_17
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+    put:
+      tags:
+      - users
+      operationId: updateDeprecated
+      parameters:
+      - name: user-id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+      deprecated: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+  /users/{user_id}/contacts:
+    get:
+      tags:
+      - users
+      operationId: readContacts
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+  /users/{user_id}/contacts/all:
+    get:
+      tags:
+      - users
+      operationId: readAllContacts
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+  /users/{user_id}/jobs/log/{start_time}/{end_time}:
+    get:
+      tags:
+      - users
+      operationId: readJobsLog
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: start_time
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: end_time
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: page_num
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      responses:
+        default:
+          description: successful operation
+  /users/{user_id}/jobs/log:
+    get:
+      tags:
+      - users
+      operationId: readJobsLogByPage
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: page_num
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      responses:
+        default:
+          description: successful operation
+  /users/{user_id}/jobs/{start_time}/{end_time}:
+    get:
+      tags:
+      - users
+      operationId: readJobs
+      parameters:
+      - name: timezone
+        in: header
+        required: false
+        schema:
+          type: string
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: start_time
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: end_time
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: page_num
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: range
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: s
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - PENDING
+            - ACCEPT
+            - REJECT
+            - COMPLETE
+            - CANCEL
+            - REVOKE
+            - UPDATE
+            - CLOSING
+      - name: cid
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int64
+      - name: jid
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int64
+      - name: pending_action
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: active
+        in: query
+        required: false
+        schema:
+          type: boolean
+      responses:
+        default:
+          description: successful operation
+  /users/{user_id}/jobs:
+    get:
+      tags:
+      - users
+      operationId: readJobsByPage
+      parameters:
+      - name: timezone
+        in: header
+        required: false
+        schema:
+          type: string
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: page_num
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: range
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: s
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - PENDING
+            - ACCEPT
+            - REJECT
+            - COMPLETE
+            - CANCEL
+            - REVOKE
+            - UPDATE
+            - CLOSING
+      - name: cid
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int64
+      - name: jid
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int64
+      - name: pending_action
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: start_time
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: end_time
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: active
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: half_jobs
+        in: query
+        required: false
+        schema:
+          type: boolean
+      responses:
+        default:
+          description: successful operation
+  /users/{user_id}/{contact_user_id}/jobs/{job_id}/status:
+    get:
+      tags:
+      - users
+      operationId: sendStatus
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: contact_user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: job_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+  /users/{user_id}/{contact_user_id}/jobs/{job_id}/jobstatus:
+    get:
+      tags:
+      - users
+      operationId: sendLatestJobStatus
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: contact_user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: job_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+  /users/{user_id}/usermasking:
+    get:
+      tags:
+      - users
+      operationId: readActiveRulesForUser
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+  /users/{user_id}:
+    get:
+      tags:
+      - users
+      operationId: read_16
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: user-id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+    put:
+      tags:
+      - users
+      operationId: update_6
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: user-id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+  /users/{user_id}/{verification_code}:
+    put:
+      tags:
+      - users
+      operationId: verify
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: verification_code
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        default:
+          description: successful operation
+components:
+  schemas:
+    KycInfoDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        userId:
+          type: integer
+          format: int64
+        applicantId:
+          type: string
+        checkId:
+          type: string
+        documentId:
+          type: string
+        documentProvider:
+          type: string
+          enum:
+          - ONFIDO
+          - STRIPE
+        ssn:
+          type: string
+        dateOfBirth:
+          type: string
+          format: date-time
+        firstName:
+          type: string
+        lastName:
+          type: string
+        companyName:
+          type: string
+        address:
+          type: string
+        city:
+          type: string
+        state:
+          type: string
+        zipCode:
+          type: string
+        businessType:
+          type: string
+          enum:
+          - INDIVIDUAL
+          - COMPANY
+        taxId:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        verifiedFields:
+          type: array
+          items:
+            type: string
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        phoneNumber:
+          type: string
+        verified:
+          type: boolean
+        firstName:
+          type: string
+        lastName:
+          type: string
+        deviceKey:
+          type: string
+        joboxNumber:
+          type: string
+        email:
+          type: string
+        companyName:
+          type: string
+        profileUrl:
+          type: string
+        occupationId:
+          type: integer
+          format: int64
+        lastUsedAt:
+          type: string
+          format: date-time
+        tax:
+          type: number
+        createdAt:
+          type: string
+          format: date-time
+        verifiedAt:
+          type: string
+          format: date-time

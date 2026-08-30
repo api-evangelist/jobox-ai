@@ -1,0 +1,100 @@
+openapi: 3.2.0
+info:
+  version: 1.2.3(1S)
+  title: Jobox Ai Payments API
+servers:
+- url: https://https://staging.jobox.ai/Kili
+tags:
+- name: payments
+paths:
+  /payments:
+    post:
+      tags:
+      - payments
+      operationId: create_13
+      parameters:
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Payment'
+    put:
+      tags:
+      - payments
+      operationId: update_4
+      parameters:
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+      deprecated: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Payment'
+  /payments/{payment_id}:
+    put:
+      tags:
+      - payments
+      operationId: update_5
+      parameters:
+      - name: payment_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Payment'
+components:
+  schemas:
+    Payment:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        jobId:
+          type: integer
+          format: int64
+        userId:
+          type: integer
+          format: int64
+        cost:
+          type: number
+        tax:
+          type: number
+        parts:
+          type: number
+        externalParts:
+          type: number
+        createdAt:
+          type: string
+          format: date-time

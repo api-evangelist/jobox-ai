@@ -1,0 +1,30 @@
+openapi: 3.2.0
+info:
+  version: 1.2.3(1S)
+  title: Jobox Ai Identification API
+servers:
+- url: https://https://staging.jobox.ai/Kili
+tags:
+- name: identification
+paths:
+  /identification/{user_id}:
+    get:
+      tags:
+      - identification
+      operationId: read_12
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: user-id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation

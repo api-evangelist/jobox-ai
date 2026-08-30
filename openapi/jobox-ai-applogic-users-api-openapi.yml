@@ -1,0 +1,32 @@
+openapi: 3.2.0
+info:
+  version: 1.2.3(1S)
+  title: Jobox Ai Applogic Users API
+servers:
+- url: https://https://staging.jobox.ai/Kili
+tags:
+- name: applogic_users
+paths:
+  /alusers:
+    post:
+      tags:
+      - applogic_users
+      operationId: create
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApplogicUserResponseDTO'
+components:
+  schemas:
+    ApplogicUserResponseDTO:
+      type: object
+      properties:
+        deviceKey:
+          type: string
+        userId:
+          type: integer
+          format: int64

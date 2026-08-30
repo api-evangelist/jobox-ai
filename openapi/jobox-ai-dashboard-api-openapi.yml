@@ -1,0 +1,24 @@
+openapi: 3.2.0
+info:
+  version: 1.2.3(1S)
+  title: Jobox Ai Dashboard API
+servers:
+- url: https://https://staging.jobox.ai/Kili
+tags:
+- name: dashboard
+paths:
+  /dashboard:
+    get:
+      tags:
+      - dashboard
+      operationId: read_2
+      responses:
+        default:
+          description: successful operation
+    post:
+      tags:
+      - dashboard
+      operationId: create_4
+      responses:
+        default:
+          description: successful operation

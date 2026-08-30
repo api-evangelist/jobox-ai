@@ -1,0 +1,241 @@
+openapi: 3.2.0
+info:
+  version: 1.2.3(1S)
+  title: Jobox Ai Wallet API
+servers:
+- url: https://https://staging.jobox.ai/Kili
+tags:
+- name: wallet
+paths:
+  /v2/wallet/{user_id}/log:
+    get:
+      tags:
+      - wallet
+      operationId: readLog
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: filter
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - ALL
+          - WALLET_TO_WALLET
+          - JOB_TO_WALLET
+      - name: page_num
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: range
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: Version
+        in: header
+        required: false
+        schema:
+          type: string
+      responses:
+        default:
+          description: successful operation
+  /v2/wallet/{user_id}:
+    get:
+      tags:
+      - wallet
+      operationId: read_17
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+  /v2/wallet:
+    post:
+      tags:
+      - wallet
+      operationId: create_18
+      parameters:
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/V2WalletDTO'
+  /v3/wallet/{user_id}/log:
+    get:
+      tags:
+      - wallet
+      operationId: readLog_1
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: Timezone
+        in: header
+        required: false
+        schema:
+          type: string
+      - name: user-id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: filter
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - PAYMENT_LOG
+          - WALLET_LOG
+          - CARD_PAYMENT_DETAILS
+      - name: page_num
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: range
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: all
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: subtype
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - JOB_PAYMENT
+            - JOB_REFUND
+            - JOB_DISPUTE
+            - ADJUSTMENT
+            - BANK_DEPOSIT
+            - BANK_TRANSFER
+            - AUTO_BANK_TRANSFER_TO
+            - AUTO_BANK_TRANSFER_FROM
+            - WALLET_TRANSFER_TO
+            - WALLET_TRANSFER_FROM
+            - CREDIT_CARD_FEE
+            - AUTO_WALLET_TRANSFER_TO
+            - AUTO_WALLET_TRANSFER_FROM
+      - name: start_time
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: end_time
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: email
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: combine
+        in: query
+        required: false
+        schema:
+          type: boolean
+      responses:
+        default:
+          description: successful operation
+  /v3/wallet/{user_id}:
+    get:
+      tags:
+      - wallet
+      operationId: read_19
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: user-id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+  /v3/wallet:
+    post:
+      tags:
+      - wallet
+      operationId: create_21
+      parameters:
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/V2WalletDTO'
+components:
+  schemas:
+    V2WalletDTO:
+      type: object
+      properties:
+        fromUserId:
+          type: integer
+          format: int64
+        toUserId:
+          type: integer
+          format: int64
+        bankId:
+          type: integer
+          format: int64
+        amount:
+          type: number
+        notes:
+          type: string

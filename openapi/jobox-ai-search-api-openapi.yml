@@ -1,0 +1,35 @@
+openapi: 3.2.0
+info:
+  version: 1.2.3(1S)
+  title: Jobox Ai Search API
+servers:
+- url: https://https://staging.jobox.ai/Kili
+tags:
+- name: search
+paths:
+  /search:
+    get:
+      tags:
+      - search
+      operationId: search
+      parameters:
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: q
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: page_num
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      responses:
+        default:
+          description: successful operation

@@ -1,0 +1,67 @@
+openapi: 3.2.0
+info:
+  version: 1.2.3(1S)
+  title: Jobox Ai Referral API
+servers:
+- url: https://https://staging.jobox.ai/Kili
+tags:
+- name: referral
+paths:
+  /referral:
+    post:
+      tags:
+      - referral
+      operationId: validate
+      parameters:
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: string
+  /referral/{user_id}/request:
+    post:
+      tags:
+      - referral
+      operationId: request
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: string
+  /referral/generate/{email}:
+    get:
+      tags:
+      - referral
+      operationId: generateReferralCodes
+      parameters:
+      - name: email
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: successful operation

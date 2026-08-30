@@ -1,0 +1,123 @@
+openapi: 3.2.0
+info:
+  version: 1.2.3(1S)
+  title: Jobox Ai Joblog API
+servers:
+- url: https://https://staging.jobox.ai/Kili
+tags:
+- name: joblog
+paths:
+  /joblog/list:
+    post:
+      tags:
+      - joblog
+      operationId: createAll
+      parameters:
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: notify
+        in: query
+        required: false
+        schema:
+          type: boolean
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/JobLog'
+  /joblog/{id}:
+    get:
+      tags:
+      - joblog
+      operationId: read_5
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: user-id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+  /joblog/v2/list:
+    post:
+      tags:
+      - joblog
+      operationId: create_7
+      parameters:
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: notify
+        in: query
+        required: false
+        schema:
+          type: boolean
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/JobLog'
+components:
+  schemas:
+    JobLog:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        jobId:
+          type: integer
+          format: int64
+        senderId:
+          type: integer
+          format: int64
+        receiverId:
+          type: integer
+          format: int64
+        tax:
+          type: number
+        fee:
+          type: number
+        fraction:
+          type: number
+        status:
+          type: string
+          enum:
+          - PENDING
+          - ACCEPT
+          - REJECT
+          - COMPLETE
+          - CANCEL
+          - REVOKE
+          - UPDATE
+          - CLOSING
+        notes:
+          type: string
+        createdAt:
+          type: string
+          format: date-time

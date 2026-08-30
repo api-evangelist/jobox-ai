@@ -1,0 +1,44 @@
+openapi: 3.2.0
+info:
+  version: 1.2.3(1S)
+  title: Jobox Ai Occupations API
+servers:
+- url: https://https://staging.jobox.ai/Kili
+tags:
+- name: occupations
+paths:
+  /occupations:
+    get:
+      tags:
+      - occupations
+      operationId: readSummary
+      parameters:
+      - name: user-id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: Version
+        in: header
+        required: false
+        schema:
+          type: string
+      responses:
+        default:
+          description: successful operation
+  /occupations/{occupation_id}:
+    get:
+      tags:
+      - occupations
+      operationId: readOccupation
+      parameters:
+      - name: occupation_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation

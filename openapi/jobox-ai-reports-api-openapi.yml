@@ -1,0 +1,237 @@
+openapi: 3.2.0
+info:
+  version: 1.2.3(1S)
+  title: Jobox Ai Reports API
+servers:
+- url: https://https://staging.jobox.ai/Kili
+tags:
+- name: reports
+paths:
+  /reports/users/{user_id}/contacts/{contact_ids}/{start_time}/{end_time}:
+    get:
+      tags:
+      - reports
+      operationId: readAll_1
+      parameters:
+      - name: email
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: contact_ids
+        in: path
+        required: true
+        schema:
+          type: string
+          pattern: (\d+)(,\s*\d+)*
+      - name: start_time
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: end_time
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: Timezone
+        in: header
+        required: false
+        schema:
+          type: string
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+  /reports/users/{user_id}/contacts/all/{start_time}/{end_time}:
+    get:
+      tags:
+      - reports
+      operationId: readAll_2
+      parameters:
+      - name: email
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: start_time
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: end_time
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: Timezone
+        in: header
+        required: false
+        schema:
+          type: string
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+  /reports/users/{user_id}/{start_time}/{end_time}:
+    get:
+      tags:
+      - reports
+      operationId: read_14
+      parameters:
+      - name: email
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: start_time
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: end_time
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: Timezone
+        in: header
+        required: false
+        schema:
+          type: string
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+      deprecated: true
+  /v3/reports/users/{user_id}/contacts/all/{start_time}/{end_time}:
+    get:
+      tags:
+      - reports
+      operationId: readAll_4
+      parameters:
+      - name: email
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: start_time
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: end_time
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: Timezone
+        in: header
+        required: false
+        schema:
+          type: string
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+  /v3/reports/users/{user_id}/contacts/{contact_ids}/{start_time}/{end_time}:
+    get:
+      tags:
+      - reports
+      operationId: readAll_5
+      parameters:
+      - name: email
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: contact_ids
+        in: path
+        required: true
+        schema:
+          type: string
+          pattern: (\d+)(,\s*\d+)*
+      - name: start_time
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: end_time
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: Timezone
+        in: header
+        required: false
+        schema:
+          type: string
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation

@@ -1,0 +1,619 @@
+openapi: 3.2.0
+info:
+  version: 1.2.3(1S)
+  title: Jobox Ai Jobs API
+servers:
+- url: https://https://staging.jobox.ai/Kili
+tags:
+- name: jobs
+paths:
+  /jobs/{job_id}/users/{user_id}/commodities:
+    get:
+      tags:
+      - jobs
+      operationId: readCommoditiesForUser
+      parameters:
+      - name: job_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+  /jobs/{job_id}/external:
+    get:
+      tags:
+      - jobs
+      operationId: readExternalDetails
+      parameters:
+      - name: job_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+  /jobs/{job_id}/payment/log:
+    get:
+      tags:
+      - jobs
+      operationId: readPaymentLog
+      parameters:
+      - name: job_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+  /jobs/{job_id}/receipts:
+    get:
+      tags:
+      - jobs
+      operationId: latestReceipt
+      parameters:
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: job_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+  /jobs/delete:
+    put:
+      tags:
+      - jobs
+      operationId: archiveForAndroid
+      parameters:
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Job'
+  /jobs:
+    get:
+      tags:
+      - jobs
+      operationId: read_8
+      parameters:
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+    post:
+      tags:
+      - jobs
+      operationId: create_8
+      parameters:
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JobRequestDTO'
+    put:
+      tags:
+      - jobs
+      operationId: update_3
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Job'
+    delete:
+      tags:
+      - jobs
+      operationId: archive_3
+      parameters:
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Job'
+  /jobs/{job_id}/notes:
+    get:
+      tags:
+      - jobs
+      operationId: readNotes
+      parameters:
+      - name: job_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: user-id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+  /jobs/{id}/description:
+    get:
+      tags:
+      - jobs
+      operationId: readDescription
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+  /jobs/{job_id}:
+    post:
+      tags:
+      - jobs
+      operationId: readJobUnit
+      parameters:
+      - name: job_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: string
+  /jobs/{job_id}/log:
+    get:
+      tags:
+      - jobs
+      operationId: readAll
+      parameters:
+      - name: job_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: user-id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+  /jobs/{job_id}/commodities:
+    get:
+      tags:
+      - jobs
+      operationId: readCommodities
+      parameters:
+      - name: job_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+  /jobs/{job_id}/payment:
+    get:
+      tags:
+      - jobs
+      operationId: readPayment
+      parameters:
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: job_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+  /jobs/list/{page_num}:
+    get:
+      tags:
+      - jobs
+      operationId: read_6
+      parameters:
+      - name: page_num
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+  /jobs/{id}:
+    get:
+      tags:
+      - jobs
+      operationId: read_7
+      parameters:
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+  /jobs/description/parse:
+    post:
+      tags:
+      - jobs
+      operationId: create_9
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddressParsingRequestDTO'
+  /v2/jobs/{job_id}:
+    get:
+      tags:
+      - jobs
+      operationId: readJob
+      parameters:
+      - name: job_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+  /v2/jobs/{job_id}/log:
+    get:
+      tags:
+      - jobs
+      operationId: readAll_3
+      parameters:
+      - name: job_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: User-Id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+components:
+  schemas:
+    AddressParsingRequestDTO:
+      type: object
+      properties:
+        blurb:
+          type: string
+        country:
+          type: string
+        zip:
+          type: string
+        area:
+          type: string
+        locality:
+          type: string
+        route:
+          type: string
+        region:
+          type: string
+        addressType:
+          type: string
+          enum:
+          - STREET_ADDRESS
+          - STREET_NUMBER
+          - FLOOR
+          - ROOM
+          - POST_BOX
+          - ROUTE
+          - INTERSECTION
+          - CONTINENT
+          - POLITICAL
+          - COUNTRY
+          - ADMINISTRATIVE_AREA_LEVEL_1
+          - ADMINISTRATIVE_AREA_LEVEL_2
+          - ADMINISTRATIVE_AREA_LEVEL_3
+          - ADMINISTRATIVE_AREA_LEVEL_4
+          - ADMINISTRATIVE_AREA_LEVEL_5
+          - COLLOQUIAL_AREA
+          - LOCALITY
+          - WARD
+          - SUBLOCALITY
+          - SUBLOCALITY_LEVEL_1
+          - SUBLOCALITY_LEVEL_2
+          - SUBLOCALITY_LEVEL_3
+          - SUBLOCALITY_LEVEL_4
+          - SUBLOCALITY_LEVEL_5
+          - NEIGHBORHOOD
+          - PREMISE
+          - SUBPREMISE
+          - POSTAL_CODE
+          - POSTAL_CODE_PREFIX
+          - POSTAL_CODE_SUFFIX
+          - NATURAL_FEATURE
+          - AIRPORT
+          - UNIVERSITY
+          - PARK
+          - MUSEUM
+          - POINT_OF_INTEREST
+          - ESTABLISHMENT
+          - BUS_STATION
+          - TRAIN_STATION
+          - SUBWAY_STATION
+          - TRANSIT_STATION
+          - LIGHT_RAIL_STATION
+          - CHURCH
+          - FINANCE
+          - POST_OFFICE
+          - PLACE_OF_WORSHIP
+          - POSTAL_TOWN
+          - SYNAGOGUE
+          - FOOD
+          - GROCERY_OR_SUPERMARKET
+          - STORE
+          - LAWYER
+          - HEALTH
+          - INSURANCE_AGENCY
+          - GAS_STATION
+          - CAR_DEALER
+          - CAR_REPAIR
+          - MEAL_TAKEAWAY
+          - FURNITURE_STORE
+          - HOME_GOODS_STORE
+          - SHOPPING_MALL
+          - GYM
+          - ACCOUNTING
+          - MOVING_COMPANY
+          - LODGING
+          - STORAGE
+          - CASINO
+          - PARKING
+          - STADIUM
+          - TRAVEL_AGENCY
+          - NIGHT_CLUB
+          - BEAUTY_SALON
+          - HAIR_CARE
+          - SPA
+          - SHOE_STORE
+          - BAKERY
+          - PHARMACY
+          - SCHOOL
+          - BOOK_STORE
+          - DEPARTMENT_STORE
+          - RESTAURANT
+          - REAL_ESTATE_AGENCY
+          - BAR
+          - DOCTOR
+          - HOSPITAL
+          - FIRE_STATION
+          - SUPERMARKET
+          - CITY_HALL
+          - LOCAL_GOVERNMENT_OFFICE
+          - ATM
+          - BANK
+          - LIBRARY
+          - CAR_WASH
+          - HARDWARE_STORE
+          - AMUSEMENT_PARK
+          - AQUARIUM
+          - ART_GALLERY
+          - BICYCLE_STORE
+          - BOWLING_ALLEY
+          - CAFE
+          - CAMPGROUND
+          - CAR_RENTAL
+          - CEMETERY
+          - CLOTHING_STORE
+          - CONVENIENCE_STORE
+          - COURTHOUSE
+          - DENTIST
+          - ELECTRICIAN
+          - ELECTRONICS_STORE
+          - EMBASSY
+          - FLORIST
+          - FUNERAL_HOME
+          - GENERAL_CONTRACTOR
+          - HINDU_TEMPLE
+          - JEWELRY_STORE
+          - LAUNDRY
+          - LIQUOR_STORE
+          - LOCKSMITH
+          - MEAL_DELIVERY
+          - MOSQUE
+          - MOVIE_RENTAL
+          - MOVIE_THEATER
+          - PAINTER
+          - PET_STORE
+          - PHYSIOTHERAPIST
+          - PLUMBER
+          - POLICE
+          - ROOFING_CONTRACTOR
+          - RV_PARK
+          - TAXI_STAND
+          - VETERINARY_CARE
+          - ZOO
+          - ARCHIPELAGO
+          - UNKNOWN
+        southWestBound:
+          $ref: '#/components/schemas/AddressBounds'
+        northEastBounds:
+          $ref: '#/components/schemas/AddressBounds'
+        address:
+          type: string
+    JobRequestDTO:
+      type: object
+      properties:
+        createdId:
+          type: integer
+          format: int64
+        description:
+          type: string
+        notes:
+          type: string
+        occupationId:
+          type: integer
+          format: int64
+        address:
+          type: string
+        clientName:
+          type: string
+        clientPhoneNumber:
+          type: string
+        clientPhoneNumber2:
+          type: string
+        addressParsingRequest:
+          $ref: '#/components/schemas/AddressParsingRequestDTO'
+    Job:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        referenceId:
+          type: string
+        createdId:
+          type: integer
+          format: int64
+        description:
+          type: string
+        notes:
+          type: string
+        occupationId:
+          type: integer
+          format: int64
+        createdAt:
+          type: string
+          format: date-time
+        active:
+          type: boolean
+    AddressBounds:
+      type: object
+      properties:
+        lat:
+          type: number
+          format: double
+        lon:
+          type: number
+          format: double

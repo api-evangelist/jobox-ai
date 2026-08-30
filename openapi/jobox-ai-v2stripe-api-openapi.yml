@@ -1,0 +1,89 @@
+openapi: 3.2.0
+info:
+  version: 1.2.3(1S)
+  title: Jobox Ai V2stripe API
+servers:
+- url: https://https://staging.jobox.ai/Kili
+tags:
+- name: v2stripe
+paths:
+  /v2/stripe:
+    get:
+      tags:
+      - v2stripe
+      operationId: read_18
+      responses:
+        default:
+          description: successful operation
+    post:
+      tags:
+      - v2stripe
+      operationId: create_20
+      parameters:
+      - name: Version
+        in: header
+        required: false
+        schema:
+          type: string
+      - name: for_tech
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: user-id
+        in: header
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: successful operation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/V2StripeDTO'
+    put:
+      tags:
+      - v2stripe
+      operationId: update_7
+      responses:
+        default:
+          description: successful operation
+    delete:
+      tags:
+      - v2stripe
+      operationId: archive_5
+      responses:
+        default:
+          description: successful operation
+components:
+  schemas:
+    V2StripeDTO:
+      type: object
+      properties:
+        userId:
+          type: integer
+          format: int64
+        token:
+          type: string
+        jobId:
+          type: integer
+          format: int64
+        amount:
+          type: number
+        tip:
+          type: number
+        cardEntryMethod:
+          type: string
+          enum:
+          - SWIPE
+          - CHIP
+          - MANUAL
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+        creditInfo:
+          type: string
