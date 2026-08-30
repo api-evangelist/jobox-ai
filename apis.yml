@@ -38,6 +38,17 @@ tags:
 - Dispatching
 - Skilled Trades
 - KYC
+- Wallets
+tags_raw:
+- Company
+- Home Services
+- Field Service Management
+- Marketplace
+- Payments
+- Fintech
+- Dispatching
+- Skilled Trades
+- KYC
 - Wallet
 apis:
 - aid: jobox-ai:jobox-ai-applogic-users-api
@@ -45,7 +56,8 @@ apis:
   description: The applogic_users API from JOBOX.ai — 1 operation(s) for applogic_users.
   humanURL: https://www.jobox.ai/marketplace
   baseURL: https://api.jobox.ai/Kili
-  tags:
+  tags: []
+  tags_raw:
   - applogic_users
   properties:
   - type: OpenAPI
@@ -72,6 +84,8 @@ apis:
   humanURL: https://www.jobox.ai/marketplace
   baseURL: https://api.jobox.ai/Kili
   tags:
+  - bank-info
+  tags_raw:
   - bankinfo
   properties:
   - type: OpenAPI
@@ -98,6 +112,8 @@ apis:
   humanURL: https://www.jobox.ai/marketplace
   baseURL: https://api.jobox.ai/Kili
   tags:
+  - Commodities
+  tags_raw:
   - commodities
   properties:
   - type: OpenAPI
@@ -124,6 +140,8 @@ apis:
   humanURL: https://www.jobox.ai/marketplace
   baseURL: https://api.jobox.ai/Kili
   tags:
+  - Contacts
+  tags_raw:
   - contacts
   properties:
   - type: OpenAPI
@@ -150,6 +168,8 @@ apis:
   humanURL: https://www.jobox.ai/marketplace
   baseURL: https://api.jobox.ai/Kili
   tags:
+  - Dashboard
+  tags_raw:
   - dashboard
   properties:
   - type: OpenAPI
@@ -202,6 +222,8 @@ apis:
   humanURL: https://www.jobox.ai/marketplace
   baseURL: https://api.jobox.ai/Kili
   tags:
+  - Disputes
+  tags_raw:
   - disputes
   properties:
   - type: OpenAPI
@@ -228,6 +250,8 @@ apis:
   humanURL: https://www.jobox.ai/marketplace
   baseURL: https://api.jobox.ai/Kili
   tags:
+  - External
+  tags_raw:
   - external
   properties:
   - type: OpenAPI
@@ -254,6 +278,8 @@ apis:
   humanURL: https://www.jobox.ai/marketplace
   baseURL: https://api.jobox.ai/Kili
   tags:
+  - History
+  tags_raw:
   - history
   properties:
   - type: OpenAPI
@@ -280,6 +306,8 @@ apis:
   humanURL: https://www.jobox.ai/marketplace
   baseURL: https://api.jobox.ai/Kili
   tags:
+  - Identification
+  tags_raw:
   - identification
   properties:
   - type: OpenAPI
@@ -306,6 +334,8 @@ apis:
   humanURL: https://www.jobox.ai/marketplace
   baseURL: https://api.jobox.ai/Kili
   tags:
+  - JobLog
+  tags_raw:
   - joblog
   properties:
   - type: OpenAPI
@@ -358,6 +388,8 @@ apis:
   humanURL: https://www.jobox.ai/marketplace
   baseURL: https://api.jobox.ai/Kili
   tags:
+  - Job
+  tags_raw:
   - jobs
   properties:
   - type: OpenAPI
@@ -384,6 +416,8 @@ apis:
   humanURL: https://www.jobox.ai/marketplace
   baseURL: https://api.jobox.ai/Kili
   tags:
+  - Notes
+  tags_raw:
   - notes
   properties:
   - type: OpenAPI
@@ -410,6 +444,8 @@ apis:
   humanURL: https://www.jobox.ai/marketplace
   baseURL: https://api.jobox.ai/Kili
   tags:
+  - Notification
+  tags_raw:
   - notifications
   properties:
   - type: OpenAPI
@@ -436,6 +472,8 @@ apis:
   humanURL: https://www.jobox.ai/marketplace
   baseURL: https://api.jobox.ai/Kili
   tags:
+  - Occupations
+  tags_raw:
   - occupations
   properties:
   - type: OpenAPI
@@ -488,6 +526,8 @@ apis:
   humanURL: https://www.jobox.ai/marketplace
   baseURL: https://api.jobox.ai/Kili
   tags:
+  - Payments
+  tags_raw:
   - payments
   properties:
   - type: OpenAPI
@@ -514,6 +554,8 @@ apis:
   humanURL: https://www.jobox.ai/marketplace
   baseURL: https://api.jobox.ai/Kili
   tags:
+  - Receipts
+  tags_raw:
   - receipts
   properties:
   - type: OpenAPI
@@ -540,6 +582,8 @@ apis:
   humanURL: https://www.jobox.ai/marketplace
   baseURL: https://api.jobox.ai/Kili
   tags:
+  - Referral
+  tags_raw:
   - referral
   properties:
   - type: OpenAPI
@@ -566,6 +610,8 @@ apis:
   humanURL: https://www.jobox.ai/marketplace
   baseURL: https://api.jobox.ai/Kili
   tags:
+  - Reports
+  tags_raw:
   - reports
   properties:
   - type: OpenAPI
@@ -592,6 +638,8 @@ apis:
   humanURL: https://www.jobox.ai/marketplace
   baseURL: https://api.jobox.ai/Kili
   tags:
+  - Search
+  tags_raw:
   - search
   properties:
   - type: OpenAPI
@@ -644,6 +692,8 @@ apis:
   humanURL: https://www.jobox.ai/marketplace
   baseURL: https://api.jobox.ai/Kili
   tags:
+  - Status
+  tags_raw:
   - status
   properties:
   - type: OpenAPI
@@ -670,6 +720,8 @@ apis:
   humanURL: https://www.jobox.ai/marketplace
   baseURL: https://api.jobox.ai/Kili
   tags:
+  - Upload
+  tags_raw:
   - upload
   properties:
   - type: OpenAPI
@@ -722,6 +774,8 @@ apis:
   humanURL: https://www.jobox.ai/marketplace
   baseURL: https://api.jobox.ai/Kili
   tags:
+  - User
+  tags_raw:
   - users
   properties:
   - type: OpenAPI
@@ -773,7 +827,8 @@ apis:
   description: The wallet_alias API from JOBOX.ai — 2 operation(s) for wallet_alias.
   humanURL: https://www.jobox.ai/marketplace
   baseURL: https://api.jobox.ai/Kili
-  tags:
+  tags: []
+  tags_raw:
   - wallet_alias
   properties:
   - type: OpenAPI
@@ -800,6 +855,8 @@ apis:
   humanURL: https://www.jobox.ai/marketplace
   baseURL: https://api.jobox.ai/Kili
   tags:
+  - Wallets
+  tags_raw:
   - wallet
   properties:
   - type: OpenAPI
