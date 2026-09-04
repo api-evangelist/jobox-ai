@@ -22,6 +22,20 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - authentication
+  - rate-limits
+  - security
+  generated: '2026-09-03'
+  method: derived
 image: https://cdn.prod.website-files.com/621a3e492346748467acfaa9/62399d2f126332471592241d_256.png
 x-type: company
 x-source: harvest:secondary-market
@@ -885,8 +899,9 @@ maintainers:
 common:
 - type: Overlay
   url: overlays/jobox-ai-kili-overlay.yaml
-- type: MCPServer
+- type: X-MCPServerCandidate
   url: mcp/jobox-ai-mcp.yml
+  note: 'Renamed from MCPServer 2026-09-03 (roadmap#247): the manifest self-describes as status: candidate — a tool list derived from the published API contracts, not an existing server. The scorer already read the manifest and reported mcp_server correctly; the MCPServer type was crediting the artifact-type surfaces with a server that does not exist.'
 - type: Website
   url: https://www.jobox.ai/
 - type: Documentation
