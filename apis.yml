@@ -92,34 +92,6 @@ apis:
     url: rate-limits/jobox-ai-rate-limits.yml
   - type: Plans
     url: plans/jobox-ai-plans-pricing.yml
-- aid: jobox-ai:jobox-ai-bankinfo-api
-  name: JOBOX.ai Bankinfo API
-  description: The bankinfo API from JOBOX.ai — 3 operation(s) for bankinfo.
-  humanURL: https://www.jobox.ai/marketplace
-  baseURL: https://api.jobox.ai/Kili
-  tags:
-  - bank-info
-  tags_raw:
-  - bankinfo
-  properties:
-  - type: OpenAPI
-    url: openapi/jobox-ai-bankinfo-api-openapi.yml
-  - type: Authentication
-    url: authentication/jobox-ai-authentication.yml
-  - type: ErrorCatalog
-    url: errors/jobox-ai-problem-types.yml
-  - type: Conventions
-    url: conventions/jobox-ai-conventions.yml
-  - type: DataModel
-    url: data-model/jobox-ai-data-model.yml
-  - type: Lifecycle
-    url: lifecycle/jobox-ai-lifecycle.yml
-  - type: Conformance
-    url: conformance/jobox-ai-conformance.yml
-  - type: RateLimits
-    url: rate-limits/jobox-ai-rate-limits.yml
-  - type: Plans
-    url: plans/jobox-ai-plans-pricing.yml
 - aid: jobox-ai:jobox-ai-commodities-api
   name: JOBOX.ai Commodities API
   description: The commodities API from JOBOX.ai — 1 operation(s) for commodities.
@@ -326,34 +298,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/jobox-ai-identification-api-openapi.yml
-  - type: Authentication
-    url: authentication/jobox-ai-authentication.yml
-  - type: ErrorCatalog
-    url: errors/jobox-ai-problem-types.yml
-  - type: Conventions
-    url: conventions/jobox-ai-conventions.yml
-  - type: DataModel
-    url: data-model/jobox-ai-data-model.yml
-  - type: Lifecycle
-    url: lifecycle/jobox-ai-lifecycle.yml
-  - type: Conformance
-    url: conformance/jobox-ai-conformance.yml
-  - type: RateLimits
-    url: rate-limits/jobox-ai-rate-limits.yml
-  - type: Plans
-    url: plans/jobox-ai-plans-pricing.yml
-- aid: jobox-ai:jobox-ai-joblog-api
-  name: JOBOX.ai Joblog API
-  description: The joblog API from JOBOX.ai — 3 operation(s) for joblog.
-  humanURL: https://www.jobox.ai/marketplace
-  baseURL: https://api.jobox.ai/Kili
-  tags:
-  - JobLog
-  tags_raw:
-  - joblog
-  properties:
-  - type: OpenAPI
-    url: openapi/jobox-ai-joblog-api-openapi.yml
   - type: Authentication
     url: authentication/jobox-ai-authentication.yml
   - type: ErrorCatalog
@@ -875,6 +819,58 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/jobox-ai-wallet-api-openapi.yml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
+- aid: jobox-ai:jobox-ai-bank-info-api
+  name: JOBOX.ai Bank Info API
+  description: The Bank Info API from JOBOX.ai — 3 operation(s) for bank info.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - Bank Info
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-bank-info-api-openapi.yml
+  - type: Authentication
+    url: authentication/jobox-ai-authentication.yml
+  - type: ErrorCatalog
+    url: errors/jobox-ai-problem-types.yml
+  - type: Conventions
+    url: conventions/jobox-ai-conventions.yml
+  - type: DataModel
+    url: data-model/jobox-ai-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/jobox-ai-lifecycle.yml
+  - type: Conformance
+    url: conformance/jobox-ai-conformance.yml
+  - type: RateLimits
+    url: rate-limits/jobox-ai-rate-limits.yml
+  - type: Plans
+    url: plans/jobox-ai-plans-pricing.yml
+- aid: jobox-ai:jobox-ai-job-log-api
+  name: JOBOX.ai Job Log API
+  description: The Job Log API from JOBOX.ai — 3 operation(s) for job log.
+  humanURL: https://www.jobox.ai/marketplace
+  baseURL: https://api.jobox.ai/Kili
+  tags:
+  - Job Log
+  properties:
+  - type: OpenAPI
+    url: openapi/jobox-ai-job-log-api-openapi.yml
   - type: Authentication
     url: authentication/jobox-ai-authentication.yml
   - type: ErrorCatalog
