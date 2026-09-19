@@ -154,7 +154,7 @@ apis:
   humanURL: https://www.jobox.ai/marketplace
   baseURL: https://api.jobox.ai/Kili
   tags:
-  - Dashboard
+  - Dashboards
   tags_raw:
   - dashboard
   properties:
@@ -540,7 +540,7 @@ apis:
   humanURL: https://www.jobox.ai/marketplace
   baseURL: https://api.jobox.ai/Kili
   tags:
-  - Referral
+  - Referrals
   tags_raw:
   - referral
   properties:
