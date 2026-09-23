@@ -5,12 +5,12 @@ info:
 servers:
 - url: https://https://staging.jobox.ai/Kili
 tags:
-- name: notifications
+- name: Notifications
 paths:
   /notifications/publish/{user_id}:
     post:
       tags:
-      - notifications
+      - Notifications
       operationId: publish
       parameters:
       - name: user_id
@@ -27,10 +27,12 @@ paths:
           application/json:
             schema:
               type: string
+      summary: Publish
+      x-summary-source: derived
   /notifications/publish/all/{language}:
     post:
       tags:
-      - notifications
+      - Notifications
       operationId: publish_1
       parameters:
       - name: language
@@ -46,10 +48,12 @@ paths:
           application/json:
             schema:
               type: string
+      summary: Publish 1
+      x-summary-source: derived
   /notifications/publish/{user_id}/contacts/all:
     post:
       tags:
-      - notifications
+      - Notifications
       operationId: publishToMyContacts
       parameters:
       - name: user_id
@@ -66,3 +70,5 @@ paths:
           application/json:
             schema:
               type: string
+      summary: Publish to my contacts
+      x-summary-source: derived

@@ -5,12 +5,12 @@ info:
 servers:
 - url: https://https://staging.jobox.ai/Kili
 tags:
-- name: history
+- name: History
 paths:
   /history/joblog:
     post:
       tags:
-      - history
+      - History
       operationId: create_6
       parameters:
       - name: User-Id
@@ -27,6 +27,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/JobLog'
+      summary: Create 6
+      x-summary-source: derived
 components:
   schemas:
     JobLog:

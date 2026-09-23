@@ -5,12 +5,12 @@ info:
 servers:
 - url: https://https://staging.jobox.ai/Kili
 tags:
-- name: receipts
+- name: Receipts
 paths:
   /receipts/{receipt_key}/feedback:
     post:
       tags:
-      - receipts
+      - Receipts
       operationId: getFeedback
       parameters:
       - name: receipt_key
@@ -26,10 +26,12 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/JobFeedback'
+      summary: Get feedback
+      x-summary-source: derived
   /receipts/v2/{receipt_key}:
     get:
       tags:
-      - receipts
+      - Receipts
       operationId: read_13
       parameters:
       - name: receipt_key
@@ -50,10 +52,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read 13
+      x-summary-source: derived
   /receipts/new:
     post:
       tags:
-      - receipts
+      - Receipts
       operationId: create_14
       parameters:
       - name: Timezone
@@ -69,8 +73,27 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ReceiptWithNotesDTO'
+      summary: Create 14
+      x-summary-source: derived
 components:
   schemas:
+    JobFeedback:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        receiptLogId:
+          type: integer
+          format: int64
+        feedback:
+          type: string
+          enum:
+          - HAPPY
+          - SAD
+        feedbackTs:
+          type: string
+          format: date-time
     ReceiptRequestDTO:
       type: object
       properties:
@@ -94,13 +117,6 @@ components:
           format: int64
         timezone:
           type: string
-    ReceiptWithNotesDTO:
-      type: object
-      properties:
-        receiptRequestDTO:
-          $ref: '#/components/schemas/ReceiptRequestDTO'
-        note:
-          $ref: '#/components/schemas/Note'
     Note:
       type: object
       properties:
@@ -141,20 +157,10 @@ components:
         createdAt:
           type: string
           format: date-time
-    JobFeedback:
+    ReceiptWithNotesDTO:
       type: object
       properties:
-        id:
-          type: integer
-          format: int64
-        receiptLogId:
-          type: integer
-          format: int64
-        feedback:
-          type: string
-          enum:
-          - HAPPY
-          - SAD
-        feedbackTs:
-          type: string
-          format: date-time
+        receiptRequestDTO:
+          $ref: '#/components/schemas/ReceiptRequestDTO'
+        note:
+          $ref: '#/components/schemas/Note'

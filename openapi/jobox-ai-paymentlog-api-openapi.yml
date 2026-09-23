@@ -22,6 +22,8 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read 11
+      x-summary-source: derived
   /paymentlog:
     post:
       tags:
@@ -47,6 +49,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/PaymentLogDTO'
+      summary: Create 11
+      x-summary-source: derived
     delete:
       tags:
       - paymentlog
@@ -59,6 +63,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/PaymentLog'
+      summary: Delete 1
+      x-summary-source: derived
   /paymentlog/list:
     post:
       tags:
@@ -86,55 +92,10 @@ paths:
               type: array
               items:
                 $ref: '#/components/schemas/PaymentLogDTO'
+      summary: Create 12
+      x-summary-source: derived
 components:
   schemas:
-    CardPaymentDetails:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-        paymentLogId:
-          type: integer
-          format: int64
-        userId:
-          type: integer
-          format: int64
-        transactionPercent:
-          type: number
-        interchangeFee:
-          type: number
-        ccTotalFee:
-          type: number
-        paymentSource:
-          type: string
-          enum:
-          - STRIPE
-        paymentSourceId:
-          type: string
-        brand:
-          type: string
-        customer:
-          type: string
-        funding:
-          type: string
-        cardEntryMethod:
-          type: string
-          enum:
-          - SWIPE
-          - CHIP
-          - MANUAL
-        fingerprint:
-          type: string
-        last4:
-          type: string
-        zip:
-          type: string
-        createdAt:
-          type: string
-          format: date-time
-        active:
-          type: boolean
     PaymentLogDTO:
       type: object
       properties:
@@ -211,3 +172,50 @@ components:
         createdAt:
           type: string
           format: date-time
+    CardPaymentDetails:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        paymentLogId:
+          type: integer
+          format: int64
+        userId:
+          type: integer
+          format: int64
+        transactionPercent:
+          type: number
+        interchangeFee:
+          type: number
+        ccTotalFee:
+          type: number
+        paymentSource:
+          type: string
+          enum:
+          - STRIPE
+        paymentSourceId:
+          type: string
+        brand:
+          type: string
+        customer:
+          type: string
+        funding:
+          type: string
+        cardEntryMethod:
+          type: string
+          enum:
+          - SWIPE
+          - CHIP
+          - MANUAL
+        fingerprint:
+          type: string
+        last4:
+          type: string
+        zip:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        active:
+          type: boolean

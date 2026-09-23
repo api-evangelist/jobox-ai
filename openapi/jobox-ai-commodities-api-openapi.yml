@@ -5,12 +5,12 @@ info:
 servers:
 - url: https://https://staging.jobox.ai/Kili
 tags:
-- name: commodities
+- name: Commodities
 paths:
   /commodities:
     post:
       tags:
-      - commodities
+      - Commodities
       operationId: create_2
       parameters:
       - name: User-Id
@@ -27,6 +27,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/JobEditDTOListCommodityDTO'
+      summary: Create 2
+      x-summary-source: derived
 components:
   schemas:
     JobEditDTOListCommodityDTO:
@@ -40,34 +42,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/CommodityDTO'
-    CommodityDTO:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-        jobId:
-          type: integer
-          format: int64
-        reportedByUserId:
-          type: integer
-          format: int64
-        viewedByUserId:
-          type: integer
-          format: int64
-        paidByUserId:
-          type: integer
-          format: int64
-        amount:
-          type: number
-        quantity:
-          type: integer
-          format: int64
-        createdAt:
-          type: string
-          format: date-time
-        note:
-          $ref: '#/components/schemas/Note'
     Note:
       type: object
       properties:
@@ -108,3 +82,31 @@ components:
         createdAt:
           type: string
           format: date-time
+    CommodityDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        jobId:
+          type: integer
+          format: int64
+        reportedByUserId:
+          type: integer
+          format: int64
+        viewedByUserId:
+          type: integer
+          format: int64
+        paidByUserId:
+          type: integer
+          format: int64
+        amount:
+          type: number
+        quantity:
+          type: integer
+          format: int64
+        createdAt:
+          type: string
+          format: date-time
+        note:
+          $ref: '#/components/schemas/Note'

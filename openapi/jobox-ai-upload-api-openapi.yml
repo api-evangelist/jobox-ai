@@ -5,12 +5,12 @@ info:
 servers:
 - url: https://https://staging.jobox.ai/Kili
 tags:
-- name: upload
+- name: Upload
 paths:
   /upload/identification:
     post:
       tags:
-      - upload
+      - Upload
       operationId: uploadId
       parameters:
       - name: user-id
@@ -44,10 +44,12 @@ paths:
                   - BUSINESS_LICENSE
                 entity_id:
                   type: string
+      summary: Upload id
+      x-summary-source: derived
   /upload/{user_id}/kyc:
     get:
       tags:
-      - upload
+      - Upload
       operationId: getKycUploadUrl
       parameters:
       - name: user_id
@@ -65,10 +67,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Get kyc upload url
+      x-summary-source: derived
   /upload/{job_id}/{payment_log_id}:
     post:
       tags:
-      - upload
+      - Upload
       operationId: create_15
       parameters:
       - name: job_id
@@ -98,10 +102,12 @@ paths:
                 user_id:
                   type: integer
                   format: int64
+      summary: Create 15
+      x-summary-source: derived
   /upload:
     post:
       tags:
-      - upload
+      - Upload
       operationId: create_16
       responses:
         default:
@@ -121,3 +127,5 @@ paths:
                 user_id:
                   type: integer
                   format: int64
+      summary: Create 16
+      x-summary-source: derived

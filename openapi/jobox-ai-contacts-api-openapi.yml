@@ -5,12 +5,12 @@ info:
 servers:
 - url: https://https://staging.jobox.ai/Kili
 tags:
-- name: contacts
+- name: Contacts
 paths:
   /contacts/{id}/aliases/{entity_type}:
     get:
       tags:
-      - contacts
+      - Contacts
       operationId: readAliases
       parameters:
       - name: User-Id
@@ -41,10 +41,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read aliases
+      x-summary-source: derived
   /contacts/delete:
     put:
       tags:
-      - contacts
+      - Contacts
       operationId: archiveForRetrofit
       parameters:
       - name: User-Id
@@ -61,10 +63,12 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ContactDTO'
+      summary: Archive for retrofit
+      x-summary-source: derived
   /contacts/{contact_id}:
     put:
       tags:
-      - contacts
+      - Contacts
       operationId: update_1
       parameters:
       - name: Version
@@ -97,9 +101,11 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ContactDTO'
+      summary: Update 1
+      x-summary-source: derived
     delete:
       tags:
-      - contacts
+      - Contacts
       operationId: archive_1
       parameters:
       - name: User-Id
@@ -117,10 +123,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Archive 1
+      x-summary-source: derived
   /contacts:
     post:
       tags:
-      - contacts
+      - Contacts
       operationId: create_3
       parameters:
       - name: User-Id
@@ -137,9 +145,11 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ContactDTO'
+      summary: Create 3
+      x-summary-source: derived
     delete:
       tags:
-      - contacts
+      - Contacts
       operationId: archive_2
       parameters:
       - name: User-Id
@@ -156,10 +166,12 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ContactDTO'
+      summary: Archive 2
+      x-summary-source: derived
   /contacts/{id}:
     get:
       tags:
-      - contacts
+      - Contacts
       operationId: read_1
       parameters:
       - name: User-Id
@@ -177,6 +189,8 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read 1
+      x-summary-source: derived
 components:
   schemas:
     Fraction:
@@ -228,36 +242,6 @@ components:
         joinId:
           type: integer
           format: int64
-    WalletLogAlias:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-        fromUserId:
-          type: integer
-          format: int64
-        toUserId:
-          type: integer
-          format: int64
-        byUserId:
-          type: integer
-          format: int64
-        active:
-          type: boolean
-        regardlessOfOwner:
-          type: boolean
-        toUserIdGetsTips:
-          type: boolean
-        createdAt:
-          type: string
-          format: date-time
-        modifiedAt:
-          type: string
-          format: date-time
-        joinId:
-          type: integer
-          format: int64
     JobStatusAlias:
       type: object
       properties:
@@ -286,6 +270,36 @@ components:
         active:
           type: boolean
         createdAt:
+          type: string
+          format: date-time
+        joinId:
+          type: integer
+          format: int64
+    WalletLogAlias:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        fromUserId:
+          type: integer
+          format: int64
+        toUserId:
+          type: integer
+          format: int64
+        byUserId:
+          type: integer
+          format: int64
+        active:
+          type: boolean
+        regardlessOfOwner:
+          type: boolean
+        toUserIdGetsTips:
+          type: boolean
+        createdAt:
+          type: string
+          format: date-time
+        modifiedAt:
           type: string
           format: date-time
         joinId:

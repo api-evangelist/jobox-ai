@@ -5,12 +5,12 @@ info:
 servers:
 - url: https://https://staging.jobox.ai/Kili
 tags:
-- name: external
+- name: External
 paths:
   /external:
     post:
       tags:
-      - external
+      - External
       operationId: create_5
       responses:
         default:
@@ -20,9 +20,11 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ExternalPayment'
+      summary: Create 5
+      x-summary-source: derived
     put:
       tags:
-      - external
+      - External
       operationId: update_2
       responses:
         default:
@@ -32,9 +34,11 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ExternalPayment'
+      summary: Update 2
+      x-summary-source: derived
     delete:
       tags:
-      - external
+      - External
       operationId: delete
       responses:
         default:
@@ -44,6 +48,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ExternalPayment'
+      summary: Delete
+      x-summary-source: derived
 components:
   schemas:
     ExternalPayment:

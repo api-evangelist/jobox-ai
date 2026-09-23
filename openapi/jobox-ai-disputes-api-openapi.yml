@@ -5,12 +5,12 @@ info:
 servers:
 - url: https://https://staging.jobox.ai/Kili
 tags:
-- name: disputes
+- name: Disputes
 paths:
   /disputes/{dispute_id}:
     get:
       tags:
-      - disputes
+      - Disputes
       operationId: read_4
       parameters:
       - name: User-Id
@@ -27,10 +27,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read 4
+      x-summary-source: derived
   /disputes/users/{user_id}:
     get:
       tags:
-      - disputes
+      - Disputes
       operationId: list
       parameters:
       - name: User-Id
@@ -60,3 +62,5 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: List
+      x-summary-source: derived

@@ -21,3 +21,5 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Unshorten
+      x-summary-source: derived

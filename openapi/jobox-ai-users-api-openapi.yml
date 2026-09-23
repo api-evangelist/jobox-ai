@@ -5,12 +5,12 @@ info:
 servers:
 - url: https://https://staging.jobox.ai/Kili
 tags:
-- name: users
+- name: Users
 paths:
   /users/{user_id}/kyc_info:
     get:
       tags:
-      - users
+      - Users
       operationId: getInfo
       parameters:
       - name: User-Id
@@ -28,9 +28,11 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Get info
+      x-summary-source: derived
     post:
       tags:
-      - users
+      - Users
       operationId: submitInfo
       parameters:
       - name: User-Id
@@ -53,10 +55,12 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/KycInfoDTO'
+      summary: Submit info
+      x-summary-source: derived
   /users:
     post:
       tags:
-      - users
+      - Users
       operationId: create_17
       responses:
         default:
@@ -66,9 +70,11 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/User'
+      summary: Create 17
+      x-summary-source: derived
     put:
       tags:
-      - users
+      - Users
       operationId: updateDeprecated
       parameters:
       - name: user-id
@@ -86,10 +92,12 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/User'
+      summary: Update deprecated
+      x-summary-source: derived
   /users/{user_id}/contacts:
     get:
       tags:
-      - users
+      - Users
       operationId: readContacts
       parameters:
       - name: user_id
@@ -101,10 +109,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read contacts
+      x-summary-source: derived
   /users/{user_id}/contacts/all:
     get:
       tags:
-      - users
+      - Users
       operationId: readAllContacts
       parameters:
       - name: user_id
@@ -116,10 +126,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read all contacts
+      x-summary-source: derived
   /users/{user_id}/jobs/log/{start_time}/{end_time}:
     get:
       tags:
-      - users
+      - Users
       operationId: readJobsLog
       parameters:
       - name: user_id
@@ -149,10 +161,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read jobs log
+      x-summary-source: derived
   /users/{user_id}/jobs/log:
     get:
       tags:
-      - users
+      - Users
       operationId: readJobsLogByPage
       parameters:
       - name: user_id
@@ -170,10 +184,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read jobs log by page
+      x-summary-source: derived
   /users/{user_id}/jobs/{start_time}/{end_time}:
     get:
       tags:
-      - users
+      - Users
       operationId: readJobs
       parameters:
       - name: timezone
@@ -262,10 +278,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read jobs
+      x-summary-source: derived
   /users/{user_id}/jobs:
     get:
       tags:
-      - users
+      - Users
       operationId: readJobsByPage
       parameters:
       - name: timezone
@@ -359,10 +377,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read jobs by page
+      x-summary-source: derived
   /users/{user_id}/{contact_user_id}/jobs/{job_id}/status:
     get:
       tags:
-      - users
+      - Users
       operationId: sendStatus
       parameters:
       - name: user_id
@@ -392,10 +412,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Send status
+      x-summary-source: derived
   /users/{user_id}/{contact_user_id}/jobs/{job_id}/jobstatus:
     get:
       tags:
-      - users
+      - Users
       operationId: sendLatestJobStatus
       parameters:
       - name: user_id
@@ -425,10 +447,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Send latest job status
+      x-summary-source: derived
   /users/{user_id}/usermasking:
     get:
       tags:
-      - users
+      - Users
       operationId: readActiveRulesForUser
       parameters:
       - name: user_id
@@ -446,10 +470,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read active rules for user
+      x-summary-source: derived
   /users/{user_id}:
     get:
       tags:
-      - users
+      - Users
       operationId: read_16
       parameters:
       - name: user_id
@@ -467,9 +493,11 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read 16
+      x-summary-source: derived
     put:
       tags:
-      - users
+      - Users
       operationId: update_6
       parameters:
       - name: user_id
@@ -492,10 +520,12 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/User'
+      summary: Update 6
+      x-summary-source: derived
   /users/{user_id}/{verification_code}:
     put:
       tags:
-      - users
+      - Users
       operationId: verify
       parameters:
       - name: user_id
@@ -513,8 +543,48 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Verify
+      x-summary-source: derived
 components:
   schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        phoneNumber:
+          type: string
+        verified:
+          type: boolean
+        firstName:
+          type: string
+        lastName:
+          type: string
+        deviceKey:
+          type: string
+        joboxNumber:
+          type: string
+        email:
+          type: string
+        companyName:
+          type: string
+        profileUrl:
+          type: string
+        occupationId:
+          type: integer
+          format: int64
+        lastUsedAt:
+          type: string
+          format: date-time
+        tax:
+          type: number
+        createdAt:
+          type: string
+          format: date-time
+        verifiedAt:
+          type: string
+          format: date-time
     KycInfoDTO:
       type: object
       properties:
@@ -568,41 +638,3 @@ components:
           type: array
           items:
             type: string
-    User:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-        phoneNumber:
-          type: string
-        verified:
-          type: boolean
-        firstName:
-          type: string
-        lastName:
-          type: string
-        deviceKey:
-          type: string
-        joboxNumber:
-          type: string
-        email:
-          type: string
-        companyName:
-          type: string
-        profileUrl:
-          type: string
-        occupationId:
-          type: integer
-          format: int64
-        lastUsedAt:
-          type: string
-          format: date-time
-        tax:
-          type: number
-        createdAt:
-          type: string
-          format: date-time
-        verifiedAt:
-          type: string
-          format: date-time

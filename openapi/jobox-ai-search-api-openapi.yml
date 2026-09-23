@@ -5,12 +5,12 @@ info:
 servers:
 - url: https://https://staging.jobox.ai/Kili
 tags:
-- name: search
+- name: Search
 paths:
   /search:
     get:
       tags:
-      - search
+      - Search
       operationId: search
       parameters:
       - name: User-Id
@@ -33,3 +33,5 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Search
+      x-summary-source: derived

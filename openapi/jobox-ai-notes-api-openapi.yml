@@ -5,12 +5,12 @@ info:
 servers:
 - url: https://https://staging.jobox.ai/Kili
 tags:
-- name: notes
+- name: Notes
 paths:
   /notes/{entity_type}/{entity_id}:
     get:
       tags:
-      - notes
+      - Notes
       operationId: read_10
       parameters:
       - name: User-Id
@@ -41,10 +41,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read 10
+      x-summary-source: derived
   /notes:
     post:
       tags:
-      - notes
+      - Notes
       operationId: create_10
       parameters:
       - name: User-Id
@@ -61,6 +63,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/Note'
+      summary: Create 10
+      x-summary-source: derived
 components:
   schemas:
     Note:

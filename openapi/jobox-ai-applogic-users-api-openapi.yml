@@ -20,6 +20,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ApplogicUserResponseDTO'
+      summary: Create
+      x-summary-source: derived
 components:
   schemas:
     ApplogicUserResponseDTO:

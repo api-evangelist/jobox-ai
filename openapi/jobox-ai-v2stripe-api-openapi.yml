@@ -15,6 +15,8 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read 18
+      x-summary-source: derived
     post:
       tags:
       - v2stripe
@@ -44,6 +46,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/V2StripeDTO'
+      summary: Create 20
+      x-summary-source: derived
     put:
       tags:
       - v2stripe
@@ -51,6 +55,8 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Update 7
+      x-summary-source: derived
     delete:
       tags:
       - v2stripe
@@ -58,6 +64,8 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Archive 5
+      x-summary-source: derived
 components:
   schemas:
     V2StripeDTO:

@@ -5,12 +5,12 @@ info:
 servers:
 - url: https://https://staging.jobox.ai/Kili
 tags:
-- name: reports
+- name: Reports
 paths:
   /reports/users/{user_id}/contacts/{contact_ids}/{start_time}/{end_time}:
     get:
       tags:
-      - reports
+      - Reports
       operationId: readAll_1
       parameters:
       - name: email
@@ -56,10 +56,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read all 1
+      x-summary-source: derived
   /reports/users/{user_id}/contacts/all/{start_time}/{end_time}:
     get:
       tags:
-      - reports
+      - Reports
       operationId: readAll_2
       parameters:
       - name: email
@@ -99,10 +101,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read all 2
+      x-summary-source: derived
   /reports/users/{user_id}/{start_time}/{end_time}:
     get:
       tags:
-      - reports
+      - Reports
       operationId: read_14
       parameters:
       - name: email
@@ -143,10 +147,12 @@ paths:
         default:
           description: successful operation
       deprecated: true
+      summary: Read 14
+      x-summary-source: derived
   /v3/reports/users/{user_id}/contacts/all/{start_time}/{end_time}:
     get:
       tags:
-      - reports
+      - Reports
       operationId: readAll_4
       parameters:
       - name: email
@@ -186,10 +192,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read all 4
+      x-summary-source: derived
   /v3/reports/users/{user_id}/contacts/{contact_ids}/{start_time}/{end_time}:
     get:
       tags:
-      - reports
+      - Reports
       operationId: readAll_5
       parameters:
       - name: email
@@ -235,3 +243,5 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read all 5
+      x-summary-source: derived

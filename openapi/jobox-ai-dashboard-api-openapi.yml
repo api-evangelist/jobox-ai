@@ -5,20 +5,24 @@ info:
 servers:
 - url: https://https://staging.jobox.ai/Kili
 tags:
-- name: dashboard
+- name: Dashboard
 paths:
   /dashboard:
     get:
       tags:
-      - dashboard
+      - Dashboard
       operationId: read_2
       responses:
         default:
           description: successful operation
+      summary: Read 2
+      x-summary-source: derived
     post:
       tags:
-      - dashboard
+      - Dashboard
       operationId: create_4
       responses:
         default:
           description: successful operation
+      summary: Create 4
+      x-summary-source: derived

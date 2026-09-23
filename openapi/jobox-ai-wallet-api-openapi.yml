@@ -5,12 +5,12 @@ info:
 servers:
 - url: https://https://staging.jobox.ai/Kili
 tags:
-- name: wallet
+- name: Wallet
 paths:
   /v2/wallet/{user_id}/log:
     get:
       tags:
-      - wallet
+      - Wallet
       operationId: readLog
       parameters:
       - name: user_id
@@ -48,10 +48,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read log
+      x-summary-source: derived
   /v2/wallet/{user_id}:
     get:
       tags:
-      - wallet
+      - Wallet
       operationId: read_17
       parameters:
       - name: user_id
@@ -63,10 +65,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read 17
+      x-summary-source: derived
   /v2/wallet:
     post:
       tags:
-      - wallet
+      - Wallet
       operationId: create_18
       parameters:
       - name: User-Id
@@ -83,10 +87,12 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/V2WalletDTO'
+      summary: Create 18
+      x-summary-source: derived
   /v3/wallet/{user_id}/log:
     get:
       tags:
-      - wallet
+      - Wallet
       operationId: readLog_1
       parameters:
       - name: user_id
@@ -180,10 +186,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read log 1
+      x-summary-source: derived
   /v3/wallet/{user_id}:
     get:
       tags:
-      - wallet
+      - Wallet
       operationId: read_19
       parameters:
       - name: user_id
@@ -201,10 +209,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read 19
+      x-summary-source: derived
   /v3/wallet:
     post:
       tags:
-      - wallet
+      - Wallet
       operationId: create_21
       parameters:
       - name: User-Id
@@ -221,6 +231,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/V2WalletDTO'
+      summary: Create 21
+      x-summary-source: derived
 components:
   schemas:
     V2WalletDTO:

@@ -28,3 +28,5 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read 3
+      x-summary-source: derived

@@ -5,12 +5,12 @@ info:
 servers:
 - url: https://https://staging.jobox.ai/Kili
 tags:
-- name: identification
+- name: Identification
 paths:
   /identification/{user_id}:
     get:
       tags:
-      - identification
+      - Identification
       operationId: read_12
       parameters:
       - name: user_id
@@ -28,3 +28,5 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read 12
+      x-summary-source: derived

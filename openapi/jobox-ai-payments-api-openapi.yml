@@ -5,12 +5,12 @@ info:
 servers:
 - url: https://https://staging.jobox.ai/Kili
 tags:
-- name: payments
+- name: Payments
 paths:
   /payments:
     post:
       tags:
-      - payments
+      - Payments
       operationId: create_13
       parameters:
       - name: User-Id
@@ -27,9 +27,11 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/Payment'
+      summary: Create 13
+      x-summary-source: derived
     put:
       tags:
-      - payments
+      - Payments
       operationId: update_4
       parameters:
       - name: User-Id
@@ -47,10 +49,12 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/Payment'
+      summary: Update 4
+      x-summary-source: derived
   /payments/{payment_id}:
     put:
       tags:
-      - payments
+      - Payments
       operationId: update_5
       parameters:
       - name: payment_id
@@ -73,6 +77,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/Payment'
+      summary: Update 5
+      x-summary-source: derived
 components:
   schemas:
     Payment:

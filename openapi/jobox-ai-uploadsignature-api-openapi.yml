@@ -33,3 +33,5 @@ paths:
                 payment_log_id:
                   type: integer
                   format: int64
+      summary: Create signature
+      x-summary-source: derived

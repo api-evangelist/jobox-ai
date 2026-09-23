@@ -28,6 +28,8 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read for user id
+      x-summary-source: derived
   /wallet/alias:
     post:
       tags:
@@ -53,6 +55,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/WalletLogAlias'
+      summary: Create 19
+      x-summary-source: derived
     delete:
       tags:
       - wallet_alias
@@ -72,6 +76,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/WalletLogAlias'
+      summary: Archive 4
+      x-summary-source: derived
 components:
   schemas:
     WalletLogAlias:

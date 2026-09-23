@@ -5,12 +5,12 @@ info:
 servers:
 - url: https://https://staging.jobox.ai/Kili
 tags:
-- name: jobs
+- name: Jobs
 paths:
   /jobs/{job_id}/users/{user_id}/commodities:
     get:
       tags:
-      - jobs
+      - Jobs
       operationId: readCommoditiesForUser
       parameters:
       - name: job_id
@@ -34,10 +34,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read commodities for user
+      x-summary-source: derived
   /jobs/{job_id}/external:
     get:
       tags:
-      - jobs
+      - Jobs
       operationId: readExternalDetails
       parameters:
       - name: job_id
@@ -49,10 +51,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read external details
+      x-summary-source: derived
   /jobs/{job_id}/payment/log:
     get:
       tags:
-      - jobs
+      - Jobs
       operationId: readPaymentLog
       parameters:
       - name: job_id
@@ -64,10 +68,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read payment log
+      x-summary-source: derived
   /jobs/{job_id}/receipts:
     get:
       tags:
-      - jobs
+      - Jobs
       operationId: latestReceipt
       parameters:
       - name: User-Id
@@ -85,10 +91,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Latest receipt
+      x-summary-source: derived
   /jobs/delete:
     put:
       tags:
-      - jobs
+      - Jobs
       operationId: archiveForAndroid
       parameters:
       - name: User-Id
@@ -105,10 +113,12 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/Job'
+      summary: Archive for android
+      x-summary-source: derived
   /jobs:
     get:
       tags:
-      - jobs
+      - Jobs
       operationId: read_8
       parameters:
       - name: User-Id
@@ -120,9 +130,11 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read 8
+      x-summary-source: derived
     post:
       tags:
-      - jobs
+      - Jobs
       operationId: create_8
       parameters:
       - name: User-Id
@@ -139,9 +151,11 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/JobRequestDTO'
+      summary: Create 8
+      x-summary-source: derived
     put:
       tags:
-      - jobs
+      - Jobs
       operationId: update_3
       responses:
         default:
@@ -151,9 +165,11 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/Job'
+      summary: Update 3
+      x-summary-source: derived
     delete:
       tags:
-      - jobs
+      - Jobs
       operationId: archive_3
       parameters:
       - name: User-Id
@@ -170,10 +186,12 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/Job'
+      summary: Archive 3
+      x-summary-source: derived
   /jobs/{job_id}/notes:
     get:
       tags:
-      - jobs
+      - Jobs
       operationId: readNotes
       parameters:
       - name: job_id
@@ -191,10 +209,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read notes
+      x-summary-source: derived
   /jobs/{id}/description:
     get:
       tags:
-      - jobs
+      - Jobs
       operationId: readDescription
       parameters:
       - name: id
@@ -206,10 +226,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read description
+      x-summary-source: derived
   /jobs/{job_id}:
     post:
       tags:
-      - jobs
+      - Jobs
       operationId: readJobUnit
       parameters:
       - name: job_id
@@ -234,10 +256,12 @@ paths:
               type: object
               additionalProperties:
                 type: string
+      summary: Read job unit
+      x-summary-source: derived
   /jobs/{job_id}/log:
     get:
       tags:
-      - jobs
+      - Jobs
       operationId: readAll
       parameters:
       - name: job_id
@@ -261,10 +285,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read all
+      x-summary-source: derived
   /jobs/{job_id}/commodities:
     get:
       tags:
-      - jobs
+      - Jobs
       operationId: readCommodities
       parameters:
       - name: job_id
@@ -282,10 +308,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read commodities
+      x-summary-source: derived
   /jobs/{job_id}/payment:
     get:
       tags:
-      - jobs
+      - Jobs
       operationId: readPayment
       parameters:
       - name: User-Id
@@ -303,10 +331,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read payment
+      x-summary-source: derived
   /jobs/list/{page_num}:
     get:
       tags:
-      - jobs
+      - Jobs
       operationId: read_6
       parameters:
       - name: page_num
@@ -324,10 +354,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read 6
+      x-summary-source: derived
   /jobs/{id}:
     get:
       tags:
-      - jobs
+      - Jobs
       operationId: read_7
       parameters:
       - name: User-Id
@@ -345,10 +377,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read 7
+      x-summary-source: derived
   /jobs/description/parse:
     post:
       tags:
-      - jobs
+      - Jobs
       operationId: create_9
       responses:
         default:
@@ -358,10 +392,12 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/AddressParsingRequestDTO'
+      summary: Create 9
+      x-summary-source: derived
   /v2/jobs/{job_id}:
     get:
       tags:
-      - jobs
+      - Jobs
       operationId: readJob
       parameters:
       - name: job_id
@@ -379,10 +415,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read job
+      x-summary-source: derived
   /v2/jobs/{job_id}/log:
     get:
       tags:
-      - jobs
+      - Jobs
       operationId: readAll_3
       parameters:
       - name: job_id
@@ -400,8 +438,65 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read all 3
+      x-summary-source: derived
 components:
   schemas:
+    Job:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        referenceId:
+          type: string
+        createdId:
+          type: integer
+          format: int64
+        description:
+          type: string
+        notes:
+          type: string
+        occupationId:
+          type: integer
+          format: int64
+        createdAt:
+          type: string
+          format: date-time
+        active:
+          type: boolean
+    AddressBounds:
+      type: object
+      properties:
+        lat:
+          type: number
+          format: double
+        lon:
+          type: number
+          format: double
+    JobRequestDTO:
+      type: object
+      properties:
+        createdId:
+          type: integer
+          format: int64
+        description:
+          type: string
+        notes:
+          type: string
+        occupationId:
+          type: integer
+          format: int64
+        address:
+          type: string
+        clientName:
+          type: string
+        clientPhoneNumber:
+          type: string
+        clientPhoneNumber2:
+          type: string
+        addressParsingRequest:
+          $ref: '#/components/schemas/AddressParsingRequestDTO'
     AddressParsingRequestDTO:
       type: object
       properties:
@@ -562,58 +657,3 @@ components:
           $ref: '#/components/schemas/AddressBounds'
         address:
           type: string
-    JobRequestDTO:
-      type: object
-      properties:
-        createdId:
-          type: integer
-          format: int64
-        description:
-          type: string
-        notes:
-          type: string
-        occupationId:
-          type: integer
-          format: int64
-        address:
-          type: string
-        clientName:
-          type: string
-        clientPhoneNumber:
-          type: string
-        clientPhoneNumber2:
-          type: string
-        addressParsingRequest:
-          $ref: '#/components/schemas/AddressParsingRequestDTO'
-    Job:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-        referenceId:
-          type: string
-        createdId:
-          type: integer
-          format: int64
-        description:
-          type: string
-        notes:
-          type: string
-        occupationId:
-          type: integer
-          format: int64
-        createdAt:
-          type: string
-          format: date-time
-        active:
-          type: boolean
-    AddressBounds:
-      type: object
-      properties:
-        lat:
-          type: number
-          format: double
-        lon:
-          type: number
-          format: double

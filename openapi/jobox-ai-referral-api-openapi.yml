@@ -5,12 +5,12 @@ info:
 servers:
 - url: https://https://staging.jobox.ai/Kili
 tags:
-- name: referral
+- name: Referral
 paths:
   /referral:
     post:
       tags:
-      - referral
+      - Referral
       operationId: validate
       parameters:
       - name: User-Id
@@ -29,10 +29,12 @@ paths:
               type: object
               additionalProperties:
                 type: string
+      summary: Validate
+      x-summary-source: derived
   /referral/{user_id}/request:
     post:
       tags:
-      - referral
+      - Referral
       operationId: request
       parameters:
       - name: user_id
@@ -51,10 +53,12 @@ paths:
               type: object
               additionalProperties:
                 type: string
+      summary: Request
+      x-summary-source: derived
   /referral/generate/{email}:
     get:
       tags:
-      - referral
+      - Referral
       operationId: generateReferralCodes
       parameters:
       - name: email
@@ -65,3 +69,5 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Generate referral codes
+      x-summary-source: derived

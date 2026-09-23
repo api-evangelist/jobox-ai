@@ -5,12 +5,12 @@ info:
 servers:
 - url: https://https://staging.jobox.ai/Kili
 tags:
-- name: bankinfo
+- name: Bank Info
 paths:
   /bankinfo/users/{user_id}:
     get:
       tags:
-      - bankinfo
+      - Bank Info
       operationId: readByUserId
       parameters:
       - name: user_id
@@ -28,10 +28,12 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read by user id
+      x-summary-source: derived
   /bankinfo:
     post:
       tags:
-      - bankinfo
+      - Bank Info
       operationId: create_1
       parameters:
       - name: User-Id
@@ -53,9 +55,11 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/BankInfo'
+      summary: Create 1
+      x-summary-source: derived
     put:
       tags:
-      - bankinfo
+      - Bank Info
       operationId: update
       responses:
         default:
@@ -65,9 +69,11 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/BankInfo'
+      summary: Update
+      x-summary-source: derived
     delete:
       tags:
-      - bankinfo
+      - Bank Info
       operationId: archive
       responses:
         default:
@@ -77,10 +83,12 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/BankInfo'
+      summary: Archive
+      x-summary-source: derived
   /bankinfo/{bank_id}:
     get:
       tags:
-      - bankinfo
+      - Bank Info
       operationId: read
       parameters:
       - name: bank_id
@@ -98,6 +106,8 @@ paths:
       responses:
         default:
           description: successful operation
+      summary: Read
+      x-summary-source: derived
 components:
   schemas:
     BankInfo:
