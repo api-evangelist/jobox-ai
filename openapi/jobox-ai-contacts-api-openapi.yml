@@ -193,88 +193,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    Fraction:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-        contactId:
-          type: integer
-          format: int64
-        fraction:
-          type: number
-        fee:
-          type: number
-        startHour:
-          type: integer
-          format: int32
-        startMin:
-          type: integer
-          format: int32
-        endHour:
-          type: integer
-          format: int32
-        endMin:
-          type: integer
-          format: int32
-        weekday:
-          type: string
-          enum:
-          - MONDAY
-          - TUESDAY
-          - WEDNESDAY
-          - THURSDAY
-          - FRIDAY
-          - SATURDAY
-          - SUNDAY
-          - ALL
-        type:
-          type: string
-          enum:
-          - TRANSFER
-          - RECEIVE
-        active:
-          type: boolean
-        createdAt:
-          type: string
-          format: date-time
-        joinId:
-          type: integer
-          format: int64
-    JobStatusAlias:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-        contactId:
-          type: integer
-          format: int64
-        aliasContactId:
-          type: integer
-          format: int64
-        justAlias:
-          type: boolean
-        status:
-          type: string
-          enum:
-          - PENDING
-          - ACCEPT
-          - REJECT
-          - COMPLETE
-          - CANCEL
-          - REVOKE
-          - UPDATE
-          - CLOSING
-        active:
-          type: boolean
-        createdAt:
-          type: string
-          format: date-time
-        joinId:
-          type: integer
-          format: int64
     WalletLogAlias:
       type: object
       properties:
@@ -360,6 +278,88 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/WalletLogAlias'
+        joinId:
+          type: integer
+          format: int64
+    Fraction:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        contactId:
+          type: integer
+          format: int64
+        fraction:
+          type: number
+        fee:
+          type: number
+        startHour:
+          type: integer
+          format: int32
+        startMin:
+          type: integer
+          format: int32
+        endHour:
+          type: integer
+          format: int32
+        endMin:
+          type: integer
+          format: int32
+        weekday:
+          type: string
+          enum:
+          - MONDAY
+          - TUESDAY
+          - WEDNESDAY
+          - THURSDAY
+          - FRIDAY
+          - SATURDAY
+          - SUNDAY
+          - ALL
+        type:
+          type: string
+          enum:
+          - TRANSFER
+          - RECEIVE
+        active:
+          type: boolean
+        createdAt:
+          type: string
+          format: date-time
+        joinId:
+          type: integer
+          format: int64
+    JobStatusAlias:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        contactId:
+          type: integer
+          format: int64
+        aliasContactId:
+          type: integer
+          format: int64
+        justAlias:
+          type: boolean
+        status:
+          type: string
+          enum:
+          - PENDING
+          - ACCEPT
+          - REJECT
+          - COMPLETE
+          - CANCEL
+          - REVOKE
+          - UPDATE
+          - CLOSING
+        active:
+          type: boolean
+        createdAt:
+          type: string
+          format: date-time
         joinId:
           type: integer
           format: int64

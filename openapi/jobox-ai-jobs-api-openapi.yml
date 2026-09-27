@@ -442,6 +442,15 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    AddressBounds:
+      type: object
+      properties:
+        lat:
+          type: number
+          format: double
+        lon:
+          type: number
+          format: double
     Job:
       type: object
       properties:
@@ -465,38 +474,6 @@ components:
           format: date-time
         active:
           type: boolean
-    AddressBounds:
-      type: object
-      properties:
-        lat:
-          type: number
-          format: double
-        lon:
-          type: number
-          format: double
-    JobRequestDTO:
-      type: object
-      properties:
-        createdId:
-          type: integer
-          format: int64
-        description:
-          type: string
-        notes:
-          type: string
-        occupationId:
-          type: integer
-          format: int64
-        address:
-          type: string
-        clientName:
-          type: string
-        clientPhoneNumber:
-          type: string
-        clientPhoneNumber2:
-          type: string
-        addressParsingRequest:
-          $ref: '#/components/schemas/AddressParsingRequestDTO'
     AddressParsingRequestDTO:
       type: object
       properties:
@@ -657,3 +634,26 @@ components:
           $ref: '#/components/schemas/AddressBounds'
         address:
           type: string
+    JobRequestDTO:
+      type: object
+      properties:
+        createdId:
+          type: integer
+          format: int64
+        description:
+          type: string
+        notes:
+          type: string
+        occupationId:
+          type: integer
+          format: int64
+        address:
+          type: string
+        clientName:
+          type: string
+        clientPhoneNumber:
+          type: string
+        clientPhoneNumber2:
+          type: string
+        addressParsingRequest:
+          $ref: '#/components/schemas/AddressParsingRequestDTO'
