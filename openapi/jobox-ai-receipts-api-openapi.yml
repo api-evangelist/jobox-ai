@@ -77,13 +77,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    ReceiptWithNotesDTO:
-      type: object
-      properties:
-        receiptRequestDTO:
-          $ref: '#/components/schemas/ReceiptRequestDTO'
-        note:
-          $ref: '#/components/schemas/Note'
     ReceiptRequestDTO:
       type: object
       properties:
@@ -124,6 +117,13 @@ components:
         feedbackTs:
           type: string
           format: date-time
+    ReceiptWithNotesDTO:
+      type: object
+      properties:
+        receiptRequestDTO:
+          $ref: '#/components/schemas/ReceiptRequestDTO'
+        note:
+          $ref: '#/components/schemas/Note'
     Note:
       type: object
       properties:

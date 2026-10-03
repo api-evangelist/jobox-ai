@@ -442,38 +442,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    AddressBounds:
-      type: object
-      properties:
-        lat:
-          type: number
-          format: double
-        lon:
-          type: number
-          format: double
-    Job:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-        referenceId:
-          type: string
-        createdId:
-          type: integer
-          format: int64
-        description:
-          type: string
-        notes:
-          type: string
-        occupationId:
-          type: integer
-          format: int64
-        createdAt:
-          type: string
-          format: date-time
-        active:
-          type: boolean
     AddressParsingRequestDTO:
       type: object
       properties:
@@ -657,3 +625,35 @@ components:
           type: string
         addressParsingRequest:
           $ref: '#/components/schemas/AddressParsingRequestDTO'
+    Job:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        referenceId:
+          type: string
+        createdId:
+          type: integer
+          format: int64
+        description:
+          type: string
+        notes:
+          type: string
+        occupationId:
+          type: integer
+          format: int64
+        createdAt:
+          type: string
+          format: date-time
+        active:
+          type: boolean
+    AddressBounds:
+      type: object
+      properties:
+        lat:
+          type: number
+          format: double
+        lon:
+          type: number
+          format: double

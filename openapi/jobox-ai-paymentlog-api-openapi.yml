@@ -96,7 +96,7 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    PaymentLogDTO:
+    PaymentLog:
       type: object
       properties:
         id:
@@ -133,8 +133,6 @@ components:
         createdAt:
           type: string
           format: date-time
-        cardPaymentDetails:
-          $ref: '#/components/schemas/CardPaymentDetails'
     CardPaymentDetails:
       type: object
       properties:
@@ -182,7 +180,7 @@ components:
           format: date-time
         active:
           type: boolean
-    PaymentLog:
+    PaymentLogDTO:
       type: object
       properties:
         id:
@@ -219,3 +217,5 @@ components:
         createdAt:
           type: string
           format: date-time
+        cardPaymentDetails:
+          $ref: '#/components/schemas/CardPaymentDetails'
