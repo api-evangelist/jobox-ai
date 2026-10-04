@@ -96,6 +96,45 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    PaymentLogDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        paymentId:
+          type: integer
+          format: int64
+        jobId:
+          type: integer
+          format: int64
+        amount:
+          type: number
+        tip:
+          type: number
+        notes:
+          type: string
+        paymentType:
+          type: string
+          enum:
+          - CARD
+          - CASH
+          - EXTERNAL
+          - CHECK
+        transactionType:
+          type: string
+          enum:
+          - PAYMENT
+          - REFUND
+          - DISPUTE
+        userId:
+          type: integer
+          format: int64
+        createdAt:
+          type: string
+          format: date-time
+        cardPaymentDetails:
+          $ref: '#/components/schemas/CardPaymentDetails'
     PaymentLog:
       type: object
       properties:
@@ -180,42 +219,3 @@ components:
           format: date-time
         active:
           type: boolean
-    PaymentLogDTO:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-        paymentId:
-          type: integer
-          format: int64
-        jobId:
-          type: integer
-          format: int64
-        amount:
-          type: number
-        tip:
-          type: number
-        notes:
-          type: string
-        paymentType:
-          type: string
-          enum:
-          - CARD
-          - CASH
-          - EXTERNAL
-          - CHECK
-        transactionType:
-          type: string
-          enum:
-          - PAYMENT
-          - REFUND
-          - DISPUTE
-        userId:
-          type: integer
-          format: int64
-        createdAt:
-          type: string
-          format: date-time
-        cardPaymentDetails:
-          $ref: '#/components/schemas/CardPaymentDetails'

@@ -77,29 +77,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    ReceiptRequestDTO:
-      type: object
-      properties:
-        firstName:
-          type: string
-        lastName:
-          type: string
-        companyName:
-          type: string
-        email:
-          type: string
-        phoneNumber:
-          type: string
-        notes:
-          type: string
-        jobId:
-          type: integer
-          format: int64
-        userId:
-          type: integer
-          format: int64
-        timezone:
-          type: string
     JobFeedback:
       type: object
       properties:
@@ -164,3 +141,26 @@ components:
         createdAt:
           type: string
           format: date-time
+    ReceiptRequestDTO:
+      type: object
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        companyName:
+          type: string
+        email:
+          type: string
+        phoneNumber:
+          type: string
+        notes:
+          type: string
+        jobId:
+          type: integer
+          format: int64
+        userId:
+          type: integer
+          format: int64
+        timezone:
+          type: string

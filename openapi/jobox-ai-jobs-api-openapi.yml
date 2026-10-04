@@ -602,6 +602,15 @@ components:
           $ref: '#/components/schemas/AddressBounds'
         address:
           type: string
+    AddressBounds:
+      type: object
+      properties:
+        lat:
+          type: number
+          format: double
+        lon:
+          type: number
+          format: double
     JobRequestDTO:
       type: object
       properties:
@@ -648,12 +657,3 @@ components:
           format: date-time
         active:
           type: boolean
-    AddressBounds:
-      type: object
-      properties:
-        lat:
-          type: number
-          format: double
-        lon:
-          type: number
-          format: double

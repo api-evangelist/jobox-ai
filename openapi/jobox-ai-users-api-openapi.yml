@@ -547,6 +547,44 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        phoneNumber:
+          type: string
+        verified:
+          type: boolean
+        firstName:
+          type: string
+        lastName:
+          type: string
+        deviceKey:
+          type: string
+        joboxNumber:
+          type: string
+        email:
+          type: string
+        companyName:
+          type: string
+        profileUrl:
+          type: string
+        occupationId:
+          type: integer
+          format: int64
+        lastUsedAt:
+          type: string
+          format: date-time
+        tax:
+          type: number
+        createdAt:
+          type: string
+          format: date-time
+        verifiedAt:
+          type: string
+          format: date-time
     KycInfoDTO:
       type: object
       properties:
@@ -600,41 +638,3 @@ components:
           type: array
           items:
             type: string
-    User:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-        phoneNumber:
-          type: string
-        verified:
-          type: boolean
-        firstName:
-          type: string
-        lastName:
-          type: string
-        deviceKey:
-          type: string
-        joboxNumber:
-          type: string
-        email:
-          type: string
-        companyName:
-          type: string
-        profileUrl:
-          type: string
-        occupationId:
-          type: integer
-          format: int64
-        lastUsedAt:
-          type: string
-          format: date-time
-        tax:
-          type: number
-        createdAt:
-          type: string
-          format: date-time
-        verifiedAt:
-          type: string
-          format: date-time
