@@ -624,6 +624,8 @@ apis:
   humanURL: https://www.jobox.ai/marketplace
   baseURL: https://api.jobox.ai/Kili
   tags:
+  - Shorten
+  tags_raw:
   - shorten
   properties:
   - type: OpenAPI
