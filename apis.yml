@@ -895,6 +895,10 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Plans
+  url: plans/jobox-ai-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/jobox-ai-rate-limits.yml
 - type: Overlay
   url: overlays/jobox-ai-kili-overlay.yaml
 - type: X-MCPServerCandidate
