@@ -77,30 +77,29 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    JobFeedback:
+    ReceiptRequestDTO:
       type: object
       properties:
-        id:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        companyName:
+          type: string
+        email:
+          type: string
+        phoneNumber:
+          type: string
+        notes:
+          type: string
+        jobId:
           type: integer
           format: int64
-        receiptLogId:
+        userId:
           type: integer
           format: int64
-        feedback:
+        timezone:
           type: string
-          enum:
-          - HAPPY
-          - SAD
-        feedbackTs:
-          type: string
-          format: date-time
-    ReceiptWithNotesDTO:
-      type: object
-      properties:
-        receiptRequestDTO:
-          $ref: '#/components/schemas/ReceiptRequestDTO'
-        note:
-          $ref: '#/components/schemas/Note'
     Note:
       type: object
       properties:
@@ -141,26 +140,27 @@ components:
         createdAt:
           type: string
           format: date-time
-    ReceiptRequestDTO:
+    JobFeedback:
       type: object
       properties:
-        firstName:
-          type: string
-        lastName:
-          type: string
-        companyName:
-          type: string
-        email:
-          type: string
-        phoneNumber:
-          type: string
-        notes:
-          type: string
-        jobId:
+        id:
           type: integer
           format: int64
-        userId:
+        receiptLogId:
           type: integer
           format: int64
-        timezone:
+        feedback:
           type: string
+          enum:
+          - HAPPY
+          - SAD
+        feedbackTs:
+          type: string
+          format: date-time
+    ReceiptWithNotesDTO:
+      type: object
+      properties:
+        receiptRequestDTO:
+          $ref: '#/components/schemas/ReceiptRequestDTO'
+        note:
+          $ref: '#/components/schemas/Note'

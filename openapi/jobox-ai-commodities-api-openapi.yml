@@ -31,6 +31,34 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    CommodityDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        jobId:
+          type: integer
+          format: int64
+        reportedByUserId:
+          type: integer
+          format: int64
+        viewedByUserId:
+          type: integer
+          format: int64
+        paidByUserId:
+          type: integer
+          format: int64
+        amount:
+          type: number
+        quantity:
+          type: integer
+          format: int64
+        createdAt:
+          type: string
+          format: date-time
+        note:
+          $ref: '#/components/schemas/Note'
     Note:
       type: object
       properties:
@@ -82,31 +110,3 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/CommodityDTO'
-    CommodityDTO:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-        jobId:
-          type: integer
-          format: int64
-        reportedByUserId:
-          type: integer
-          format: int64
-        viewedByUserId:
-          type: integer
-          format: int64
-        paidByUserId:
-          type: integer
-          format: int64
-        amount:
-          type: number
-        quantity:
-          type: integer
-          format: int64
-        createdAt:
-          type: string
-          format: date-time
-        note:
-          $ref: '#/components/schemas/Note'
