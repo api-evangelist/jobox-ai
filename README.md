@@ -64,5 +64,143 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-JOBOX.ai is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/jobox-ai_stock/
+JOBOX.ai (Jobox) is a home-services fintech and marketplace-infrastructure platform for skilled trades professionals — locksmiths, plumbers, HVAC and appliance technicians. Founded in California in 2016 and operating since 2018, Jobox runs a mobile business app for independent pros (job intake from SMS/WhatsApp, dispatching, invoicing, tap-to-pay card acceptance, receipts, settlement reports, the Jobox Wallet and a Jobox credit card) plus a B2B "managed marketplace" product that lets retailers, distributors, discovery platforms and franchises embed home services into their own customer journeys through programmable APIs, an automated dispatch algorithm, a demand-partner dashboard, Jobox-handled KYC and weekly settlement reconciliation. Jobox.ai was acquired by Talus Pay in January 2024; the pro-facing mobile app and help center have since been rebranded to Talus Pay while the jobox.ai marketing site and the api.jobox.ai "Kili" production API remain live.
+
+**Areas:** Company · Home Services · Field Service · Marketplace · Payments · Fintech · Dispatching · Skilled Trades · KYC · Wallets
+
+## JOBOX.ai on APIs.io
+
+Everything profiled for JOBOX.ai is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/jobox-ai/](https://apis.io/providers/jobox-ai/)** — or go straight to one of the APIs or properties below.
+
+### APIs (30)
+
+- [JOBOX.ai Applogic Users API](https://apis.io/apis/jobox-ai/jobox-ai-applogic-users-api/) — The applogic_users API from JOBOX.ai — 1 operation(s) for applogic_users.
+- [JOBOX.ai Commodities API](https://apis.io/apis/jobox-ai/jobox-ai-commodities-api/) — The commodities API from JOBOX.ai — 1 operation(s) for commodities.
+- [JOBOX.ai Contacts API](https://apis.io/apis/jobox-ai/jobox-ai-contacts-api/) — The contacts API from JOBOX.ai — 5 operation(s) for contacts.
+- [JOBOX.ai Dashboard API](https://apis.io/apis/jobox-ai/jobox-ai-dashboard-api/) — The dashboard API from JOBOX.ai — 1 operation(s) for dashboard.
+- [JOBOX.ai Displayname API](https://apis.io/apis/jobox-ai/jobox-ai-displayname-api/) — The displayname API from JOBOX.ai — 1 operation(s) for displayname.
+- [JOBOX.ai Disputes API](https://apis.io/apis/jobox-ai/jobox-ai-disputes-api/) — The disputes API from JOBOX.ai — 2 operation(s) for disputes.
+- [JOBOX.ai External API](https://apis.io/apis/jobox-ai/jobox-ai-external-api/) — The external API from JOBOX.ai — 1 operation(s) for external.
+- [JOBOX.ai History API](https://apis.io/apis/jobox-ai/jobox-ai-history-api/) — The history API from JOBOX.ai — 1 operation(s) for history.
+- [JOBOX.ai Identification API](https://apis.io/apis/jobox-ai/jobox-ai-identification-api/) — The identification API from JOBOX.ai — 1 operation(s) for identification.
+- [JOBOX.ai Joboxnumbers API](https://apis.io/apis/jobox-ai/jobox-ai-joboxnumbers-api/) — The joboxnumbers API from JOBOX.ai — 1 operation(s) for joboxnumbers.
+- [JOBOX.ai Jobs API](https://apis.io/apis/jobox-ai/jobox-ai-jobs-api/) — The jobs API from JOBOX.ai — 17 operation(s) for jobs.
+- [JOBOX.ai Notes API](https://apis.io/apis/jobox-ai/jobox-ai-notes-api/) — The notes API from JOBOX.ai — 2 operation(s) for notes.
+- [JOBOX.ai Notifications API](https://apis.io/apis/jobox-ai/jobox-ai-notifications-api/) — The notifications API from JOBOX.ai — 3 operation(s) for notifications.
+- [JOBOX.ai Occupations API](https://apis.io/apis/jobox-ai/jobox-ai-occupations-api/) — The occupations API from JOBOX.ai — 2 operation(s) for occupations.
+- [JOBOX.ai Paymentlog API](https://apis.io/apis/jobox-ai/jobox-ai-paymentlog-api/) — The paymentlog API from JOBOX.ai — 3 operation(s) for paymentlog.
+- [JOBOX.ai Payments API](https://apis.io/apis/jobox-ai/jobox-ai-payments-api/) — The payments API from JOBOX.ai — 2 operation(s) for payments.
+- [JOBOX.ai Receipts API](https://apis.io/apis/jobox-ai/jobox-ai-receipts-api/) — The receipts API from JOBOX.ai — 3 operation(s) for receipts.
+- [JOBOX.ai Referral API](https://apis.io/apis/jobox-ai/jobox-ai-referral-api/) — The referral API from JOBOX.ai — 3 operation(s) for referral.
+- [JOBOX.ai Reports API](https://apis.io/apis/jobox-ai/jobox-ai-reports-api/) — The reports API from JOBOX.ai — 5 operation(s) for reports.
+- [JOBOX.ai Search API](https://apis.io/apis/jobox-ai/jobox-ai-search-api/) — The search API from JOBOX.ai — 1 operation(s) for search.
+- [JOBOX.ai Shorten API](https://apis.io/apis/jobox-ai/jobox-ai-shorten-api/) — The shorten API from JOBOX.ai — 1 operation(s) for shorten.
+- [JOBOX.ai Status API](https://apis.io/apis/jobox-ai/jobox-ai-status-api/) — The status API from JOBOX.ai — 1 operation(s) for status.
+- [JOBOX.ai Upload API](https://apis.io/apis/jobox-ai/jobox-ai-upload-api/) — The upload API from JOBOX.ai — 4 operation(s) for upload.
+- [JOBOX.ai Uploadsignature API](https://apis.io/apis/jobox-ai/jobox-ai-uploadsignature-api/) — The uploadsignature API from JOBOX.ai — 1 operation(s) for uploadsignature.
+- [JOBOX.ai Users API](https://apis.io/apis/jobox-ai/jobox-ai-users-api/) — The users API from JOBOX.ai — 13 operation(s) for users.
+- [JOBOX.ai V2stripe API](https://apis.io/apis/jobox-ai/jobox-ai-v2stripe-api/) — The v2stripe API from JOBOX.ai — 1 operation(s) for v2stripe.
+- [JOBOX.ai Wallet Alias API](https://apis.io/apis/jobox-ai/jobox-ai-wallet-alias-api/) — The wallet_alias API from JOBOX.ai — 2 operation(s) for wallet_alias.
+- [JOBOX.ai Wallet API](https://apis.io/apis/jobox-ai/jobox-ai-wallet-api/) — The wallet API from JOBOX.ai — 6 operation(s) for wallet.
+- [JOBOX.ai Bank Info API](https://apis.io/apis/jobox-ai/jobox-ai-bank-info-api/) — The Bank Info API from JOBOX.ai — 3 operation(s) for bank info.
+- [JOBOX.ai Job Log API](https://apis.io/apis/jobox-ai/jobox-ai-job-log-api/) — The Job Log API from JOBOX.ai — 3 operation(s) for job log.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [jobox-ai-mcp.yml](https://apis.io/servers/jobox-ai/jobox-ai-mcp-yml/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Jobox Ai Kili Overlay](https://apis.io/overlays/jobox-ai/jobox-ai-kili-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Jobox Ai Authentication](https://apis.io/security/jobox-ai/jobox-ai-authentication/)
+- [Jobox Ai Domain Security](https://apis.io/security/jobox-ai/jobox-ai-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Jobox Ai Plans Pricing](https://apis.io/plans/jobox-ai/jobox-ai-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Jobox Ai Rate Limits](https://apis.io/rate-limits/jobox-ai/jobox-ai-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.jobox.ai/)
+- [Documentation](https://help.jobox.ai/en/)
+- [Getting started](https://help.jobox.ai/en/articles/2790099-getting-started-with-the-talus-pay-app)
+- [Support](https://help.jobox.ai/en/articles/9702013-how-and-when-to-contact-support)
+- [Blog](https://blog.jobox.ai/)
+- [Terms of service](https://www.jobox.ai/terms-of-service)
+- [Privacy policy](https://www.jobox.ai/privacy-policy)
+
+## API Evangelist rating
+
+**Kin Score 30.8** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 31.0 |
+| Contract governance | 4.5 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 42.3 |
+| Access clarity | 21.1 |
+
+**Agent readiness 21.8** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 22.3** — Payments
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/jobox-ai/](https://apis.io/providers/jobox-ai/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for JOBOX.ai: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/jobox-ai/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
